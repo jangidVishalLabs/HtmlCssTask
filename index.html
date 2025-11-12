@@ -11,6 +11,7 @@
 </head>
 
 <body>
+    <script src="script.js" defer></script>
     <nav>
         <header class="nav-header" role="banner">
             <div class="nav-left">
@@ -18,9 +19,19 @@
                     <img src="images/logo.png" alt="ceASAP logo" class="brand-logo">
                 </a>
             </div>
+
+            <!-- Mobile hamburger toggle -->
+            <button class="nav-toggle" aria-controls="nav-menu" aria-expanded="false" aria-label="Open navigation">
+                <span class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </span>
+            </button>
+
+            <!-- Right side navigation (greeting + actions) -->
             <div class="nav-right">
-                <p class="greeting">Welcome back, <strong>Scott</strong>!</p>
-                <nav class="actions" aria-label="User actions">
+                <nav id="nav-menu" class="nav-menu" aria-label="User actions">
                     <ul class="actions-list">
                         <li class="actions-item">
                             <a class="btn btn-primary" href="#">Calendar</a>
@@ -41,7 +52,7 @@
                 </nav>
             </div>
         </header>
-        <footer class="nav-footer" role="contentinfo">
+        <nav class="nav-footer" role="contentinfo">
             <div class="content">
                 <button class="location" aria-haspopup="listbox" aria-expanded="false">
                     <span class="location-text">Nevada</span>
@@ -63,682 +74,710 @@
                     </li>
                 </ul>
             </nav>
+
+        </nav>
+        <!-- Hero -->
+        <section class="hero" aria-label="Hero">
+            <div class="hero-decor hero-decor--right" aria-hidden="true"></div>
+            <div class="container">
+                <div class="hero-grid">
+
+
+                    <div class="hero-body">
+                        <h1 class="hero-title">
+                            Nevada continuing education dedicated to complete
+                            <span class="accent"> flexibility</span>.
+                        </h1>
+
+                        <div class="hero-card">
+                            <p class="hero-sub">Complete your real estate education <span class="accent">FAST</span>!
+                            </p>
+
+                            <div class="hero-ctas">
+                                <a class="cta-btn" href="#">Live/ZOOM Calendar <span class="chev"
+                                        aria-hidden="true">→</span></a>
+                                <a class="cta-btn" href="#">Internet CE Courses <span class="chev"
+                                        aria-hidden="true">→</span></a>
+                                <a class="cta-btn" href="#">Bundle &amp; Save <span class="chev"
+                                        aria-hidden="true">→</span></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hero-media">
+                        <figure>
+                            <img class="hero-image" src="/images/hero.png" alt="Students in online real estate course">
+                        </figure>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-decor hero-decor--left" aria-hidden="true"></div>
+        </section>
+
+        <!-- Bundles -->
+
+
+
+
+
+
+        <!-- Stats -->
+        <section class="stats" aria-label="Key statistics">
+            <div class="stats__container">
+                <ul class="stats__list">
+                    <li class="stat">
+                        <div class="stat__icon" aria-hidden="true">
+                            <img src="images/icons/Vector.svg" alt="" width="64" height="64">
+                        </div>
+                        <div class="stat__content">
+                            <div class="stat__value">35,000+</div>
+                            <div class="stat__label">Enrollments and counting</div>
+                        </div>
+                    </li>
+
+                    <li class="stat">
+                        <div class="stat__icon" aria-hidden="true">
+                            <img src="images/icons/Vector2.svg" alt="" width="64" height="64">
+                        </div>
+                        <div class="stat__content">
+                            <div class="stat__value">5,000+</div>
+                            <div class="stat__label">Students and counting</div>
+                        </div>
+                    </li>
+
+                    <li class="stat">
+                        <div class="stat__icon" aria-hidden="true">
+                            <img src="images/icons/Vector3.svg" alt="" width="64" height="64">
+                        </div>
+                        <div class="stat__content">
+                            <div class="stat__value">24/7/365</div>
+                            <div class="stat__label">Course / Content Access</div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <!-- Ratings / Offers -->
+        <section class="ratings" aria-label="Ratings and current offers">
+            <div class="ratings__container">
+                <div class="ratings__left">
+                    <img src="./images/rating.png" alt="" srcset="">
+                </div>
+
+
+                <div class="ratings__right">
+                    <ul class="offers" aria-hidden="false">
+                        <li class="offer"><img src="images/icons/tick.svg" alt="36 hour" class="offer-icon"><span
+                                class="offer-text">36-Hrs. CE for $119</span></li>
+                        <li class="offer"><img src="images/icons/tick.svg" alt="18 hour internet"
+                                class="offer-icon"><span class="offer-text">18-Hrs. Internet CE for $50</span></li>
+                        <li class="offer"><img src="images/icons/tick.svg" alt="18 hour live" class="offer-icon"><span
+                                class="offer-text">18-Hrs. Live/ZOOM CE for $79</span></li>
+                        <li class="offer"><img src="images/icons/tick.svg" alt="internet" class="offer-icon"><span
+                                class="offer-text">Internet CE $10/ea.</span></li>
+                        <li class="offer"><img src="images/icons/tick.svg" alt="live" class="offer-icon"><span
+                                class="offer-text">Live/ZOOM CE $20/ea.</span></li>
+                    </ul>
+
+                    <a class="ratings-cta" href="#">Explore Now <span aria-hidden="true">→</span></a>
+                </div>
+            </div>
+        </section>
+        <!-- Courses -->
+        <section class="courses" aria-label="Course types">
+            <div class="courses__container">
+                <ul class="courses__list">
+                    <li class="course">
+                        <img class="course__media" src="images/course1.png" alt="Live Zoom" />
+                        <div class="course__body">
+                            <h3 class="course__title"><span class="muted">Live/ZOOM</span> <span
+                                    class="highlight">CE</span>
+                            </h3>
+                            <p class="course__desc">Complete CE without stepping outside your door — Live/ZOOM-approved
+                                courses bring education to you.</p>
+                            <a class="course-cta" href="#">Explore Now <span aria-hidden="true">→</span></a>
+                        </div>
+                    </li>
+
+                    <li class="course">
+                        <img class="course__media" src="images/course2.png" alt="Internet CE" />
+                        <div class="course__body">
+                            <h3 class="course__title"><span class="muted">Internet</span> <span
+                                    class="highlight">CE</span>
+                            </h3>
+                            <p class="course__desc">Go at your own pace with our on-demand Nevada Real Estate Division
+                                approved continuing education courses.</p>
+                            <a class="course-cta" href="#">Explore Now <span aria-hidden="true">→</span></a>
+                        </div>
+                    </li>
+
+                    <li class="course">
+                        <img class="course__media" src="images/course3.png" alt="Bundles" />
+                        <div class="course__body">
+                            <h3 class="course__title"><span class="muted">Save</span> <span class="highlight">with
+                                    Bundles</span></h3>
+                            <p class="course__desc">Save big on CE bundles — combine Live/ZOOM and Internet CE for
+                                convenience and savings.</p>
+                            <a class="course-cta" href="#">Explore Now <span aria-hidden="true">→</span></a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <!-- Benefits -->
+        <section class="benefits-1" aria-label="36-hour CE bundle">
+            <div class="benefits__media">
+                <img class="image" src="images/ben-1.png" alt="Instructor teaching an online class">
+            </div>
+            <div class="benefits__body">
+                <div class="content4">
+                    <div class="content5">
+                        <div class="content6">
+                            <h2 class="text">36-Hour CE Bundle: Flexibility and Value for Your Renewal</h2>
+                            <div class="text2">
+                                <ul class="text-2-span bold">
+                                    <li class="bold-text">18 Hours of NRED Core-Required CE:</li>
+                                </ul>
+                                <ul class="text-2-span3">
+                                    <li class="unbold">Enjoy the freedom of online CE courses that fit into your busy
+                                        life,
+                                        letting you
+                                        learn anytime, anywhere, at your own pace!</li>
+                                </ul>
+                                <ul class="text-2-span">
+                                    <li class="bold-text">18 Hours of Live/ZOOM CE:</li>
+                                </ul>
+                                <ul class="text-2-span3">
+                                    <li class="unbold">Join live CE courses on ZOOM, connect with expert instructors and
+                                        peers in real
+                                        time, and enjoy the flexibility of learning from anywhere!</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="button">
+                            <a class="text3" href="#">Learn More</a>
+                            <img class="akar-icons-circle-chevron-right-fill" src="images/icons/right-fill.svg"
+                                alt="arrow">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="benefits-1 benefit-right" aria-label="36-hour CE bundle">
+            <div class="benefits__media">
+                <img class="image" src="images/ben-2.png" alt="Instructor teaching an online class">
+            </div>
+            <div class="benefits__body">
+                <div class="content4">
+                    <div class="content5">
+                        <div class="content6">
+                            <h2 class="text">Complete your Nevada approved CE faster and easier than ever!</h2>
+                            <div class="text2">
+                                Choose live ZOOM sessions for real-time interaction or self-paced
+                                courses that adapt to your schedule. Everything is right here in one
+                                simple place. Start now and take the hassle out of renewing your Nevada
+                                real estate license!
+                            </div>
+                        </div>
+                        <div class="button">
+                            <a class="text3" href="#">Learn More</a>
+                            <img class="akar-icons-circle-chevron-right-fill" src="images/icons/right-fill.svg"
+                                alt="arrow">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Cards: Digital downloads (semantic, namespaced classes) -->
+        <section class="cards" aria-label="Digital downloads">
+            <div class="cards__container">
+                <header class="cards__header">
+                    <h2 class="cards__title">DIGITAL DOWNLOADS TO ELEVATE YOUR GAME!</h2>
+                    <div class="cards__controls" aria-hidden="true">
+                        <button class="cards__control cards__control--prev" type="button" aria-hidden="true">
+                            <img src="images/chevron-left.svg" alt="">
+                        </button>
+                        <button class="cards__control cards__control--next" type="button" aria-hidden="true">
+                            <img src="images/chevron-right.svg" alt="">
+                        </button>
+                    </div>
+                </header>
+
+                <ul class="cards__list">
+                    <li class="card">
+                        <figure class="card__media-wrap">
+                            <img class="card__media" src="images/digital-1.png" alt="Link select distribute product">
+                        </figure>
+                        <div class="card__body">
+                            <h3 class="card__title">Link select distribute auto</h3>
+                            <p class="card__desc">Device prototype thumbnail vertical share list scrolling figjam.
+                                Object
+                                horizontal comment arrow.</p>
+                        </div>
+                    </li>
+
+                    <li class="card">
+                        <figure class="card__media-wrap">
+                            <img class="card__media" src="images/digital-2.png" alt="Create pencil object product">
+                        </figure>
+                        <div class="card__body">
+                            <h3 class="card__title">Create pencil object</h3>
+                            <p class="card__desc">Figjam hand follower move mask undo plugin. Mask team object editor
+                                thumbnail. Stroke vertical.</p>
+                        </div>
+                    </li>
+
+                    <li class="card">
+                        <figure class="card__media-wrap">
+                            <img class="card__media" src="images/digital-3.png" alt="Vector distribute product">
+                        </figure>
+                        <div class="card__body">
+                            <h3 class="card__title">Vector distribute</h3>
+                            <p class="card__desc">Undo distribute outline comment mask scale flatten rectangle. Shadow
+                                team
+                                library line italic.</p>
+                        </div>
+                    </li>
+
+                    <li class="card">
+                        <figure class="card__media-wrap">
+                            <img class="card__media" src="images/digital-4.png" alt="Background union product">
+                        </figure>
+                        <div class="card__body">
+                            <h3 class="card__title">Background union union</h3>
+                            <p class="card__desc">Horizontal community create distribute arrange scale distribute object
+                                effect rectangle. Share.</p>
+                        </div>
+                    </li>
+                </ul>
+
+                <div class="cards__pager" aria-hidden="true">
+                    <button class="cards__dot is-active" aria-hidden="true"></button>
+                    <button class="cards__dot" aria-hidden="true"></button>
+                    <button class="cards__dot" aria-hidden="true"></button>
+                    <button class="cards__dot" aria-hidden="true"></button>
+                </div>
+
+                <a class="cards__cta" href="#" role="button">Explore All <span class="sr-only">digital
+                        downloads</span></a>
+            </div>
+        </section>
+        <!-- Testimonials / Reviews -->
+        <section class="testimonials" aria-label="Student reviews and testimonials">
+            <div class="testimonials__container">
+                <header class="testimonials__header">
+                    <h2 class="testimonials__title">What our students say</h2>
+                </header>
+
+                <div class="testimonials__track">
+                    <ul class="testimonials__list">
+                        <li class="testimonial">
+                            <div class="testimonial__card">
+                                <div class="testimonial__meta">
+                                    <img class="testimonial__avatar" src="images/icons/avatar1.svg" alt="Lisa Foster">
+                                    <div class="testimonial__who">
+                                        <div class="testimonial__name">Lisa Foster</div>
+                                        <div class="testimonial__stars" aria-hidden="true">★★★★★</div>
+                                    </div>
+                                </div>
+                                <p class="testimonial__text">Lorem ipsum dolor sit amet consectetur. Facilisi elit
+                                    adipiscing a eu mauris. Pharetra feugiat tempor a commodo.</p>
+                                <div class="testimonial__meta-footer"><time datetime="2024-12-14">December 14,
+                                        2024</time><img src="images/icons/google.svg" alt="" aria-hidden="true"></div>
+                            </div>
+                        </li>
+                        <li class="testimonial">
+                            <div class="testimonial__card">
+                                <div class="testimonial__meta">
+                                    <img class="testimonial__avatar" src="images/icons/avatar1.svg" alt="Lisa Foster">
+                                    <div class="testimonial__who">
+                                        <div class="testimonial__name">Lisa Foster</div>
+                                        <div class="testimonial__stars" aria-hidden="true">★★★★★</div>
+                                    </div>
+                                </div>
+                                <p class="testimonial__text">Lorem ipsum dolor sit amet consectetur. Facilisi elit
+                                    adipiscing a eu mauris. Pharetra feugiat tempor a commodo.</p>
+                                <div class="testimonial__meta-footer"><time datetime="2024-12-14">December 14,
+                                        2024</time><img src="images/icons/google.svg" alt="" aria-hidden="true"></div>
+                            </div>
+                        </li>
+
+
+
+                        <li class="testimonial">
+                            <div class="testimonial__card">
+                                <div class="testimonial__meta">
+                                    <img class="testimonial__avatar" src="images/icons/avatar3.svg" alt="John Sanders">
+                                    <div class="testimonial__who">
+                                        <div class="testimonial__name">John Sanders</div>
+                                        <div class="testimonial__stars" aria-hidden="true">★★★★★</div>
+                                    </div>
+                                </div>
+                                <p class="testimonial__text">Lorem ipsum dolor sit amet consectetur. Purus diam
+                                    tincidunt
+                                    eget in convallis nec. Blandit tristique leo diam.</p>
+                                <div class="testimonial__meta-footer"><time datetime="2024-12-14">December 14,
+                                        2024</time><img src="images/icons/google.svg" alt="" aria-hidden="true"></div>
+                            </div>
+                        </li>
+
+
+                    </ul>
+
+                    <div class="testimonials__pager" aria-hidden="true">
+                        <span class="dot is-active"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                    </div>
+
+                    <div class="testimonials__cta">
+                        <a class="btn" href="#reviews">See More Reviews</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="bundles-block" aria-label="Popular bundles">
+            <div class="bundles-block__container">
+                <header class="bundles-block__header">
+                    <h2 class="bundles-block__title">Popular Bundles</h2>
+                </header>
+
+                <div class="bundles-block__grid">
+                    <!-- Featured bundle (large) -->
+                    <article class="bundle-card bundle-card--featured">
+                        <figure class="bundle-card__media">
+                            <img src="images/bundle1.png" alt="36-Hour ceBUILDER Bundle" />
+                        </figure>
+                        <div class="bundle-card__body">
+                            <h3 class="bundle-card__title"><span class="muted">36-Hour</span> <span
+                                    class="highlight">ce</span> <strong>BUILDER Bundle</strong></h3>
+                            <p class="bundle-card__desc">Complete all 36 hrs. of NRED approved continuing education
+                                easily
+                                with our ceBUILDER Bundle! This affordable package includes 18 hrs. of required NRED CE
+                                courses and 18 hrs. of Live/ZOOM sessions for your in-person requirements.</p>
+
+                            <div class="bundle-card__meta">
+                                <div class="bundle-card__prices">
+                                    <span class="bundle-price bundle-price--old">$189.00</span>
+                                    <span class="bundle-price bundle-price--new">$119.00</span>
+                                </div>
+
+                                <a class="bundle-cta" href="#" role="button">Learn More <span
+                                        aria-hidden="true">→</span></a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Right column: two smaller bundles stacked -->
+                    <div class="bundles-block__side">
+                        <article class="bundle-card">
+                            <figure class="bundle-card__media">
+                                <img src="images/bundle2.png" alt="18-Hour Internet CE Bundle" />
+                            </figure>
+                            <div class="bundle-card__body">
+                                <h4 class="bundle-card__title">18-Hour Internet CE Bundle</h4>
+                                <p class="bundle-card__desc">Renew your Nevada real estate license with our
+                                    comprehensive
+                                    18-hour CE bundle, featuring all six mandatory courses required for license renewal.
+                                </p>
+
+                                <div class=" side_meta">
+                                    <div class="bundle-card__prices">
+                                        <span class="bundle-price bundle-price--old">$99.00</span>
+                                        <span class="bundle-price bundle-price--new">$50.00</span>
+                                    </div>
+                                    <a class="bundle-cta" href="#" role="button">Learn More <span
+                                            aria-hidden="true">→</span></a>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="bundle-card">
+                            <figure class="bundle-card__media">
+                                <img src="images/bundle3.png" alt="18-Hour Live/ZOOM CE Bundle" />
+                            </figure>
+                            <div class="bundle-card__body">
+                                <h4 class="bundle-card__title">18-Hour Live/ZOOM CE Bundle</h4>
+                                <p class="bundle-card__desc">Explore our Live/ZOOM CE Calendar and select six
+                                    NRED-approved
+                                    courses to complete your required 18 hours of in-person continuing education.</p>
+
+                                <div class="side_meta">
+                                    <div class="bundle-card__prices">
+                                        <span class="bundle-price bundle-price--old">$129.00</span>
+                                        <span class="bundle-price bundle-price--new">$79.00</span>
+                                    </div>
+                                    <a class="bundle-cta" href="#" role="button">Learn More <span
+                                            aria-hidden="true">→</span></a>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Tools block: Scott's Tools (semantic, namespaced) -->
+        <section class="tools-block" aria-label="Scott's tools">
+            <div class="tools-block__container">
+                <div class="tools-block__content">
+                    <div class="tools-block__body">
+                        <div class="tools-block__heading">
+                            <span class="tools-block__title"><span class="tools-block__title-strong">Scott's</span>
+                                <span class="tools-block__title-accent">TOOLS</span> <span
+                                    class="tools-block__title-strong">of the trade!</span></span>
+                            <p class="tools-block__sub">Unlock your business's potential by exploring cutting-edge
+                                software,
+                                tools, and AI solutions designed to drive growth and amplify results. Take the first
+                                step
+                                toward transformation and explore now!</p>
+                        </div>
+
+                        <div class="tools-block__profile">
+                            <figure class="tools-block__avatar-wrap">
+                                <img class="tools-block__avatar" src="images/tools-test.png" alt="Scott Beaudry">
+                            </figure>
+                            <div class="tools-block__meta">
+                                <div class="tools-block__name">Scott Beaudry</div>
+                                <div class="tools-block__role">Tech Ninja</div>
+                            </div>
+                        </div>
+
+                        <a class="tools-block__cta" href="#">Explore Now <span class="sr-only">tools and
+                                resources</span></a>
+                    </div>
+
+                    <div class="tools-block__media">
+                        <img class="tools-block__hero" src="images/tools-model.png" alt="Tools overview illustration">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- FAQ: Frequently asked questions -->
+        <section class="faq" aria-label="Frequently asked questions">
+            <div class="faq__wrap">
+                <header class="faq__header">
+                    <h2 class="faq__title">Frequently Asked Questions</h2>
+                </header>
+
+                <div class="faq__container">
+                    <div class="faq__grid">
+                        <div class="faq__column">
+                            <details class="faq__item" open>
+                                <summary class="faq__question">Can I take the same type of course more than once and
+                                    receive
+                                    CE credits?</summary>
+                                <div class="faq__answer">An example of this would be completing an additional 3 CE hours
+                                    of
+                                    Ethics resulting in a total of 6 hours of Ethics. Yes, you can. The additional 3 CE
+                                    hours of Ethics would then go towards your General CE requirements. But you cannot
+                                    take
+                                    the same course (same NRED CE #) for a second time and receive the additional
+                                    credits.
+                                    Prior to submitting your completed CE certificates, verify that you do not have
+                                    duplicate courses.</div>
+                            </details>
+
+                            <details class="faq__item">
+                                <summary class="faq__question">Where can I go to get the most up-to-date real estate
+                                    license
+                                    renewal information?</summary>
+                            </details>
+
+                            <details class="faq__item">
+                                <summary class="faq__question">If this is my first renewal, how many hours of education
+                                    do I
+                                    need to renew my real estate license?</summary>
+                            </details>
+
+                            <details class="faq__item">
+                                <summary class="faq__question">How many CE credits do I need to renew my Salesperson
+                                    real
+                                    estate license?</summary>
+                            </details>
+                        </div>
+
+                        <div class="faq__column">
+                            <details class="faq__item">
+                                <summary class="faq__question">What is the difference between Live, internet, and ZOOM?
+                                </summary>
+                            </details>
+
+                            <details class="faq__item">
+                                <summary class="faq__question">I also hold an NRED Property Manager permit. What
+                                    additional
+                                    courses do I need to complete to renew my PM permit?</summary>
+                            </details>
+
+                            <details class="faq__item">
+                                <summary class="faq__question">Can I renew my real estate license online?</summary>
+                            </details>
+
+                            <details class="faq__item">
+                                <summary class="faq__question">If I need additional assistance regarding my real estate
+                                    license and/or permits, who can I reach out to?</summary>
+                            </details>
+
+                            <details class="faq__item">
+                                <summary class="faq__question">What if I need to swap-out a CE class for a different
+                                    type or
+                                    date for a live class?</summary>
+                            </details>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Partners: industry partners (semantic, namespaced) -->
+        <section class="partners-block" aria-label="Our industry partners">
+            <div class="partners-block__container">
+                <header class="partners-block__header">
+                    <h2 class="partners-block__title"><span class="partners-block__title-strong">Our Amazing
+                            Industry</span>
+                        <span class="partners-block__title-accent">Partners</span>
+                    </h2>
+                </header>
+
+                <ul class="partners-block__list" aria-label="Partner logos">
+                    <li class="partners-block__item">
+                        <figure class="partners-block__logo">
+                            <img src="images/icons/s1.svg" alt="Partner 1 logo" width="148" height="61">
+                        </figure>
+                    </li>
+                    <li class="partners-block__item">
+                        <figure class="partners-block__logo">
+                            <img src="images/icons/s2.svg" alt="Partner 2 logo" width="151" height="64">
+                        </figure>
+                    </li>
+                    <li class="partners-block__item">
+                        <figure class="partners-block__logo">
+                            <img src="images/icons/s3.svg" alt="Partner 3 logo" width="154" height="63">
+                        </figure>
+                    </li>
+                    <li class="partners-block__item">
+                        <figure class="partners-block__logo">
+                            <img src="images/icons/s4.svg" alt="Partner 4 logo" width="148" height="61">
+                        </figure>
+                    </li>
+                    <li class="partners-block__item">
+                        <figure class="partners-block__logo">
+                            <img src="images/icons/s4.svg" alt="Partner 5 logo" width="151" height="64">
+                        </figure>
+                    </li>
+                </ul>
+
+                <div class="partners-block__pager" aria-hidden="true">
+                    <span class="partners-block__dot"></span>
+                    <span class="partners-block__dot"></span>
+                    <span class="partners-block__dot"></span>
+                    <span class="partners-block__dot"></span>
+                    <span class="partners-block__dot"></span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact / Support -->
+        <section class="contact" aria-label="Contact support">
+            <div class="contact__container">
+                <div class="contact__info">
+                    <h2 class="contact__title">Need Additional Assistance?</h2>
+                    <p class="contact__desc">Whether you have a question, need support, or want to share your
+                        feedback, we’re here to help. Your satisfaction is our priority — please feel free to reach
+                        out.
+                        <br /> <br /> For quick answers, visit our <a href="#" class="contact__link">Frequently Asked
+                            Questions</a>
+                        or try our automated AI ChatBot, available 24/7 to provide instant help.
+                    </p>
+                </div>
+
+                <form class="contact__form" action="#" method="post" novalidate>
+                    <div class="contact__fields">
+                        <div class="contact__field">
+                            <label class="contact__label" for="contact-name">Full name</label>
+                            <input class="contact__input" id="contact-name" name="name" type="text"
+                                placeholder="Your full name">
+                        </div>
+
+                        <div class="contact__field">
+                            <label class="contact__label" for="contact-email">Email address</label>
+                            <input class="contact__input" id="contact-email" name="email" type="email"
+                                placeholder="you@example.com">
+                        </div>
+
+                        <div class="contact__field">
+                            <label class="contact__label" for="contact-message">Message</label>
+                            <textarea class="contact__textarea" id="contact-message" name="message" rows="6"
+                                placeholder="Enter your message..."></textarea>
+                        </div>
+                    </div>
+
+                    <div class="contact__actions">
+                        <button class="btn contact__submit" type="submit">Send Message</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <!-- Site Footer -->
+        <footer class="site-footer" aria-label="Site footer">
+            <div class="site-footer__container">
+                <div class="site-footer__brand">
+                    <img src="images/logo.png" alt="ceASAP logo" class="site-footer__logo">
+                    <div>
+                        <p class="site-footer__copyright">© ceASAP LTD and its subsidiaries 2025. Except as permitted by
+                            the
+                            copyright law applicable to you, you may not reproduce or communicate any of the content on
+                            this
+                            website without permission. We may change these terms of use from time to time.</p>
+
+                        <ul class="site-footer__social" aria-label="Follow us">
+                            <li><a href="#" aria-label="Facebook" class="site-footer__social-link"><img
+                                        src="images/icons/f1.svg" alt="Facebook"></a></li>
+                            <li><a href="#" aria-label="Instagram" class="site-footer__social-link"><img
+                                        src="images/icons/f2.png" alt="Instagram"></a></li>
+                            <li><a href="#" aria-label="X" class="site-footer__social-link"><img
+                                        src="images/icons/f3.svg" alt="X"></a></li>
+                            <li><a href="#" aria-label="YouTube" class="site-footer__social-link"><img
+                                        src="images/icons/f4.svg" alt="YouTube"></a></li>
+                            <li><a href="#" aria-label="LinkedIn" class="site-footer__social-link"><img
+                                        src="images/icons/f5.svg" alt="LinkedIn"></a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="site-footer__lists">
+                    <nav class="site-footer__links" aria-label="Useful links">
+                        <h3 class="sr-only">Links</h3>
+                        <ul class="site-footer__list">
+                            <li><a href="#">Continuing Education</a></li>
+                            <li><a href="#">Our Experts</a></li>
+                            <li><a href="#">Customer Support</a></li>
+                            <li><a href="#">How it works?</a></li>
+                            <li><a href="#">Marketplace</a></li>
+                            <li><a href="#">Resources</a></li>
+                            <li><a href="#">Reviews</a></li>
+                        </ul>
+                    </nav>
+
+                    <div class="site-footer__legal" aria-label="Legal">
+                        <h3 class="sr-only">Legal</h3>
+                        <ul class="site-footer__list">
+                            <li><a href="#">Terms &amp; Conditions</a></li>
+                            <li><a href="#">Privacy</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="site-footer__bottom">
+
+            </div>
+            <div class="site-footer__small">© 2025 ceASAP.com - All rights reserved.</div>
+            </div>
         </footer>
-    </nav>
-    <!-- Hero -->
-    <section class="hero" aria-label="Hero">
-        <div class="hero-decor hero-decor--right" aria-hidden="true"></div>
-        <div class="container">
-            <div class="hero-grid">
-
-
-                <div class="hero-body">
-                    <h1 class="hero-title">
-                        Nevada continuing education dedicated to complete
-                        <span class="accent"> flexibility</span>.
-                    </h1>
-
-                    <div class="hero-card">
-                        <p class="hero-sub">Complete your real estate education <span class="accent">FAST</span>!</p>
-
-                        <div class="hero-ctas">
-                            <a class="cta-btn" href="#">Live/ZOOM Calendar <span class="chev"
-                                    aria-hidden="true">→</span></a>
-                            <a class="cta-btn" href="#">Internet CE Courses <span class="chev"
-                                    aria-hidden="true">→</span></a>
-                            <a class="cta-btn" href="#">Bundle &amp; Save <span class="chev"
-                                    aria-hidden="true">→</span></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="hero-media">
-                    <figure>
-                        <img class="hero-image" src="/images/hero.png" alt="Students in online real estate course">
-                    </figure>
-                </div>
-            </div>
-        </div>
-        <div class="hero-decor hero-decor--left" aria-hidden="true"></div>
-    </section>
-
-    <!-- Bundles -->
-
-
-
-
-
-
-    <!-- Stats -->
-    <section class="stats" aria-label="Key statistics">
-        <div class="stats__container">
-            <ul class="stats__list">
-                <li class="stat">
-                    <div class="stat__icon" aria-hidden="true">
-                        <img src="images/icons/Vector.svg" alt="" width="64" height="64">
-                    </div>
-                    <div class="stat__content">
-                        <div class="stat__value">35,000+</div>
-                        <div class="stat__label">Enrollments and counting</div>
-                    </div>
-                </li>
-
-                <li class="stat">
-                    <div class="stat__icon" aria-hidden="true">
-                        <img src="images/icons/Vector2.svg" alt="" width="64" height="64">
-                    </div>
-                    <div class="stat__content">
-                        <div class="stat__value">5,000+</div>
-                        <div class="stat__label">Students and counting</div>
-                    </div>
-                </li>
-
-                <li class="stat">
-                    <div class="stat__icon" aria-hidden="true">
-                        <img src="images/icons/Vector3.svg" alt="" width="64" height="64">
-                    </div>
-                    <div class="stat__content">
-                        <div class="stat__value">24/7/365</div>
-                        <div class="stat__label">Course / Content Access</div>
-                    </div>
-                </li>
-            </ul>
-        </div>
-    </section>
-    <!-- Ratings / Offers -->
-    <section class="ratings" aria-label="Ratings and current offers">
-        <div class="ratings__container">
-            <div class="ratings__left">
-                <img src="./images/rating.png" alt="" srcset="">
-            </div>
-
-
-            <div class="ratings__right">
-                <ul class="offers" aria-hidden="false">
-                    <li class="offer"><img src="images/icons/tick.svg" alt="36 hour" class="offer-icon"><span
-                            class="offer-text">36-Hrs. CE for $119</span></li>
-                    <li class="offer"><img src="images/icons/tick.svg" alt="18 hour internet" class="offer-icon"><span
-                            class="offer-text">18-Hrs. Internet CE for $50</span></li>
-                    <li class="offer"><img src="images/icons/tick.svg" alt="18 hour live" class="offer-icon"><span
-                            class="offer-text">18-Hrs. Live/ZOOM CE for $79</span></li>
-                    <li class="offer"><img src="images/icons/tick.svg" alt="internet" class="offer-icon"><span
-                            class="offer-text">Internet CE $10/ea.</span></li>
-                    <li class="offer"><img src="images/icons/tick.svg" alt="live" class="offer-icon"><span
-                            class="offer-text">Live/ZOOM CE $20/ea.</span></li>
-                </ul>
-
-                <a class="ratings-cta" href="#">Explore Now <span aria-hidden="true">→</span></a>
-            </div>
-        </div>
-    </section>
-    <!-- Courses -->
-    <section class="courses" aria-label="Course types">
-        <div class="courses__container">
-            <ul class="courses__list">
-                <li class="course">
-                    <img class="course__media" src="images/course1.png" alt="Live Zoom" />
-                    <div class="course__body">
-                        <h3 class="course__title"><span class="muted">Live/ZOOM</span> <span class="highlight">CE</span>
-                        </h3>
-                        <p class="course__desc">Complete CE without stepping outside your door — Live/ZOOM-approved
-                            courses bring education to you.</p>
-                        <a class="course-cta" href="#">Explore Now <span aria-hidden="true">→</span></a>
-                    </div>
-                </li>
-
-                <li class="course">
-                    <img class="course__media" src="images/course2.png" alt="Internet CE" />
-                    <div class="course__body">
-                        <h3 class="course__title"><span class="muted">Internet</span> <span class="highlight">CE</span>
-                        </h3>
-                        <p class="course__desc">Go at your own pace with our on-demand Nevada Real Estate Division
-                            approved continuing education courses.</p>
-                        <a class="course-cta" href="#">Explore Now <span aria-hidden="true">→</span></a>
-                    </div>
-                </li>
-
-                <li class="course">
-                    <img class="course__media" src="images/course3.png" alt="Bundles" />
-                    <div class="course__body">
-                        <h3 class="course__title"><span class="muted">Save</span> <span class="highlight">with
-                                Bundles</span></h3>
-                        <p class="course__desc">Save big on CE bundles — combine Live/ZOOM and Internet CE for
-                            convenience and savings.</p>
-                        <a class="course-cta" href="#">Explore Now <span aria-hidden="true">→</span></a>
-                    </div>
-                </li>
-            </ul>
-        </div>
-    </section>
-    <!-- Benefits -->
-    <section class="benefits-1" aria-label="36-hour CE bundle">
-        <div class="benefits__media">
-            <img class="image" src="images/ben-1.png" alt="Instructor teaching an online class">
-        </div>
-        <div class="benefits__body">
-            <div class="content4">
-                <div class="content5">
-                    <div class="content6">
-                        <h2 class="text">36-Hour CE Bundle: Flexibility and Value for Your Renewal</h2>
-                        <div class="text2">
-                            <ul class="text-2-span bold">
-                                <li class="bold-text">18 Hours of NRED Core-Required CE:</li>
-                            </ul>
-                            <ul class="text-2-span3">
-                                <li class="unbold">Enjoy the freedom of online CE courses that fit into your busy life,
-                                    letting you
-                                    learn anytime, anywhere, at your own pace!</li>
-                            </ul>
-                            <ul class="text-2-span">
-                                <li class="bold-text">18 Hours of Live/ZOOM CE:</li>
-                            </ul>
-                            <ul class="text-2-span3">
-                                <li class="unbold">Join live CE courses on ZOOM, connect with expert instructors and
-                                    peers in real
-                                    time, and enjoy the flexibility of learning from anywhere!</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="button">
-                        <a class="text3" href="#">Learn More</a>
-                        <img class="akar-icons-circle-chevron-right-fill" src="images/icons/right-fill.svg" alt="arrow">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-    <section class="benefits-1 benefit-right" aria-label="36-hour CE bundle">
-        <div class="benefits__media">
-            <img class="image" src="images/ben-2.png" alt="Instructor teaching an online class">
-        </div>
-        <div class="benefits__body">
-            <div class="content4">
-                <div class="content5">
-                    <div class="content6">
-                        <h2 class="text">Complete your Nevada approved CE faster and easier than ever!</h2>
-                        <div class="text2">
-                            Choose live ZOOM sessions for real-time interaction or self-paced
-                            courses that adapt to your schedule. Everything is right here in one
-                            simple place. Start now and take the hassle out of renewing your Nevada
-                            real estate license!
-                        </div>
-                    </div>
-                    <div class="button">
-                        <a class="text3" href="#">Learn More</a>
-                        <img class="akar-icons-circle-chevron-right-fill" src="images/icons/right-fill.svg" alt="arrow">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Cards: Digital downloads (semantic, namespaced classes) -->
-    <section class="cards" aria-label="Digital downloads">
-        <div class="cards__container">
-            <header class="cards__header">
-                <h2 class="cards__title">DIGITAL DOWNLOADS TO ELEVATE YOUR GAME!</h2>
-                <div class="cards__controls" aria-hidden="true">
-                    <button class="cards__control cards__control--prev" type="button" aria-hidden="true">
-                        <img src="images/chevron-left.svg" alt="">
-                    </button>
-                    <button class="cards__control cards__control--next" type="button" aria-hidden="true">
-                        <img src="images/chevron-right.svg" alt="">
-                    </button>
-                </div>
-            </header>
-
-            <ul class="cards__list">
-                <li class="card">
-                    <figure class="card__media-wrap">
-                        <img class="card__media" src="images/digital-1.png" alt="Link select distribute product">
-                    </figure>
-                    <div class="card__body">
-                        <h3 class="card__title">Link select distribute auto</h3>
-                        <p class="card__desc">Device prototype thumbnail vertical share list scrolling figjam. Object
-                            horizontal comment arrow.</p>
-                    </div>
-                </li>
-
-                <li class="card">
-                    <figure class="card__media-wrap">
-                        <img class="card__media" src="images/digital-2.png" alt="Create pencil object product">
-                    </figure>
-                    <div class="card__body">
-                        <h3 class="card__title">Create pencil object</h3>
-                        <p class="card__desc">Figjam hand follower move mask undo plugin. Mask team object editor
-                            thumbnail. Stroke vertical.</p>
-                    </div>
-                </li>
-
-                <li class="card">
-                    <figure class="card__media-wrap">
-                        <img class="card__media" src="images/digital-3.png" alt="Vector distribute product">
-                    </figure>
-                    <div class="card__body">
-                        <h3 class="card__title">Vector distribute</h3>
-                        <p class="card__desc">Undo distribute outline comment mask scale flatten rectangle. Shadow team
-                            library line italic.</p>
-                    </div>
-                </li>
-
-                <li class="card">
-                    <figure class="card__media-wrap">
-                        <img class="card__media" src="images/digital-4.png" alt="Background union product">
-                    </figure>
-                    <div class="card__body">
-                        <h3 class="card__title">Background union union</h3>
-                        <p class="card__desc">Horizontal community create distribute arrange scale distribute object
-                            effect rectangle. Share.</p>
-                    </div>
-                </li>
-            </ul>
-
-            <div class="cards__pager" aria-hidden="true">
-                <button class="cards__dot is-active" aria-hidden="true"></button>
-                <button class="cards__dot" aria-hidden="true"></button>
-                <button class="cards__dot" aria-hidden="true"></button>
-                <button class="cards__dot" aria-hidden="true"></button>
-            </div>
-
-            <a class="cards__cta" href="#" role="button">Explore All <span class="sr-only">digital downloads</span></a>
-        </div>
-    </section>
-    <!-- Testimonials / Reviews -->
-    <section class="testimonials" aria-label="Student reviews and testimonials">
-        <div class="testimonials__container">
-            <header class="testimonials__header">
-                <h2 class="testimonials__title">What our students say</h2>
-            </header>
-
-            <div class="testimonials__track">
-                <ul class="testimonials__list">
-                    <li class="testimonial">
-                        <div class="testimonial__card">
-                            <div class="testimonial__meta">
-                                <img class="testimonial__avatar" src="images/icons/avatar1.svg" alt="Lisa Foster">
-                                <div class="testimonial__who">
-                                    <div class="testimonial__name">Lisa Foster</div>
-                                    <div class="testimonial__stars" aria-hidden="true">★★★★★</div>
-                                </div>
-                            </div>
-                            <p class="testimonial__text">Lorem ipsum dolor sit amet consectetur. Facilisi elit
-                                adipiscing a eu mauris. Pharetra feugiat tempor a commodo.</p>
-                            <div class="testimonial__meta-footer"><time datetime="2024-12-14">December 14,
-                                    2024</time><img src="images/icons/google.svg" alt="" aria-hidden="true"></div>
-                        </div>
-                    </li>
-                    <li class="testimonial">
-                        <div class="testimonial__card">
-                            <div class="testimonial__meta">
-                                <img class="testimonial__avatar" src="images/icons/avatar1.svg" alt="Lisa Foster">
-                                <div class="testimonial__who">
-                                    <div class="testimonial__name">Lisa Foster</div>
-                                    <div class="testimonial__stars" aria-hidden="true">★★★★★</div>
-                                </div>
-                            </div>
-                            <p class="testimonial__text">Lorem ipsum dolor sit amet consectetur. Facilisi elit
-                                adipiscing a eu mauris. Pharetra feugiat tempor a commodo.</p>
-                            <div class="testimonial__meta-footer"><time datetime="2024-12-14">December 14,
-                                    2024</time><img src="images/icons/google.svg" alt="" aria-hidden="true"></div>
-                        </div>
-                    </li>
-
-
-
-                    <li class="testimonial">
-                        <div class="testimonial__card">
-                            <div class="testimonial__meta">
-                                <img class="testimonial__avatar" src="images/icons/avatar3.svg" alt="John Sanders">
-                                <div class="testimonial__who">
-                                    <div class="testimonial__name">John Sanders</div>
-                                    <div class="testimonial__stars" aria-hidden="true">★★★★★</div>
-                                </div>
-                            </div>
-                            <p class="testimonial__text">Lorem ipsum dolor sit amet consectetur. Purus diam tincidunt
-                                eget in convallis nec. Blandit tristique leo diam.</p>
-                            <div class="testimonial__meta-footer"><time datetime="2024-12-14">December 14,
-                                    2024</time><img src="images/icons/google.svg" alt="" aria-hidden="true"></div>
-                        </div>
-                    </li>
-
-
-                </ul>
-
-                <div class="testimonials__pager" aria-hidden="true">
-                    <span class="dot is-active"></span>
-                    <span class="dot"></span>
-                    <span class="dot"></span>
-                    <span class="dot"></span>
-                </div>
-
-                <div class="testimonials__cta">
-                    <a class="btn" href="#reviews">See More Reviews</a>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class="bundles-block" aria-label="Popular bundles">
-        <div class="bundles-block__container">
-            <header class="bundles-block__header">
-                <h2 class="bundles-block__title">Popular Bundles</h2>
-            </header>
-
-            <div class="bundles-block__grid">
-                <!-- Featured bundle (large) -->
-                <article class="bundle-card bundle-card--featured">
-                    <figure class="bundle-card__media">
-                        <img src="images/bundle1.png" alt="36-Hour ceBUILDER Bundle" />
-                    </figure>
-                    <div class="bundle-card__body">
-                        <h3 class="bundle-card__title"><span class="muted">36-Hour</span> <span
-                                class="highlight">ce</span> <strong>BUILDER Bundle</strong></h3>
-                        <p class="bundle-card__desc">Complete all 36 hrs. of NRED approved continuing education easily
-                            with our ceBUILDER Bundle! This affordable package includes 18 hrs. of required NRED CE
-                            courses and 18 hrs. of Live/ZOOM sessions for your in-person requirements.</p>
-
-                        <div class="bundle-card__meta">
-                            <div class="bundle-card__prices">
-                                <span class="bundle-price bundle-price--old">$189.00</span>
-                                <span class="bundle-price bundle-price--new">$119.00</span>
-                            </div>
-
-                            <a class="bundle-cta" href="#" role="button">Learn More <span
-                                    aria-hidden="true">→</span></a>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Right column: two smaller bundles stacked -->
-                <div class="bundles-block__side">
-                    <article class="bundle-card">
-                        <figure class="bundle-card__media">
-                            <img src="images/bundle2.png" alt="18-Hour Internet CE Bundle" />
-                        </figure>
-                        <div class="bundle-card__body">
-                            <h4 class="bundle-card__title">18-Hour Internet CE Bundle</h4>
-                            <p class="bundle-card__desc">Renew your Nevada real estate license with our comprehensive
-                                18-hour CE bundle, featuring all six mandatory courses required for license renewal.</p>
-
-                            <div class=" side_meta">
-                                <div class="bundle-card__prices">
-                                    <span class="bundle-price bundle-price--old">$99.00</span>
-                                    <span class="bundle-price bundle-price--new">$50.00</span>
-                                </div>
-                                <a class="bundle-cta" href="#" role="button">Learn More <span
-                                        aria-hidden="true">→</span></a>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="bundle-card">
-                        <figure class="bundle-card__media">
-                            <img src="images/bundle3.png" alt="18-Hour Live/ZOOM CE Bundle" />
-                        </figure>
-                        <div class="bundle-card__body">
-                            <h4 class="bundle-card__title">18-Hour Live/ZOOM CE Bundle</h4>
-                            <p class="bundle-card__desc">Explore our Live/ZOOM CE Calendar and select six NRED-approved
-                                courses to complete your required 18 hours of in-person continuing education.</p>
-
-                            <div class="side_meta">
-                                <div class="bundle-card__prices">
-                                    <span class="bundle-price bundle-price--old">$129.00</span>
-                                    <span class="bundle-price bundle-price--new">$79.00</span>
-                                </div>
-                                <a class="bundle-cta" href="#" role="button">Learn More <span
-                                        aria-hidden="true">→</span></a>
-                            </div>
-                        </div>
-                    </article>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Tools block: Scott's Tools (semantic, namespaced) -->
-    <section class="tools-block" aria-label="Scott's tools">
-        <div class="tools-block__container">
-            <div class="tools-block__content">
-                <div class="tools-block__body">
-                    <div class="tools-block__heading">
-                        <span class="tools-block__title"><span class="tools-block__title-strong">Scott's</span> <span
-                                class="tools-block__title-accent">TOOLS</span> <span
-                                class="tools-block__title-strong">of the trade!</span></span>
-                        <p class="tools-block__sub">Unlock your business's potential by exploring cutting-edge software,
-                            tools, and AI solutions designed to drive growth and amplify results. Take the first step
-                            toward transformation and explore now!</p>
-                    </div>
-
-                    <div class="tools-block__profile">
-                        <figure class="tools-block__avatar-wrap">
-                            <img class="tools-block__avatar" src="images/tools-test.png" alt="Scott Beaudry">
-                        </figure>
-                        <div class="tools-block__meta">
-                            <div class="tools-block__name">Scott Beaudry</div>
-                            <div class="tools-block__role">Tech Ninja</div>
-                        </div>
-                    </div>
-
-                    <a class="tools-block__cta" href="#">Explore Now <span class="sr-only">tools and
-                            resources</span></a>
-                </div>
-
-                <div class="tools-block__media">
-                    <img class="tools-block__hero" src="images/tools-model.png" alt="Tools overview illustration">
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- FAQ: Frequently asked questions -->
-    <section class="faq" aria-label="Frequently asked questions">
-        <div class="faq__wrap">
-            <header class="faq__header">
-                <h2 class="faq__title">Frequently Asked Questions</h2>
-            </header>
-
-            <div class="faq__container">
-                <div class="faq__grid">
-                    <div class="faq__column">
-                        <details class="faq__item" open>
-                            <summary class="faq__question">Can I take the same type of course more than once and receive
-                                CE credits?</summary>
-                            <div class="faq__answer">An example of this would be completing an additional 3 CE hours of
-                                Ethics resulting in a total of 6 hours of Ethics. Yes, you can. The additional 3 CE
-                                hours of Ethics would then go towards your General CE requirements. But you cannot take
-                                the same course (same NRED CE #) for a second time and receive the additional credits.
-                                Prior to submitting your completed CE certificates, verify that you do not have
-                                duplicate courses.</div>
-                        </details>
-
-                        <details class="faq__item">
-                            <summary class="faq__question">Where can I go to get the most up-to-date real estate license
-                                renewal information?</summary>
-                        </details>
-
-                        <details class="faq__item">
-                            <summary class="faq__question">If this is my first renewal, how many hours of education do I
-                                need to renew my real estate license?</summary>
-                        </details>
-
-                        <details class="faq__item">
-                            <summary class="faq__question">How many CE credits do I need to renew my Salesperson real
-                                estate license?</summary>
-                        </details>
-                    </div>
-
-                    <div class="faq__column">
-                        <details class="faq__item">
-                            <summary class="faq__question">What is the difference between Live, internet, and ZOOM?
-                            </summary>
-                        </details>
-
-                        <details class="faq__item">
-                            <summary class="faq__question">I also hold an NRED Property Manager permit. What additional
-                                courses do I need to complete to renew my PM permit?</summary>
-                        </details>
-
-                        <details class="faq__item">
-                            <summary class="faq__question">Can I renew my real estate license online?</summary>
-                        </details>
-
-                        <details class="faq__item">
-                            <summary class="faq__question">If I need additional assistance regarding my real estate
-                                license and/or permits, who can I reach out to?</summary>
-                        </details>
-
-                        <details class="faq__item">
-                            <summary class="faq__question">What if I need to swap-out a CE class for a different type or
-                                date for a live class?</summary>
-                        </details>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Partners: industry partners (semantic, namespaced) -->
-    <section class="partners-block" aria-label="Our industry partners">
-        <div class="partners-block__container">
-            <header class="partners-block__header">
-                <h2 class="partners-block__title"><span class="partners-block__title-strong">Our Amazing Industry</span>
-                    <span class="partners-block__title-accent">Partners</span>
-                </h2>
-            </header>
-
-            <ul class="partners-block__list" aria-label="Partner logos">
-                <li class="partners-block__item">
-                    <figure class="partners-block__logo">
-                        <img src="images/icons/s1.svg" alt="Partner 1 logo" width="148" height="61">
-                    </figure>
-                </li>
-                <li class="partners-block__item">
-                    <figure class="partners-block__logo">
-                        <img src="images/icons/s2.svg" alt="Partner 2 logo" width="151" height="64">
-                    </figure>
-                </li>
-                <li class="partners-block__item">
-                    <figure class="partners-block__logo">
-                        <img src="images/icons/s3.svg" alt="Partner 3 logo" width="154" height="63">
-                    </figure>
-                </li>
-                <li class="partners-block__item">
-                    <figure class="partners-block__logo">
-                        <img src="images/icons/s4.svg" alt="Partner 4 logo" width="148" height="61">
-                    </figure>
-                </li>
-                <li class="partners-block__item">
-                    <figure class="partners-block__logo">
-                        <img src="images/icons/s4.svg" alt="Partner 5 logo" width="151" height="64">
-                    </figure>
-                </li>
-            </ul>
-
-            <div class="partners-block__pager" aria-hidden="true">
-                <span class="partners-block__dot"></span>
-                <span class="partners-block__dot"></span>
-                <span class="partners-block__dot"></span>
-                <span class="partners-block__dot"></span>
-                <span class="partners-block__dot"></span>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact / Support -->
-    <section class="contact" aria-label="Contact support">
-        <div class="contact__container">
-            <div class="contact__info">
-                <h2 class="contact__title">Need Additional Assistance?</h2>
-                <p class="contact__desc">Whether you have a question, need support, or want to share your
-                    feedback, we’re here to help. Your satisfaction is our priority — please feel free to reach
-                    out.
-                    <br /> <br /> For quick answers, visit our <a href="#" class="contact__link">Frequently Asked
-                        Questions</a>
-                    or try our automated AI ChatBot, available 24/7 to provide instant help.
-                </p>
-            </div>
-
-            <form class="contact__form" action="#" method="post" novalidate>
-                <div class="contact__fields">
-                    <div class="contact__field">
-                        <label class="contact__label" for="contact-name">Full name</label>
-                        <input class="contact__input" id="contact-name" name="name" type="text"
-                            placeholder="Your full name">
-                    </div>
-
-                    <div class="contact__field">
-                        <label class="contact__label" for="contact-email">Email address</label>
-                        <input class="contact__input" id="contact-email" name="email" type="email"
-                            placeholder="you@example.com">
-                    </div>
-
-                    <div class="contact__field">
-                        <label class="contact__label" for="contact-message">Message</label>
-                        <textarea class="contact__textarea" id="contact-message" name="message" rows="6"
-                            placeholder="Enter your message..."></textarea>
-                    </div>
-                </div>
-
-                <div class="contact__actions">
-                    <button class="btn contact__submit" type="submit">Send Message</button>
-                </div>
-            </form>
-        </div>
-    </section>
-
-    <!-- Site Footer -->
-    <footer class="site-footer" aria-label="Site footer">
-        <div class="site-footer__container">
-            <div class="site-footer__brand">
-                <img src="images/logo.png" alt="ceASAP logo" class="site-footer__logo">
-                <div>
-                    <p class="site-footer__copyright">© ceASAP LTD and its subsidiaries 2025. Except as permitted by the
-                        copyright law applicable to you, you may not reproduce or communicate any of the content on this
-                        website without permission. We may change these terms of use from time to time.</p>
-
-                    <ul class="site-footer__social" aria-label="Follow us">
-                        <li><a href="#" aria-label="Facebook" class="site-footer__social-link"><img
-                                    src="images/icons/f1.svg" alt="Facebook"></a></li>
-                        <li><a href="#" aria-label="Instagram" class="site-footer__social-link"><img
-                                    src="images/icons/f2.png" alt="Instagram"></a></li>
-                        <li><a href="#" aria-label="X" class="site-footer__social-link"><img src="images/icons/f3.svg"
-                                    alt="X"></a></li>
-                        <li><a href="#" aria-label="YouTube" class="site-footer__social-link"><img
-                                    src="images/icons/f4.svg" alt="YouTube"></a></li>
-                        <li><a href="#" aria-label="LinkedIn" class="site-footer__social-link"><img
-                                    src="images/icons/f5.svg" alt="LinkedIn"></a></li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="site-footer__lists">
-                <nav class="site-footer__links" aria-label="Useful links">
-                    <h3 class="sr-only">Links</h3>
-                    <ul class="site-footer__list">
-                        <li><a href="#">Continuing Education</a></li>
-                        <li><a href="#">Our Experts</a></li>
-                        <li><a href="#">Customer Support</a></li>
-                        <li><a href="#">How it works?</a></li>
-                        <li><a href="#">Marketplace</a></li>
-                        <li><a href="#">Resources</a></li>
-                        <li><a href="#">Reviews</a></li>
-                    </ul>
-                </nav>
-
-                <div class="site-footer__legal" aria-label="Legal">
-                    <h3 class="sr-only">Legal</h3>
-                    <ul class="site-footer__list">
-                        <li><a href="#">Terms &amp; Conditions</a></li>
-                        <li><a href="#">Privacy</a></li>
-                    </ul>
-                </div>
-            </div>
-
-
-        </div>
-        <div class="site-footer__bottom">
-
-        </div>
-        <div class="site-footer__small">© 2025 ceASAP.com - All rights reserved.</div>
-        </div>
-    </footer>
 </body>
 
 </html>

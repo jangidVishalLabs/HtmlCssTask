@@ -76,6 +76,29 @@
         padding: 12px 24px
     }
 
+    /* Desktop: show full nav menu inline and hide hamburger */
+    .nav-toggle {
+        display: none
+    }
+
+    .nav-menu {
+        display: block !important;
+        position: static;
+        background: transparent;
+        box-shadow: none;
+        padding: 0
+    }
+
+    .nav-menu .actions-list {
+        flex-direction: row;
+        gap: 12px;
+        align-items: center
+    }
+
+    .nav-menu .actions-item {
+        display: inline-flex
+    }
+
     /* Desktop footer tweaks */
     .nav-footer {
         padding: 16px 48px

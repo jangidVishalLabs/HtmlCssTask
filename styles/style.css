@@ -159,6 +159,74 @@ body {
     gap: 12px;
 }
 
+/* Mobile-first: hide the full nav menu and show hamburger */
+.nav-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: 0;
+    padding: 8px;
+    margin-left: 8px;
+    cursor: pointer;
+}
+
+.nav-toggle .hamburger {
+    display: inline-block;
+    width: 22px;
+    height: 16px;
+    position: relative
+}
+
+.nav-toggle .bar {
+    display: block;
+    height: 2px;
+    background: #111;
+    margin: 4px 0;
+    border-radius: 2px
+}
+
+.nav-menu {
+    display: none;
+    /* hidden by default on mobile */
+    position: absolute;
+    right: 12px;
+    top: 64px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 12px 40px rgba(6, 24, 44, 0.16);
+    padding: 12px;
+    min-width: 200px;
+    z-index: 1200;
+}
+
+.nav-menu .actions-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px
+}
+
+.nav-menu .actions-item {
+    display: block
+}
+
+/* When header has .nav-open, show menu */
+.nav-header.nav-open .nav-menu {
+    display: block
+}
+
+/* Keep greeting visible but if you want it inside menu on very small screens you could move it */
+.nav-header .greeting {
+    display: block
+}
+
+/* Small-screen tweak to keep header compact */
+@media screen and (max-width: 479px) {
+    .brand-logo {
+        width: 140px
+    }
+}
+
 .greeting {
     margin: 0;
     font-size: 16px;
