@@ -1,0 +1,18 @@
+<svg width="804" height="640" viewBox="0 0 804 640" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect opacity="0.1" width="80" height="80" transform="matrix(1 0 0 -1 720 80)" fill="#A9A9C2"/>
+<rect opacity="0.1" width="80" height="80" transform="matrix(1 0 0 -1 320 80)" fill="#A9A9C2"/>
+<rect opacity="0.1" width="80" height="80" transform="matrix(1 0 0 -1 560 80)" fill="#A9A9C2"/>
+<rect opacity="0.1" width="80" height="80" transform="matrix(1 0 0 -1 720 240)" fill="#A9A9C2"/>
+<rect opacity="0.1" width="80" height="80" transform="matrix(1 0 0 -1 720 400)" fill="#A9A9C2"/>
+<rect opacity="0.02" width="80" height="80" transform="matrix(1 0 0 -1 720 160)" fill="#A9A9C2"/>
+<rect opacity="0.02" width="80" height="80" transform="matrix(1 0 0 -1 560 320)" fill="#A9A9C2"/>
+<rect opacity="0.2" width="80" height="80" transform="matrix(1 0 0 -1 560 160)" fill="#A9A9C2"/>
+<rect opacity="0.02" width="80" height="80" transform="matrix(1 0 0 -1 720 320)" fill="#A9A9C2"/>
+<rect opacity="0.1" width="80" height="80" transform="matrix(1 0 0 -1 640 160)" fill="#A9A9C2"/>
+<rect opacity="0.1" width="80" height="80" transform="matrix(1 0 0 -1 480 160)" fill="#A9A9C2"/>
+<rect opacity="0.1" width="80" height="80" transform="matrix(1 0 0 -1 640 320)" fill="#A9A9C2"/>
+<rect opacity="0.05" width="80" height="80" transform="matrix(1 0 0 -1 480 240)" fill="#A9A9C2"/>
+<rect opacity="0.01" x="0.5" y="-0.5" width="79" height="79" transform="matrix(1 0 0 -1 480 239)" fill="#A9A9C2" stroke="black"/>
+<rect opacity="0.05" width="80" height="80" transform="matrix(1 0 0 -1 640 240)" fill="#A9A9C2"/>
+<rect opacity="0.05" width="80" height="80" transform="matrix(1 0 0 -1 400 80)" fill="#A9A9C2"/>
+</svg>

@@ -985,3 +985,99 @@ body {
     height: auto;
     object-fit: cover
 }
+
+/* ----------------------
+   Contact / Support (mobile-first)
+   ---------------------- */
+.contact,
+.contact * {
+    box-sizing: border-box;
+}
+
+.contact {
+    background: #ffffff;
+    padding: 24px 16px;
+}
+
+.contact__container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.contact__info {
+    display: block;
+}
+
+.contact__title {
+    margin: 0 0 8px 0;
+    font-size: 24px;
+    line-height: 32px;
+    color: #FF1200;
+    font-weight: 800;
+}
+
+.contact__desc {
+    margin: 0;
+    color: var(--text-color);
+    font-size: 15px;
+    line-height: 22px;
+}
+
+.contact__link {
+    color: #FF1200;
+    text-decoration: underline;
+}
+
+.contact__form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.contact__fields {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.contact__field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.contact__label {
+    font-size: 14px;
+    color: #111;
+    font-weight: 600;
+}
+
+.contact__input,
+.contact__textarea {
+    border: 1px solid #e4e6ea;
+    border-radius: 8px;
+    padding: 12px 14px;
+    font-size: 15px;
+    color: var(--text-color);
+    background: #fff;
+}
+
+.contact__textarea {
+    resize: vertical
+}
+
+.contact__actions {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.contact__submit {
+
+    padding: 10px 18px;
+    border-radius: 999px;
+    color: #fff;
+    background-color: #FF1200;
+}
