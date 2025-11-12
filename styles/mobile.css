@@ -287,6 +287,29 @@
     }
 }
 
+/* Partners block: mobile tweaks */
+@media screen and (max-width: 767px) {
+    .partners-block {
+        padding: 20px 12px
+    }
+
+    .partners-block__title {
+        font-size: 18px
+    }
+
+    .partners-block__list {
+        gap: 12px
+    }
+
+    .partners-block__logo img {
+        height: 48px
+    }
+
+    .partners-block__pager {
+        margin-top: 10px
+    }
+}
+
 /* Tools-block: mobile tweaks */
 @media screen and (max-width: 767px) {
     .tools-block {

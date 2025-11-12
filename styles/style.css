@@ -809,6 +809,86 @@ body {
 }
 
 /* ----------------------
+   Partners block (mobile-first)
+   ---------------------- */
+.partners-block,
+.partners-block * {
+    box-sizing: border-box;
+}
+
+.partners-block {
+    background: #ffffff;
+    padding: 28px 16px;
+}
+
+.partners-block__container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.partners-block__header {
+    text-align: center;
+    margin-bottom: 16px;
+}
+
+.partners-block__title {
+    font-size: 22px;
+    font-weight: 800;
+    margin: 0
+}
+
+.partners-block__title-accent {
+    color: #ff1200
+}
+
+.partners-block__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    /* allow logos to wrap onto multiple rows */
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 8px;
+}
+
+.partners-block__item {
+    /* allow items to grow/shrink, and establish a reasonable base width */
+    flex: 1 1 160px;
+    max-width: 220px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 4px;
+}
+
+.partners-block__logo img {
+    display: block;
+    width: auto;
+    max-width: 100%;
+    height: 64px;
+    object-fit: contain;
+}
+
+.partners-block__pager {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    margin-top: 12px
+}
+
+.partners-block__dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 999px;
+    background: rgba(0, 0, 0, 0.08);
+    display: inline-block
+}
+
+
+/* ----------------------
    Tools block (mobile-first)
    ---------------------- */
 .tools-block,
