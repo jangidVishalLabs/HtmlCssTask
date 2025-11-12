@@ -255,3 +255,67 @@
         justify-content: center
     }
 }
+
+/* Cards: mobile-specific adjustments */
+@media screen and (max-width: 767px) {
+    .cards {
+        padding: 20px 12px;
+    }
+
+    .cards__title {
+        font-size: 18px;
+
+    }
+
+    .cards__list {
+        gap: 14px;
+        margin-top: 16px;
+    }
+
+
+    .card__media {
+        height: 140px
+    }
+
+    .cards__controls {
+        display: none
+    }
+
+    .cards__cta {
+        width: 100%;
+        justify-content: center
+    }
+}
+
+/* Tools-block: mobile tweaks */
+@media screen and (max-width: 767px) {
+    .tools-block {
+        padding: 16px 12px
+    }
+
+    .tools-block__content {
+        flex-direction: column
+    }
+
+    .tools-block__media {
+        order: 1;
+        margin-bottom: 12px
+    }
+
+    .tools-block__body {
+        order: 2
+    }
+
+    .tools-block__title {
+        font-size: 18px
+    }
+
+    .tools-block__hero {
+        max-width: 100%
+    }
+
+    .tools-block__cta {
+        width: 100%;
+        justify-content: center
+    }
+}

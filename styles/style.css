@@ -684,3 +684,224 @@ body {
 
 
 }
+
+/* ----------------------
+   Cards (mobile-first)
+   ---------------------- */
+.cards,
+.cards * {
+    box-sizing: border-box;
+}
+
+.cards {
+    background: #0e86d4;
+    padding: 24px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+.cards__container {
+    width: 100%;
+    max-width: 1200px;
+}
+
+.cards__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.cards__title {
+    color: #fff;
+    font-size: 20px;
+    line-height: 1.2;
+    margin: 0;
+}
+
+.cards__controls {
+    display: flex;
+    gap: 8px
+}
+
+.cards__control {
+    background: transparent;
+    border: 0;
+    padding: 6px;
+    border-radius: 6px
+}
+
+.cards__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.card__media {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    display: block;
+}
+
+
+.card__body {
+    padding: 12px;
+}
+
+.card__title {
+    font-size: 16px;
+    margin: 0 0 8px 0;
+    font-weight: 800
+}
+
+.card__desc {
+    margin: 0;
+    color: #374354
+}
+
+.cards__pager {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    margin-top: 12px
+}
+
+.cards__dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.35);
+    border: 0
+}
+
+.cards__dot.is-active {
+    background: #fff
+}
+
+.cards__cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin: 12px auto 0;
+    background: linear-gradient(90deg, #ff1200, #ff5a3a);
+    color: #fff;
+    padding: 10px 16px;
+    border-radius: 999px;
+    text-decoration: none;
+    font-weight: 700
+}
+
+/* ----------------------
+   Tools block (mobile-first)
+   ---------------------- */
+.tools-block,
+.tools-block * {
+    box-sizing: border-box;
+}
+
+.tools-block {
+    background: #ffffff;
+    padding: 20px 16px;
+}
+
+.tools-block__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 16px;
+
+}
+
+.tools-block__content {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 16px;
+    align-items: stretch;
+
+}
+
+.tools-block__body {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.tools-block__heading {
+    margin-bottom: 8px;
+}
+
+.tools-block__title {
+    font-size: 22px;
+    font-weight: 600;
+    color: #000
+}
+
+.tools-block__title-accent {
+    color: #ff1200
+}
+
+.tools-block__sub {
+    color: #374354;
+    margin: 8px 0 0 0
+}
+
+.tools-block__profile {
+    display: flex;
+    gap: 12px;
+    align-items: center
+}
+
+.tools-block__avatar {
+    width: 64px;
+    height: 64px;
+    border-radius: 999px;
+    object-fit: cover
+}
+
+.tools-block__name {
+    font-weight: 800
+}
+
+.tools-block__role {
+    color: #374354
+}
+
+.tools-block__cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 16px;
+    background: linear-gradient(90deg, #ff1200, #ff5a3a);
+    color: #fff;
+    border-radius: 999px;
+    text-decoration: none;
+    width: fit-content;
+}
+
+.tools-block__media {
+    margin-top: 12px
+}
+
+.tools-block__hero {
+    width: 100%;
+    max-width: 480px;
+    display: block;
+    height: auto;
+    object-fit: cover
+}
