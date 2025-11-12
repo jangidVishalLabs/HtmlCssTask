@@ -374,3 +374,65 @@
         height: 48px
     }
 }
+
+/* Benefits-1: tablet and desktop layout */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    .benefits-1 {
+        padding: 40px 28px;
+        gap: 24px;
+    }
+
+    .benefits-1 .text {
+        font-size: 28px;
+        line-height: 36px
+    }
+
+    .benefits-1 .text2 {
+        font-size: 16px
+    }
+
+    .benefits-1 .button {
+        padding: 10px 20px
+    }
+}
+
+@media screen and (min-width: 1025px) {
+    .benefits-1 {
+        display: flex;
+        flex-direction: row;
+        padding: 40px 48px;
+        justify-content: space-around;
+        gap: 36px;
+    }
+
+    .benefit-right {
+        flex-direction: row-reverse;
+    }
+
+    .benefits__body {
+        /* background-color: black; */
+        max-width: 600px;
+
+    }
+
+
+    .benefits-1 .image {
+        width: 100%;
+    }
+
+
+    .benefits-1 .text {
+        font-size: 32px;
+        line-height: 40px
+    }
+
+    .benefits-1 .text2 {
+        font-size: 18px
+    }
+
+    .benefits-1 .button {
+        padding: 12px 24px;
+        margin-top: 12px;
+        text-decoration: none;
+    }
+}

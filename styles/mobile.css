@@ -204,3 +204,54 @@
         padding: 10px 12px
     }
 }
+
+/* Benefits-1: mobile adjustments */
+@media screen and (max-width: 767px) {
+    .benefits-1 {
+        padding: 20px 12px;
+        flex-direction: column;
+        gap: 20px
+    }
+
+    .benefits-1 .content {
+        width: 100%;
+        padding: 12px;
+        border-radius: 12px
+    }
+
+    .benefits-1 .content3,
+    .benefits-1 .image,
+    .benefits-1 .image-2652 {
+        position: static;
+        width: 100%;
+        height: auto;
+        left: auto;
+        top: auto
+    }
+
+    .benefits-1 .content4 {
+        width: 100%;
+        padding: 12px
+    }
+
+    .benefits-1 .text {
+        font-size: 20px;
+        line-height: 28px
+    }
+
+    .benefits-1 .text2 {
+        font-size: 15px;
+        line-height: 22px
+    }
+
+    .benefits-1 .text-2-span,
+    .benefits-1 .text-2-span3,
+    .benefits-1 .text-2-span2 {
+        padding-left: 1em
+    }
+
+    .benefits-1 .button {
+        width: 100%;
+        justify-content: center
+    }
+}
