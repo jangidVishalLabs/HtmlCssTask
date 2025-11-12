@@ -555,3 +555,37 @@
         width: 100%;
     }
 }
+
+/* Site footer: tablet+ layout adjustments */
+@media screen and (min-width: 768px) {
+    .site-footer__container {
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: space-around;
+        gap: 24px;
+    }
+
+    .site-footer__brand {
+        flex: 0 0 320px;
+    }
+
+    .site-footer__lists {
+        flex-direction: row;
+        gap: 32px;
+        align-items: flex-start;
+    }
+
+    .site-footer__list {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .site-footer__badges {
+        justify-content: flex-end;
+    }
+
+    .site-footer__small {
+        text-align: center
+    }
+}

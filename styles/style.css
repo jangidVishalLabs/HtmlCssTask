@@ -92,6 +92,7 @@
     text-decoration: none;
 }
 
+
 .bold-text {
     font-weight: bold;
 }
@@ -1080,4 +1081,112 @@ body {
     border-radius: 999px;
     color: #fff;
     background-color: #FF1200;
+}
+
+/* ----------------------
+   Site Footer (mobile-first)
+   - link and legal lists are shown as two columns on narrow screens per request
+   ---------------------- */
+.site-footer,
+.site-footer * {
+    box-sizing: border-box;
+}
+
+.site-footer {
+    background: #f9fafb;
+    padding: 24px 16px;
+    color: var(--text-color);
+}
+
+.site-footer__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.site-footer__brand {
+    display: flex;
+    gap: 12px;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.site-footer__logo {
+    width: 84px;
+    height: auto;
+    display: block;
+}
+
+.site-footer__copyright {
+    margin: 0;
+    font-size: 13px;
+    line-height: 20px;
+    color: var(--muted);
+}
+
+
+.site-footer__lists {
+    /* on mobile, arrange the two lists as two columns side-by-side */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px 24px;
+    align-items: start;
+}
+
+.site-footer__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.site-footer__list a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.site-footer__badges {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.site-footer__social {
+    list-style: none;
+    margin: 10px 0 0 0;
+    padding: 0;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.site-footer__social-link img {
+    display: block;
+    width: 20px;
+    height: 20px
+}
+
+.site-footer__badge {
+    height: 40px;
+    width: auto;
+    display: block;
+}
+
+.site-footer__bottom {
+    margin-top: 12px;
+    border-top: 1px solid rgba(0, 0, 0, 0.04);
+    padding-top: 12px;
+}
+
+.site-footer__small {
+    font-size: 13px;
+    color: var(--muted);
+    text-align: center
 }
