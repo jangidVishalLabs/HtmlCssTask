@@ -187,3 +187,61 @@
         padding: 24px
     }
 }
+
+/* Ratings: tablet/desktop layout */
+@media screen and (min-width: 768px) {
+    .ratings__container {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        gap: 32px;
+    }
+
+    .ratings__left {
+        flex: 0 0 320px
+    }
+
+    .ratings__right {
+        flex: 1;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .offers {
+        flex-direction: column;
+        flex-wrap: wrap;
+        gap: 12px
+    }
+
+    .offer {
+        min-width: 200px
+    }
+}
+
+@media screen and (min-width: 1025px) {
+    .ratings {
+        padding: 40px 48px
+    }
+
+    .ratings__left {
+        flex: 0 0 360px
+    }
+
+    .ratings__logo {
+        width: 140px
+    }
+
+    .ratings__stars img {
+        width: 24px;
+        height: 24px
+    }
+
+    .rating {
+        font-size: 28px
+    }
+
+    .offer-icon {
+        width: 48px;
+        height: 48px
+    }
+}
