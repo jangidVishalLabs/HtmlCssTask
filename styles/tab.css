@@ -692,3 +692,42 @@
 
     }
 }
+
+/* Testimonials: tablet+ layout - show horizontally with center emphasis */
+@media screen and (min-width: 768px) {
+    .testimonials__track {
+        gap: 24px;
+    }
+
+    .testimonials__list {
+        flex-direction: row;
+        align-items: stretch;
+        justify-content: center;
+    }
+
+    .testimonial {
+        flex: 0 0 auto;
+    }
+
+    .testimonial__card {
+        max-width: 320px;
+    }
+
+    .testimonial--media {
+        flex: 0 0 360px;
+    }
+
+    .testimonials__pager {
+        margin-top: 18px;
+    }
+}
+
+@media screen and (min-width: 1025px) {
+    .testimonials__container {
+        padding: 0 24px;
+    }
+
+    .testimonial--media {
+        flex: 0 0 420px;
+    }
+}
