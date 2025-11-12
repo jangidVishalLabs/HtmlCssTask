@@ -5,11 +5,70 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ceASAP</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/mobile.css" media="screen and (max-width: 768px)">
+    <link rel="stylesheet" href="styles/tab.css" media="screen and (min-width: 768px)">
 </head>
 
 <body>
-    <h1>Welcome to ceASAP</h1>
-    <p>Your go-to platform for ASAP services.</p>
+    <header class="nav-header" role="banner">
+        <div class="nav-left">
+            <a href="/" class="brand" aria-label="Home">
+                <img src="images/logo.png" alt="ceASAP logo" class="brand-logo">
+            </a>
+        </div>
+
+        <div class="nav-right">
+            <p class="greeting">Welcome back, <strong>Scott</strong>!</p>
+
+            <nav class="actions" aria-label="User actions">
+                <ul class="actions-list">
+                    <li class="actions-item">
+                        <a class="btn btn-primary" href="#">Calendar</a>
+                    </li>
+
+                    <li class="actions-item">
+                        <button class="icon-btn" aria-label="Cart" title="Cart">
+                            <img src="images/icons/cart.svg" alt="Cart icon" class="icon">
+                            <span class="cart-count" aria-hidden="false">0</span>
+                        </button>
+                    </li>
+
+                    <li class="actions-item">
+                        <a class="btn btn-primary" href="#">My Courses</a>
+                    </li>
+
+                    <li class="actions-item">
+                        <a class="btn btn-primary" href="#">My Account</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <footer class="nav-footer" role="contentinfo">
+        <div class="content">
+            <button class="location" aria-haspopup="listbox" aria-expanded="false">
+                <span class="location-text">Nevada</span>
+                <img class="mdi-chevron-down" src="images/icons/downArrow.svg" alt="open location selector">
+            </button>
+        </div>
+
+        <nav class="footer-nav" aria-label="Footer navigation">
+            <ul class="footer-list">
+                <li class="footer-item"><a href="#" class="footer-link">Our Story</a></li>
+                <li class="footer-item"><a href="#" class="footer-link">How it Works?</a></li>
+                <li class="footer-item"><a href="#" class="footer-link">Our Experts</a></li>
+                <li class="footer-item"><a href="#" class="footer-link">Marketplace</a></li>
+                <li class="footer-item"><a href="#" class="footer-link">Our Blog</a></li>
+                <li class="footer-item"><a href="#" class="footer-link">News</a></li>
+                <li class="footer-item"><a href="#" class="footer-link">Support</a></li>
+                <li class="footer-item">
+                    <a href="#" class="footer-link">Resources</a>
+                    <img class="mdi-chevron-down2" src="images/icons/downArrow.svg" alt="more">
+                </li>
+            </ul>
+        </nav>
+    </footer>
 </body>
 
 </html>

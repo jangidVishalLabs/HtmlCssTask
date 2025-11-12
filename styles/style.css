@@ -1,11 +1,220 @@
-* {
+/* Base (mobile-first) styles - layout with flexbox, semantic classes used in index.html */
+:root {
+    --brand-color: #0e86d4;
+    --text-color: #374354;
+    --muted: rgba(0, 0, 0, 0.6);
+    --gap: 12px;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Satoshi", "Helvetica Neue", Arial;
+    color: var(--text-color);
+    background: #fff;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Header */
+.nav-header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 20px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    gap: var(--gap);
+}
+
+.nav-left {
+    display: flex;
+    align-items: center;
+    gap: var(--gap);
+}
+
+.brand {
+    display: inline-block
+}
+
+.brand-logo {
+    width: 160px;
+    height: auto;
+    display: block;
+    object-fit: contain
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.greeting {
+    margin: 0;
+    font-size: 16px;
+    line-height: 1;
+    font-weight: 500;
+}
+
+.actions-list {
+    list-style: none;
     margin: 0;
     padding: 0;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.actions-item {
+    display: inline-flex
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 0;
+    cursor: pointer;
+    text-decoration: none;
+    color: inherit;
+    background: transparent;
+}
+
+.btn-primary {
+    background: var(--brand-color);
+    color: #fff;
+    border-radius: 999px;
+    padding: 10px 16px;
+    font-weight: 700;
+    font-size: 15px;
+}
+
+.icon-btn {
+    background: var(--brand-color);
+    border-radius: 999px;
+    padding: 8px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 0;
+    position: relative;
+}
+
+.icon {
+    width: 20px;
+    height: 20px;
+    display: block
+}
+
+.cart-count {
+    position: absolute;
+    top: -6px;
+    right: -6px;
+    min-width: 18px;
+    height: 18px;
+    padding: 0 4px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: #ff200f;
+    color: #fff;
+    border-radius: 999px;
+    font-size: 11px;
+    font-weight: 800;
+}
+
+/* Footer (refactored) */
+.nav-footer,
+.nav-footer * {
     box-sizing: border-box;
 }
 
-body,
-html {
-    height: 100%;
-    width: 100%;
+.nav-footer {
+    background: var(--brand-color);
+    padding: 8px 16px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    flex-shrink: 0;
+    position: relative;
+    overflow: hidden;
 }
+
+/* Location pill on the left */
+.location {
+    background: #ffffff;
+    border: 0;
+    border-radius: 36px;
+    padding: 6px 14px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--brand-color);
+    cursor: pointer;
+}
+
+.location-text {
+    font-weight: 700;
+    font-size: 16px;
+    color: var(--brand-color);
+}
+
+.mdi-chevron-down {
+    width: 16px;
+    height: 16px;
+    display: block;
+    opacity: 0.95
+}
+
+/* Footer links as pill-like items on the right */
+.footer-list {
+    display: flex;
+    gap: 8px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    align-items: center;
+}
+
+.footer-item {
+    /* placeholder for per-item overrides if needed */
+}
+
+.footer-link {
+    display: inline-block;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 15px;
+    padding: 8px 12px;
+    border-radius: 36px;
+}
+
+
+/* Utilities */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0
+}
+
+/* Desktop-level default tweaks can go here or in tab.css */
