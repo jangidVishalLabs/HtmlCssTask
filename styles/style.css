@@ -810,6 +810,126 @@ body {
 }
 
 /* ----------------------
+   Bundles (mobile-first)
+   ---------------------- */
+.bundles-block,
+.bundles-block * {
+    box-sizing: border-box;
+}
+
+.bundles-block {
+    background: #ffffff;
+    padding: 24px 16px;
+}
+
+.bundles-block__container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.bundles-block__header {
+    margin-bottom: 16px;
+}
+
+.bundles-block__title {
+    font-size: 24px;
+    font-weight: 800;
+    margin: 0;
+}
+
+.bundles-block__grid {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.bundles-block__side {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.bundle-card {
+    background: #fff;
+    border-radius: 12px;
+    border: 1px solid #e4e6ea;
+    box-shadow: 0 6px 18px rgba(16, 24, 40, 0.04);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.bundle-card__media img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.bundle-card--featured .bundle-card__media img {
+    height: 220px;
+}
+
+.bundle-card__body {
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.bundle-card__title {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 800;
+    color: var(--text-color);
+}
+
+.bundle-card__desc {
+    margin: 0;
+    color: #374354;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+.bundle-card__meta,
+.side_meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-top: 8px;
+}
+
+.bundle-card__prices {
+    display: flex;
+    gap: 12px;
+    align-items: baseline;
+}
+
+.bundle-price--old {
+    text-decoration: line-through;
+    color: #9aa3ad;
+    font-weight: 600;
+}
+
+.bundle-price--new {
+    color: #2697ff;
+    font-weight: 700;
+}
+
+.bundle-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 14px;
+    background: linear-gradient(90deg, #ff1200, #ff5a3a);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 999px;
+    font-weight: 700;
+}
+
+/* ----------------------
    Partners block (mobile-first)
    ---------------------- */
 .partners-block,
@@ -1189,4 +1309,12 @@ body {
     font-size: 13px;
     color: var(--muted);
     text-align: center
+}
+
+@media screen and (max-width: 325px) {
+    .side_meta {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+    }
 }

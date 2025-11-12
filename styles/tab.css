@@ -589,3 +589,62 @@
         text-align: center
     }
 }
+
+/* Bundles: tablet & desktop layouts */
+@media screen and (min-width: 768px) {
+    .bundles-block__grid {
+        flex-direction: row;
+        gap: 24px;
+        align-items: stretch;
+    }
+
+    .bundle-card--featured {
+        flex: 2 1 60%;
+    }
+
+    .bundles-block__side {
+        flex: 1 1 40%;
+        justify-content: space-between;
+    }
+
+    .bundles-block__side .bundle-card {
+        display: flex;
+        flex-direction: row;
+        gap: 12px;
+        align-items: center;
+    }
+
+    .bundles-block__side .bundle-card__media img {
+        width: 140px;
+        height: 100px;
+        object-fit: cover;
+        border-radius: 8px;
+    }
+
+    .bundles-block__side .bundle-card__body {
+        padding: 12px;
+    }
+}
+
+@media screen and (min-width: 1025px) {
+    .bundles-block__container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 24px;
+    }
+
+    .bundle-card--featured .bundle-card__media img {
+        height: 248px;
+    }
+
+    .bundles-block__side .bundle-card__media img {
+        height: 100%;
+    }
+
+    .side_meta {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+    }
+}
