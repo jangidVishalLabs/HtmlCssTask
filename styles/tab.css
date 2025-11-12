@@ -590,6 +590,50 @@
     }
 }
 
+/* FAQ: two-column layout on tablet and desktop */
+@media screen and (min-width: 768px) {
+    .faq {
+        padding: 72px 24px;
+    }
+
+    .faq__container {
+        padding: 28px 32px;
+        border-radius: 20px;
+    }
+
+    .faq__grid {
+        flex-direction: row;
+        gap: 32px;
+    }
+
+    .faq__column {
+        flex: 1;
+    }
+
+    .faq__title {
+        font-size: 20px;
+    }
+}
+
+@media screen and (min-width: 1025px) {
+    .faq__wrap {
+        max-width: 1280px;
+    }
+
+    .faq__title {
+        font-size: 22px;
+    }
+
+    .faq__item summary {
+        padding: 20px 18px;
+        font-size: 18px;
+    }
+
+    .faq__answer {
+        font-size: 15px;
+    }
+}
+
 /* Bundles: tablet & desktop layouts */
 @media screen and (min-width: 768px) {
     .bundles-block__grid {

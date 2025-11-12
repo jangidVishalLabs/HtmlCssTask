@@ -353,12 +353,8 @@ body {
     border-radius: 16px;
     object-fit: cover;
     display: block;
-    padding: 4px;
-    border: 5px solid transparent;
-    border-radius: 12px;
-    background: linear-gradient(45deg, #ff7e5f, #feb47b) border-box;
-    -webkit-background-clip: padding-box, border-box;
-    background-clip: padding-box, border-box;
+
+
 }
 
 .hero-body {
@@ -369,11 +365,11 @@ body {
 }
 
 .hero-title {
-    font-size: 28px;
-    line-height: 36px;
+    font-size: 24px;
+    line-height: 32px;
     margin: 0;
-    color: var(--text-color);
-    font-weight: 700
+    color: black;
+    font-weight: 500
 }
 
 .hero-title .accent {
@@ -383,7 +379,7 @@ body {
 .hero-card {
     background: rgba(255, 255, 255, 0.8);
     border-radius: 16px;
-    padding: 16px;
+    padding: 1px;
     box-shadow: 0 12px 32px rgba(0, 20, 89, 0.12);
     backdrop-filter: blur(6px)
 }
@@ -719,9 +715,11 @@ body {
 
 .cards__title {
     color: #fff;
-    font-size: 20px;
-    line-height: 1.2;
+    font-size: 22px;
+    line-height: 1.1;
     margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
 }
 
 .cards__controls {
@@ -760,6 +758,27 @@ body {
     display: block;
 }
 
+.card {
+    /* subtle elevated cards like the design */
+    box-shadow: 0 6px 18px rgba(16, 24, 40, 0.08);
+}
+
+.card__media-wrap {
+    display: block;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    right: 40px;
+    bottom: 20px;
+}
+
+.card__media {
+    display: block;
+    width: 100%;
+
+
+}
+
 
 .card__body {
     padding: 12px;
@@ -780,19 +799,21 @@ body {
     display: flex;
     gap: 8px;
     justify-content: center;
-    margin-top: 12px
+    margin-top: 18px;
 }
 
 .cards__dot {
     width: 10px;
     height: 10px;
     border-radius: 999px;
-    background: rgba(255, 255, 255, 0.35);
-    border: 0
+    background: rgba(255, 255, 255, 0.85);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
 }
 
 .cards__dot.is-active {
-    background: #fff
+    background: #ff1200;
+    border-color: #ff1200;
 }
 
 .cards__cta {
@@ -803,10 +824,15 @@ body {
     margin: 12px auto 0;
     background: linear-gradient(90deg, #ff1200, #ff5a3a);
     color: #fff;
-    padding: 10px 16px;
+    padding: 12px 20px;
     border-radius: 999px;
     text-decoration: none;
     font-weight: 700
+}
+
+/* Make the cards area visually separated inside the blue panel */
+.cards__container {
+    padding: 20px 8px;
 }
 
 /* ----------------------
@@ -1309,6 +1335,110 @@ body {
     font-size: 13px;
     color: var(--muted);
     text-align: center
+}
+
+/* ----------------------
+   FAQ (mobile-first, accessible)
+   ---------------------- */
+.faq {
+    background: #eaf6fb;
+    /* slightly lighter than design base */
+    padding: 48px 16px;
+}
+
+.faq__wrap {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.faq__header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.faq__title {
+    color: #ff1200;
+    font-size: 18px;
+    font-weight: 800;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+.faq__container {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 20px;
+}
+
+.faq__grid {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.faq__column {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.faq__item {
+    background: transparent;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.faq__item summary {
+    list-style: none;
+    cursor: pointer;
+    padding: 18px 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    font-weight: 700;
+    font-size: 16px;
+    border-radius: 8px;
+}
+
+.faq__item[open] summary {
+    background: #fff;
+}
+
+.faq__question {
+    color: #000;
+}
+
+.faq__answer {
+    padding: 12px 12px 18px 12px;
+    color: #374354;
+    font-size: 15px;
+    line-height: 1.5;
+    border-top: 1px solid #e6ebee;
+    background: #fff;
+}
+
+.faq__item summary::-webkit-details-marker {
+    display: none
+}
+
+.faq__item summary:after {
+    content: '+';
+    display: inline-block;
+    width: 28px;
+    height: 28px;
+    border-radius: 999px;
+    border: 1px solid #ff1200;
+    color: #ff1200;
+    text-align: center;
+    line-height: 26px;
+    font-weight: 700;
+}
+
+.faq__item[open] summary:after {
+    content: '−';
 }
 
 @media screen and (max-width: 325px) {
