@@ -11,64 +11,95 @@
 </head>
 
 <body>
-    <header class="nav-header" role="banner">
-        <div class="nav-left">
-            <a href="/" class="brand" aria-label="Home">
-                <img src="images/logo.png" alt="ceASAP logo" class="brand-logo">
-            </a>
-        </div>
-
-        <div class="nav-right">
-            <p class="greeting">Welcome back, <strong>Scott</strong>!</p>
-
-            <nav class="actions" aria-label="User actions">
-                <ul class="actions-list">
-                    <li class="actions-item">
-                        <a class="btn btn-primary" href="#">Calendar</a>
-                    </li>
-
-                    <li class="actions-item">
-                        <button class="icon-btn" aria-label="Cart" title="Cart">
-                            <img src="images/icons/cart.svg" alt="Cart icon" class="icon">
-                            <span class="cart-count" aria-hidden="false">0</span>
-                        </button>
-                    </li>
-
-                    <li class="actions-item">
-                        <a class="btn btn-primary" href="#">My Courses</a>
-                    </li>
-
-                    <li class="actions-item">
-                        <a class="btn btn-primary" href="#">My Account</a>
+    <nav>
+        <header class="nav-header" role="banner">
+            <div class="nav-left">
+                <a href="/" class="brand" aria-label="Home">
+                    <img src="images/logo.png" alt="ceASAP logo" class="brand-logo">
+                </a>
+            </div>
+            <div class="nav-right">
+                <p class="greeting">Welcome back, <strong>Scott</strong>!</p>
+                <nav class="actions" aria-label="User actions">
+                    <ul class="actions-list">
+                        <li class="actions-item">
+                            <a class="btn btn-primary" href="#">Calendar</a>
+                        </li>
+                        <li class="actions-item">
+                            <button class="icon-btn" aria-label="Cart" title="Cart">
+                                <img src="images/icons/cart.svg" alt="Cart icon" class="icon">
+                                <span class="cart-count" aria-hidden="false">0</span>
+                            </button>
+                        </li>
+                        <li class="actions-item">
+                            <a class="btn btn-primary" href="#">My Courses</a>
+                        </li>
+                        <li class="actions-item">
+                            <a class="btn btn-primary" href="#">My Account</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <footer class="nav-footer" role="contentinfo">
+            <div class="content">
+                <button class="location" aria-haspopup="listbox" aria-expanded="false">
+                    <span class="location-text">Nevada</span>
+                    <img class="mdi-chevron-down" src="images/icons/downArrow.svg" alt="open location selector">
+                </button>
+            </div>
+            <nav class="footer-nav" aria-label="Footer navigation">
+                <ul class="footer-list">
+                    <li class="footer-item"><a href="#" class="footer-link">Our Story</a></li>
+                    <li class="footer-item"><a href="#" class="footer-link">How it Works?</a></li>
+                    <li class="footer-item"><a href="#" class="footer-link">Our Experts</a></li>
+                    <li class="footer-item"><a href="#" class="footer-link">Marketplace</a></li>
+                    <li class="footer-item"><a href="#" class="footer-link">Our Blog</a></li>
+                    <li class="footer-item"><a href="#" class="footer-link">News</a></li>
+                    <li class="footer-item"><a href="#" class="footer-link">Support</a></li>
+                    <li class="footer-item">
+                        <a href="#" class="footer-link">Resources</a>
+                        <img class="mdi-chevron-down2" src="images/icons/downArrow.svg" alt="more">
                     </li>
                 </ul>
             </nav>
-        </div>
-    </header>
-    <footer class="nav-footer" role="contentinfo">
-        <div class="content">
-            <button class="location" aria-haspopup="listbox" aria-expanded="false">
-                <span class="location-text">Nevada</span>
-                <img class="mdi-chevron-down" src="images/icons/downArrow.svg" alt="open location selector">
-            </button>
-        </div>
+        </footer>
+    </nav>
+    <!-- Hero -->
+    <section class="hero" aria-label="Hero">
+        <div class="hero-decor hero-decor--right" aria-hidden="true"></div>
+        <div class="container">
+            <div class="hero-grid">
 
-        <nav class="footer-nav" aria-label="Footer navigation">
-            <ul class="footer-list">
-                <li class="footer-item"><a href="#" class="footer-link">Our Story</a></li>
-                <li class="footer-item"><a href="#" class="footer-link">How it Works?</a></li>
-                <li class="footer-item"><a href="#" class="footer-link">Our Experts</a></li>
-                <li class="footer-item"><a href="#" class="footer-link">Marketplace</a></li>
-                <li class="footer-item"><a href="#" class="footer-link">Our Blog</a></li>
-                <li class="footer-item"><a href="#" class="footer-link">News</a></li>
-                <li class="footer-item"><a href="#" class="footer-link">Support</a></li>
-                <li class="footer-item">
-                    <a href="#" class="footer-link">Resources</a>
-                    <img class="mdi-chevron-down2" src="images/icons/downArrow.svg" alt="more">
-                </li>
-            </ul>
-        </nav>
-    </footer>
+
+                <div class="hero-body">
+                    <h1 class="hero-title">
+                        Nevada continuing education dedicated to complete
+                        <span class="accent"> flexibility</span>.
+                    </h1>
+
+                    <div class="hero-card">
+                        <p class="hero-sub">Complete your real estate education <span class="accent">FAST</span>!</p>
+
+                        <div class="hero-ctas">
+                            <a class="cta-btn" href="#">Live/ZOOM Calendar <span class="chev"
+                                    aria-hidden="true">→</span></a>
+                            <a class="cta-btn" href="#">Internet CE Courses <span class="chev"
+                                    aria-hidden="true">→</span></a>
+                            <a class="cta-btn" href="#">Bundle &amp; Save <span class="chev"
+                                    aria-hidden="true">→</span></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-media">
+                    <figure>
+                        <img class="hero-image" src="/images/hero.png" alt="Students in online real estate course">
+                    </figure>
+                </div>
+            </div>
+        </div>
+        <div class="hero-decor hero-decor--left" aria-hidden="true"></div>
+    </section>
 </body>
 
 </html>

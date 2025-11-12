@@ -218,3 +218,133 @@ body {
 }
 
 /* Desktop-level default tweaks can go here or in tab.css */
+
+/* ----------------------
+     Hero (mobile-first)
+     ---------------------- */
+.hero {
+    box-sizing: border-box;
+    padding: 20px 16px;
+    border-bottom: 1px solid rgba(230, 230, 230, 1);
+    position: relative;
+    overflow: hidden;
+    background: #fff;
+}
+
+.hero .container {
+    max-width: 1200px;
+    margin: 0 auto
+}
+
+.hero-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    align-items: center
+}
+
+.hero-media {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    
+}
+
+.hero-image {
+    width: 100%;
+    max-width: 640px;
+    border-radius: 16px;
+    object-fit: cover;
+    display: block;
+    padding: 4px;
+    border: 5px solid transparent;
+    border-radius: 12px;
+    background: linear-gradient(45deg, #ff7e5f, #feb47b) border-box;
+    -webkit-background-clip: padding-box, border-box;
+    background-clip: padding-box, border-box;
+}
+
+.hero-body {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 16px
+}
+
+.hero-title {
+    font-size: 28px;
+    line-height: 36px;
+    margin: 0;
+    color: var(--text-color);
+    font-weight: 700
+}
+
+.hero-title .accent {
+    color: #ff1200
+}
+
+.hero-card {
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 16px;
+    padding: 16px;
+    box-shadow: 0 12px 32px rgba(0, 20, 89, 0.12);
+    backdrop-filter: blur(6px)
+}
+
+.hero-sub {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 700;
+    text-align: left
+}
+
+.hero-sub .accent {
+    color: #ff1200
+}
+
+.hero-ctas {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 8px
+}
+
+.cta-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 14px;
+    border-radius: 999px;
+    text-decoration: none;
+    color: #fff;
+    background: linear-gradient(90deg, #ff1200, #ff5a3a);
+    font-weight: 700
+}
+
+.cta-btn .chev {
+    opacity: 0.95
+}
+
+/* Decorative background blobs (subtle) */
+.hero-decor {
+    position: absolute;
+    width: 420px;
+    height: 420px;
+    border-radius: 50%;
+    filter: blur(160px);
+    opacity: 0.6
+}
+
+.hero-decor--right {
+    right: -120px;
+    top: 20%;
+    background: rgba(14, 134, 212, 0.32)
+}
+
+.hero-decor--left {
+    left: -180px;
+    bottom: -40px;
+    background: rgba(14, 134, 212, 0.24)
+}

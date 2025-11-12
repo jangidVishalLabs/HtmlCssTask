@@ -70,4 +70,37 @@
     .footer-list::-webkit-scrollbar {
         display: none
     }
+
+    .hero-grid {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    /* Hero mobile adjustments */
+    .hero {
+        padding: 18px 12px;
+    }
+
+    .hero-title {
+        font-size: 24px;
+        line-height: 32px;
+    }
+
+    .hero-image {
+        max-width: 100%;
+        border-radius: 12px;
+    }
+
+    .hero-card {
+        padding: 12px;
+    }
+
+    .hero-ctas {
+        gap: 8px;
+    }
+
+    .cta-btn {
+        padding: 10px 12px;
+        font-size: 14px;
+    }
 }
