@@ -189,9 +189,6 @@ body {
     align-items: center;
 }
 
-.footer-item {
-    /* placeholder for per-item overrides if needed */
-}
 
 .footer-link {
     display: inline-block;
@@ -248,7 +245,7 @@ body {
     display: flex;
     justify-content: center;
 
-    
+
 }
 
 .hero-image {
@@ -347,4 +344,60 @@ body {
     left: -180px;
     bottom: -40px;
     background: rgba(14, 134, 212, 0.24)
+}
+
+/* ----------------------
+     Stats (mobile-first)
+     ---------------------- */
+.stats {
+    background: #ffffff;
+    padding: 20px 16px;
+}
+
+.stats__container {
+    max-width: 1200px;
+    margin: 0 auto
+}
+
+.stats__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.stat {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border-radius: 20px;
+    background-color: #E5F2FA;
+    width: 220px;
+    position: relative;
+    text-align: center;
+    border: 1px solid red;
+    padding: 4px;
+}
+
+.stat__icon img {
+    width: 32px;
+    height: 32px;
+    display: block;
+    position: absolute;
+    transform: translate(-50%, -100%);
+}
+
+.stat__value {
+    font-size: 28px;
+    line-height: 34px;
+    color: #FF1F0E;
+    font-weight: 800
+}
+
+.stat__label {
+    font-size: 14px;
+    color: var(--brand-color);
+    font-weight: 700
 }

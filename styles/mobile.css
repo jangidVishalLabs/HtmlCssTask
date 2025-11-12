@@ -103,4 +103,26 @@
         padding: 10px 12px;
         font-size: 14px;
     }
+
+    /* Stats mobile tweaks: keep stacked and tighten spacing */
+    .stats {
+        margin-top: 20px;
+        padding: 16px 12px;
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .stat {
+        padding: 10px
+    }
+
+    .stat__value {
+        font-size: 24px
+    }
+
+    .stat__icon img {
+        width: 56px;
+        height: 56px
+    }
 }
