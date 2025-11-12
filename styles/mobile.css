@@ -1,7 +1,9 @@
-/* Mobile-specific tweaks: keep header compact and stack where needed
-	 Media query placed here per request: mobile rules live in this file
-*/
+/* =========================================================
+   📱 MOBILE STYLES (max-width: 767px)
+   Keep header compact and stack where needed
+   ========================================================= */
 
+/* ======================== NAVBAR ======================== */
 @media screen and (max-width: 767px) {
     .nav-header {
         width: 100%;
@@ -13,7 +15,7 @@
     }
 
     .brand-logo {
-        width: 140px
+        width: 140px;
     }
 
     .nav-right {
@@ -29,14 +31,13 @@
         right: 1rem;
     }
 
-
     .actions-list {
-        gap: 8px
+        gap: 8px;
     }
 
     .btn-primary {
         padding: 8px 12px;
-        font-size: 14px
+        font-size: 14px;
     }
 
     /* Make cart badge slightly smaller on small viewports */
@@ -45,11 +46,12 @@
         right: -5px;
         min-width: 16px;
         height: 16px;
-        font-size: 10px
+        font-size: 10px;
     }
+}
 
-    /* Footer stack */
-    /* Footer: stack vertically on small screens */
+/* ======================== FOOTER ======================== */
+@media screen and (max-width: 767px) {
     .nav-footer {
         padding: 12px 12px;
         flex-direction: column;
@@ -62,7 +64,7 @@
         justify-content: space-between;
     }
 
-    /* make footer links horizontally scrollable on narrow screens */
+    /* Make footer links horizontally scrollable on narrow screens */
     .footer-list {
         gap: 8px;
         overflow-x: auto;
@@ -72,15 +74,17 @@
     }
 
     .footer-list::-webkit-scrollbar {
-        display: none
+        display: none;
     }
+}
 
+/* ======================== HERO SECTION ======================== */
+@media screen and (max-width: 767px) {
     .hero-grid {
         display: flex;
         flex-direction: column-reverse;
     }
 
-    /* Hero mobile adjustments */
     .hero {
         padding: 18px 12px;
     }
@@ -107,8 +111,10 @@
         padding: 10px 12px;
         font-size: 14px;
     }
+}
 
-    /* Stats mobile tweaks: keep stacked and tighten spacing */
+/* ======================== STATS SECTION ======================== */
+@media screen and (max-width: 767px) {
     .stats {
         margin-top: 20px;
         padding: 16px 12px;
@@ -118,109 +124,108 @@
     }
 
     .stat {
-        padding: 10px
+        padding: 10px;
     }
 
     .stat__value {
-        font-size: 24px
+        font-size: 24px;
     }
 
     .stat__icon img {
         width: 56px;
-        height: 56px
+        height: 56px;
     }
 }
 
+/* ======================== COURSES SECTION ======================== */
 @media screen and (max-width: 767px) {
-
-    /* Courses mobile tweaks */
     .courses {
-        padding: 16px 12px
+        padding: 16px 12px;
     }
 
     .courses__list {
-        gap: 12px
+        gap: 12px;
     }
 
     .course {
-        padding: 10px
+        padding: 10px;
     }
 
     .course__media {
         height: 160px;
-        object-fit: cover
+        object-fit: cover;
     }
 
     .course__title {
-        font-size: 18px
+        font-size: 18px;
     }
 
     .course-cta {
         width: 100%;
-        justify-content: center
+        justify-content: center;
     }
 }
 
-/* Responsive rules for legacy .courses markup (mobile) */
+/* ===== Legacy .courses markup (mobile) ===== */
 @media screen and (max-width: 767px) {
     .courses {
-        padding: 20px 12px
+        padding: 20px 12px;
     }
 
     .courses .content {
         flex-direction: column;
         padding: 16px;
         gap: 16px;
-        width: auto
+        width: auto;
     }
 
     .courses .content2 {
         width: 100%;
         display: flex;
-        flex-direction: column
+        flex-direction: column;
     }
 
     .courses .content3,
     .courses .content6,
     .courses .content7 {
         width: 100%;
-        height: auto
+        height: auto;
     }
 
     .courses .content4 {
         padding: 16px;
-        align-items: flex-start
+        align-items: flex-start;
     }
 
     .courses .text {
         text-align: left;
-        font-size: 20px
+        font-size: 20px;
     }
 
     .courses .text2 {
         text-align: left;
-        font-size: 16px
+        font-size: 16px;
     }
 
     .courses .button {
         width: 100%;
         justify-content: center;
-        padding: 10px 12px
+        padding: 10px 12px;
     }
 }
 
-/* Benefits-1: mobile adjustments */
+/* ======================== BENEFITS SECTION ======================== */
 @media screen and (max-width: 767px) {
     .benefits-1 {
         padding: 20px 12px;
         flex-direction: column;
-        gap: 20px
+        gap: 20px;
     }
 
     .benefits-1 .content {
         width: 100%;
         padding: 12px;
-        border-radius: 12px
+        border-radius: 12px;
     }
 
     .benefits-1 .content3,
@@ -230,37 +235,37 @@
         width: 100%;
         height: auto;
         left: auto;
-        top: auto
+        top: auto;
     }
 
     .benefits-1 .content4 {
         width: 100%;
-        padding: 12px
+        padding: 12px;
     }
 
     .benefits-1 .text {
         font-size: 20px;
-        line-height: 28px
+        line-height: 28px;
     }
 
     .benefits-1 .text2 {
         font-size: 15px;
-        line-height: 22px
+        line-height: 22px;
     }
 
     .benefits-1 .text-2-span,
     .benefits-1 .text-2-span3,
     .benefits-1 .text-2-span2 {
-        padding-left: 1em
+        padding-left: 1em;
     }
 
     .benefits-1 .button {
         width: 100%;
-        justify-content: center
+        justify-content: center;
     }
 }
 
-/* Cards: mobile-specific adjustments */
+/* ======================== CARDS SECTION ======================== */
 @media screen and (max-width: 767px) {
     .cards {
         padding: 20px 12px;
@@ -268,7 +273,6 @@
 
     .cards__title {
         font-size: 18px;
-
     }
 
     .cards__list {
@@ -276,73 +280,72 @@
         margin-top: 16px;
     }
 
-
     .card__media {
-        height: 140px
+        height: 140px;
     }
 
     .cards__controls {
-        display: none
+        display: none;
     }
 
     .cards__cta {
         width: 100%;
-        justify-content: center
+        justify-content: center;
     }
 }
 
-/* Partners block: mobile tweaks */
+/* ======================== PARTNERS SECTION ======================== */
 @media screen and (max-width: 767px) {
     .partners-block {
-        padding: 20px 12px
+        padding: 20px 12px;
     }
 
     .partners-block__title {
-        font-size: 18px
+        font-size: 18px;
     }
 
     .partners-block__list {
-        gap: 12px
+        gap: 12px;
     }
 
     .partners-block__logo img {
-        height: 48px
+        height: 48px;
     }
 
     .partners-block__pager {
-        margin-top: 10px
+        margin-top: 10px;
     }
 }
 
-/* Tools-block: mobile tweaks */
+/* ======================== TOOLS SECTION ======================== */
 @media screen and (max-width: 767px) {
     .tools-block {
-        padding: 16px 12px
+        padding: 16px 12px;
     }
 
     .tools-block__content {
-        flex-direction: column
+        flex-direction: column;
     }
 
     .tools-block__media {
         order: 1;
-        margin-bottom: 12px
+        margin-bottom: 12px;
     }
 
     .tools-block__body {
-        order: 2
+        order: 2;
     }
 
     .tools-block__title {
-        font-size: 18px
+        font-size: 18px;
     }
 
     .tools-block__hero {
-        max-width: 100%
+        max-width: 100%;
     }
 
     .tools-block__cta {
         width: 100%;
-        justify-content: center
+        justify-content: center;
     }
 }

@@ -1,4 +1,6 @@
-/* Base (mobile-first) styles - layout with flexbox, semantic classes used in index.html */
+/* ====================================================================
+   ROOT VARIABLES & GLOBAL RESETS
+   ==================================================================== */
 :root {
     --brand-color: #0e86d4;
     --text-color: #374354;
@@ -10,105 +12,6 @@
 *::before,
 *::after {
     box-sizing: border-box
-}
-
-
-/* Benefits-1 base (mobile-first) */
-.benefits-1,
-.benefits-1 * {
-    box-sizing: border-box;
-}
-
-.benefits-1 {
-    background: #ffffff;
-    padding: 28px 16px;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    align-items: stretch;
-    justify-content: flex-start;
-}
-
-
-
-.benefits__media {
-    display: block;
-}
-
-.benefits__media .content {
-    border-radius: 16px;
-    border: 2px solid transparent;
-    padding: 8px;
-    overflow: hidden;
-}
-
-.benefits-1 .content3 {
-    position: relative;
-}
-
-.benefits-1 .image {
-    width: 100%;
-    height: auto;
-    display: block;
-    border-radius: 12px;
-    object-fit: cover;
-}
-
-
-.benefits__body {
-    display: block;
-}
-
-.benefits-1 .text {
-    color: #ff1200;
-    font-size: 22px;
-    line-height: 30px;
-    font-weight: 700;
-    margin: 0 0 8px 0;
-}
-
-.benefits-1 .text2 {
-    font-size: 16px;
-    line-height: 24px;
-    color: #374354;
-    margin: 0 0 12px 0;
-}
-
-.benefits-1 .text-2-span,
-.benefits-1 .text-2-span2,
-.benefits-1 .text-2-span3 {
-    margin: 6px 0;
-    font: bold;
-}
-
-.benefits-1 .button {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    background: linear-gradient(90deg, #ff1200, #ff5a3a);
-    color: #fff;
-    padding: 10px 16px;
-    border-radius: 999px;
-    text-decoration: none;
-}
-
-
-.bold-text {
-    font-weight: bold;
-}
-
-.unbold {
-    list-style: none;
-}
-
-.benefits-1 .text3 {
-    color: #fff;
-    font-weight: 700;
-}
-
-.benefits-1 .akar-icons-circle-chevron-right-fill {
-    width: 20px;
-    height: 20px;
 }
 
 html,
@@ -125,7 +28,33 @@ body {
     -moz-osx-font-smoothing: grayscale;
 }
 
-/* Header */
+/* ====================================================================
+   UTILITIES
+   ==================================================================== */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0
+}
+
+.bold-text {
+    font-weight: bold;
+}
+
+.unbold {
+    list-style: none;
+}
+
+/* ====================================================================
+   HEADER / NAVIGATION
+   ==================================================================== */
+/* Base (mobile-first) styles */
 .nav-header {
     display: flex;
     flex-direction: row;
@@ -159,7 +88,6 @@ body {
     gap: 12px;
 }
 
-/* Mobile-first: hide the full nav menu and show hamburger */
 .nav-toggle {
     display: inline-flex;
     align-items: center;
@@ -188,7 +116,6 @@ body {
 
 .nav-menu {
     display: none;
-    /* hidden by default on mobile */
     position: absolute;
     right: 12px;
     top: 64px;
@@ -210,21 +137,12 @@ body {
     display: block
 }
 
-/* When header has .nav-open, show menu */
 .nav-header.nav-open .nav-menu {
     display: block
 }
 
-/* Keep greeting visible but if you want it inside menu on very small screens you could move it */
 .nav-header .greeting {
     display: block
-}
-
-/* Small-screen tweak to keep header compact */
-@media screen and (max-width: 479px) {
-    .brand-logo {
-        width: 140px
-    }
 }
 
 .greeting {
@@ -301,7 +219,17 @@ body {
     font-weight: 800;
 }
 
-/* Footer (refactored) */
+/* Header Media Queries */
+@media screen and (max-width: 479px) {
+    .brand-logo {
+        width: 140px
+    }
+}
+
+/* ====================================================================
+   FOOTER (NAV-FOOTER)
+   ==================================================================== */
+/* Base (mobile-first) styles */
 .nav-footer,
 .nav-footer * {
     box-sizing: border-box;
@@ -320,7 +248,6 @@ body {
     overflow: hidden;
 }
 
-/* Location pill on the left */
 .location {
     background: #ffffff;
     border: 0;
@@ -346,7 +273,6 @@ body {
     opacity: 0.95
 }
 
-/* Footer links as pill-like items on the right */
 .footer-list {
     display: flex;
     gap: 8px;
@@ -355,7 +281,6 @@ body {
     list-style: none;
     align-items: center;
 }
-
 
 .footer-link {
     display: inline-block;
@@ -367,25 +292,10 @@ body {
     border-radius: 36px;
 }
 
-
-/* Utilities */
-.sr-only {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
-    border: 0
-}
-
-/* Desktop-level default tweaks can go here or in tab.css */
-
-/* ----------------------
-     Hero (mobile-first)
-     ---------------------- */
+/* ====================================================================
+   HERO SECTION
+   ==================================================================== */
+/* Base (mobile-first) styles */
 .hero {
     box-sizing: border-box;
     padding: 20px 16px;
@@ -411,8 +321,6 @@ body {
     width: 100%;
     display: flex;
     justify-content: center;
-
-
 }
 
 .hero-image {
@@ -421,8 +329,6 @@ body {
     border-radius: 16px;
     object-fit: cover;
     display: block;
-
-
 }
 
 .hero-body {
@@ -487,7 +393,6 @@ body {
     opacity: 0.95
 }
 
-/* Decorative background blobs (subtle) */
 .hero-decor {
     position: absolute;
     width: 420px;
@@ -509,9 +414,10 @@ body {
     background: rgba(14, 134, 212, 0.24)
 }
 
-/* ----------------------
-     Stats (mobile-first)
-     ---------------------- */
+/* ====================================================================
+   STATS SECTION
+   ==================================================================== */
+/* Base (mobile-first) styles */
 .stats {
     background: #ffffff;
     padding: 20px 16px;
@@ -565,9 +471,10 @@ body {
     font-weight: 700
 }
 
-/* ----------------------
-     Ratings / Offers
-     ---------------------- */
+/* ====================================================================
+   RATINGS / OFFERS SECTION
+   ==================================================================== */
+/* Base (mobile-first) styles */
 .ratings {
     background: #ffffff;
     padding: 20px 16px;
@@ -587,9 +494,6 @@ body {
     gap: 8px;
 }
 
-
-
-
 .rating {
     font-size: 20px;
     color: var(--brand-color);
@@ -599,96 +503,6 @@ body {
 .rating-count {
     text-decoration: underline;
 }
-
-/* ----------------------
-   Courses (mobile-first)
-   ---------------------- */
-.courses {
-    background: #ffffff;
-    padding: 20px 16px;
-}
-
-.courses__container {
-    max-width: 1200px;
-    margin: 0 auto;
-    background-color: #E5F2FA;
-    padding: 8px;
-    border-radius: 12px;
-
-}
-
-.courses__list {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-
-}
-
-.course {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    background: #fff;
-    border-radius: 12px;
-    padding: 16px;
-    align-items: flex-start;
-}
-
-.course__media {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-    object-fit: cover;
-
-
-}
-
-.course__body {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    text-align: center;
-    gap: 16px;
-
-}
-
-.course__title {
-    margin: 0;
-    font-size: 20px;
-    font-weight: 800;
-    text-align: center;
-    width: 100%;
-}
-
-.muted {
-    color: #0e87d5;
-}
-
-.highlight {
-    color: #ff1200;
-}
-
-.course__desc {
-    margin: 0;
-    color: var(--text-color);
-}
-
-.course-cta {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    margin: auto;
-    padding: 8px 14px;
-    border-radius: 999px;
-    background: linear-gradient(90deg, #ff1200, #ff5a3a);
-    color: #fff;
-    text-decoration: none;
-    font-weight: 700;
-}
-
 
 .ratings__right {
     display: flex;
@@ -734,6 +548,92 @@ body {
     width: fit-content;
 }
 
+/* ====================================================================
+   COURSES SECTION
+   ==================================================================== */
+/* Base (mobile-first) styles */
+.courses {
+    background: #ffffff;
+    padding: 20px 16px;
+}
+
+.courses__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #E5F2FA;
+    padding: 8px;
+    border-radius: 12px;
+}
+
+.courses__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.course {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    background: #fff;
+    border-radius: 12px;
+    padding: 16px;
+    align-items: flex-start;
+}
+
+.course__media {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.course__body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    text-align: center;
+    gap: 16px;
+}
+
+.course__title {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 800;
+    text-align: center;
+    width: 100%;
+}
+
+.muted {
+    color: #0e87d5;
+}
+
+.highlight {
+    color: #ff1200;
+}
+
+.course__desc {
+    margin: 0;
+    color: var(--text-color);
+}
+
+.course-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin: auto;
+    padding: 8px 14px;
+    border-radius: 999px;
+    background: linear-gradient(90deg, #ff1200, #ff5a3a);
+    color: #fff;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+/* Courses Media Queries */
 @media screen and (min-width: 336px) and (max-width: 767px) {
     .courses__list {
         padding: 36px;
@@ -746,13 +646,101 @@ body {
     .course__desc {
         text-align: center;
     }
-
-
 }
 
-/* ----------------------
-   Cards (mobile-first)
-   ---------------------- */
+/* ====================================================================
+   BENEFITS SECTION
+   ==================================================================== */
+/* Base (mobile-first) styles */
+.benefits-1,
+.benefits-1 * {
+    box-sizing: border-box;
+}
+
+.benefits-1 {
+    background: #ffffff;
+    padding: 28px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: stretch;
+    justify-content: flex-start;
+}
+
+.benefits__media {
+    display: block;
+}
+
+.benefits__media .content {
+    border-radius: 16px;
+    border: 2px solid transparent;
+    padding: 8px;
+    overflow: hidden;
+}
+
+.benefits-1 .content3 {
+    position: relative;
+}
+
+.benefits-1 .image {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 12px;
+    object-fit: cover;
+}
+
+.benefits__body {
+    display: block;
+}
+
+.benefits-1 .text {
+    color: #ff1200;
+    font-size: 22px;
+    line-height: 30px;
+    font-weight: 700;
+    margin: 0 0 8px 0;
+}
+
+.benefits-1 .text2 {
+    font-size: 16px;
+    line-height: 24px;
+    color: #374354;
+    margin: 0 0 12px 0;
+}
+
+.benefits-1 .text-2-span,
+.benefits-1 .text-2-span2,
+.benefits-1 .text-2-span3 {
+    margin: 6px 0;
+    font: bold;
+}
+
+.benefits-1 .button {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: linear-gradient(90deg, #ff1200, #ff5a3a);
+    color: #fff;
+    padding: 10px 16px;
+    border-radius: 999px;
+    text-decoration: none;
+}
+
+.benefits-1 .text3 {
+    color: #fff;
+    font-weight: 700;
+}
+
+.benefits-1 .akar-icons-circle-chevron-right-fill {
+    width: 20px;
+    height: 20px;
+}
+
+/* ====================================================================
+   CARDS SECTION
+   ==================================================================== */
+/* Base (mobile-first) styles */
 .cards,
 .cards * {
     box-sizing: border-box;
@@ -771,6 +759,7 @@ body {
 .cards__container {
     width: 100%;
     max-width: 1200px;
+    padding: 20px 8px;
 }
 
 .cards__header {
@@ -817,6 +806,7 @@ body {
     background: #fff;
     border-radius: 12px;
     overflow: hidden;
+    box-shadow: 0 6px 18px rgba(16, 24, 40, 0.08);
 }
 
 .card__media {
@@ -824,11 +814,6 @@ body {
     height: 160px;
     object-fit: cover;
     display: block;
-}
-
-.card {
-    /* subtle elevated cards like the design */
-    box-shadow: 0 6px 18px rgba(16, 24, 40, 0.08);
 }
 
 .card__media-wrap {
@@ -843,10 +828,7 @@ body {
 .card__media {
     display: block;
     width: 100%;
-
-
 }
-
 
 .card__body {
     padding: 12px;
@@ -898,14 +880,10 @@ body {
     font-weight: 700
 }
 
-/* Make the cards area visually separated inside the blue panel */
-.cards__container {
-    padding: 20px 8px;
-}
-
-/* ----------------------
-   Bundles (mobile-first)
-   ---------------------- */
+/* ====================================================================
+   BUNDLES SECTION
+   ==================================================================== */
+/* Base (mobile-first) styles */
 .bundles-block,
 .bundles-block * {
     box-sizing: border-box;
@@ -1023,9 +1001,21 @@ body {
     font-weight: 700;
 }
 
-/* ----------------------
-   Partners block (mobile-first)
-   ---------------------- */
+/* Bundles Media Queries */
+@media screen and (max-width: 325px) {
+
+    .side_meta,
+    .bundle-card__meta {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+    }
+}
+
+/* ====================================================================
+   PARTNERS SECTION
+   ==================================================================== */
+/* Base (mobile-first) styles */
 .partners-block,
 .partners-block * {
     box-sizing: border-box;
@@ -1063,14 +1053,12 @@ body {
     display: flex;
     gap: 16px;
     flex-wrap: wrap;
-    /* allow logos to wrap onto multiple rows */
     align-items: center;
     justify-content: center;
     padding-bottom: 8px;
 }
 
 .partners-block__item {
-    /* allow items to grow/shrink, and establish a reasonable base width */
     flex: 1 1 160px;
     max-width: 220px;
     display: flex;
@@ -1102,9 +1090,10 @@ body {
     display: inline-block
 }
 
-/* ----------------------
-   Testimonials (mobile-first)
-   ---------------------- */
+/* ====================================================================
+   TESTIMONIALS SECTION
+   ==================================================================== */
+/* Base (mobile-first) styles */
 .testimonials {
     background: #eaf6fb;
     padding: 40px 16px;
@@ -1266,10 +1255,10 @@ body {
     display: inline-flex
 }
 
-
-/* ----------------------
-   Tools block (mobile-first)
-   ---------------------- */
+/* ====================================================================
+   TOOLS SECTION
+   ==================================================================== */
+/* Base (mobile-first) styles */
 .tools-block,
 .tools-block * {
     box-sizing: border-box;
@@ -1284,7 +1273,6 @@ body {
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px 16px;
-
 }
 
 .tools-block__content {
@@ -1292,7 +1280,6 @@ body {
     flex-direction: column-reverse;
     gap: 16px;
     align-items: stretch;
-
 }
 
 .tools-block__body {
@@ -1365,9 +1352,10 @@ body {
     object-fit: cover
 }
 
-/* ----------------------
-   Contact / Support (mobile-first)
-   ---------------------- */
+/* ====================================================================
+   CONTACT / SUPPORT SECTION
+   ==================================================================== */
+/* Base (mobile-first) styles */
 .contact,
 .contact * {
     box-sizing: border-box;
@@ -1454,17 +1442,16 @@ body {
 }
 
 .contact__submit {
-
     padding: 10px 18px;
     border-radius: 999px;
     color: #fff;
     background-color: #FF1200;
 }
 
-/* ----------------------
-   Site Footer (mobile-first)
-   - link and legal lists are shown as two columns on narrow screens per request
-   ---------------------- */
+/* ====================================================================
+   SITE FOOTER
+   ==================================================================== */
+/* Base (mobile-first) styles */
 .site-footer,
 .site-footer * {
     box-sizing: border-box;
@@ -1504,9 +1491,7 @@ body {
     color: var(--muted);
 }
 
-
 .site-footer__lists {
-    /* on mobile, arrange the two lists as two columns side-by-side */
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 12px 24px;
@@ -1569,12 +1554,12 @@ body {
     text-align: center
 }
 
-/* ----------------------
-   FAQ (mobile-first, accessible)
-   ---------------------- */
+/* ====================================================================
+   FAQ SECTION
+   ==================================================================== */
+/* Base (mobile-first) styles */
 .faq {
     background: #eaf6fb;
-    /* slightly lighter than design base */
     padding: 48px 16px;
 }
 
@@ -1671,14 +1656,4 @@ body {
 
 .faq__item[open] summary:after {
     content: '−';
-}
-
-@media screen and (max-width: 325px) {
-
-    .side_meta,
-    .bundle-card__meta {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 6px;
-    }
 }
