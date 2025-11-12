@@ -240,6 +240,8 @@
     .hero-title {
         font-size: 48px;
         line-height: 56px;
+        max-width: 400px;
+        margin-bottom: 2rem;
     }
 
     .hero-image {

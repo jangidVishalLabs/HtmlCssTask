@@ -1272,7 +1272,10 @@ body {
 .tools-block__container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 20px 16px;
+    padding: 46px 16px;
+    box-shadow: 0 12px 30px rgba(16, 24, 40, 0.08);
+    border-radius: 12px;
+
 }
 
 .tools-block__content {
