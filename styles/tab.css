@@ -106,6 +106,92 @@
     .hero-image {
         width: 100%;
         max-width: 640px;
+
+        /* Responsive rules for legacy .courses markup (tablet and up) */
+        @media screen and (min-width: 768px) and (max-width: 1024px) {
+            .courses {
+                padding: 28px
+            }
+
+            .courses .content {
+                flex-direction: row;
+                flex-wrap: wrap;
+                gap: 20px;
+                width: 100%;
+                padding: 24px
+            }
+
+            .courses .content2 {
+                flex: 1 1 calc(50% - 20px);
+                max-width: calc(50% - 20px)
+            }
+
+            .courses .content3,
+            .courses .content6,
+            .courses .content7 {
+                width: 100%;
+                height: 160px
+            }
+
+            .courses .content4 {
+                padding: 16px
+            }
+
+            .courses .text {
+                font-size: 20px
+            }
+
+            .courses .text2 {
+                font-size: 16px
+            }
+
+            .courses .button {
+                padding: 8px 18px
+            }
+        }
+
+        @media screen and (min-width: 1025px) {
+            .courses {
+                padding: 40px 48px
+            }
+
+            .courses .content {
+                gap: 24px;
+                padding: 36px;
+                width: 100%;
+                justify-content: space-between
+            }
+
+            .courses .content2 {
+                flex: 1 1 calc(33.333% - 24px);
+                max-width: calc(33.333% - 24px)
+            }
+
+            .courses .content3 {
+                height: 200px
+            }
+
+            .courses .content6 {
+                height: 200px
+            }
+
+            .courses .content7 {
+                height: 200px
+            }
+
+            .courses .text {
+                font-size: 24px
+            }
+
+            .courses .text2 {
+                font-size: 18px
+            }
+
+            .courses .button {
+                padding: 10px 24px
+            }
+        }
+
         border-radius: 18px
     }
 
@@ -168,6 +254,49 @@
         font-size: 16px
     }
 }
+
+@media screen and (min-width: 768px) {
+
+    /* Courses: show as three columns */
+    .courses__list {
+        flex-direction: row;
+        gap: 24px;
+        padding: 28px;
+    }
+
+    .course {
+        flex: 1;
+        align-items: stretch
+    }
+
+    .course__media {
+        height: 200px
+    }
+
+    .course__body {
+        align-items: flex-start;
+        gap: 36px;
+    }
+
+    .course-cta {
+        align-self: flex-start
+    }
+}
+
+@media screen and (min-width: 1025px) {
+    .courses {
+        padding: 40px 48px
+    }
+
+    .course__media {
+        height: 240px
+    }
+
+    .course__title {
+        font-size: 22px
+    }
+}
+
 
 @media screen and (min-width: 1025px) {
     .hero {

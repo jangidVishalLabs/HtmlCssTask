@@ -424,28 +424,8 @@ body {
     gap: 8px;
 }
 
-.ratings__logo {
-    width: 120px;
-    height: auto;
-    display: block;
-}
 
-.ratings__stars {
-    display: flex;
-    gap: 6px;
-}
 
-.ratings__stars img {
-    width: 22px;
-    height: 22px;
-    display: block;
-}
-
-.ratings__text {
-    margin: 0;
-    font-weight: 700;
-    color: var(--text-color);
-}
 
 .rating {
     font-size: 20px;
@@ -456,6 +436,96 @@ body {
 .rating-count {
     text-decoration: underline;
 }
+
+/* ----------------------
+   Courses (mobile-first)
+   ---------------------- */
+.courses {
+    background: #ffffff;
+    padding: 20px 16px;
+}
+
+.courses__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #E5F2FA;
+    padding: 8px;
+    border-radius: 12px;
+
+}
+
+.courses__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+}
+
+.course {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    background: #fff;
+    border-radius: 12px;
+    padding: 16px;
+    align-items: flex-start;
+}
+
+.course__media {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+
+
+}
+
+.course__body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    text-align: center;
+    gap: 16px;
+
+}
+
+.course__title {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 800;
+    text-align: center;
+    width: 100%;
+}
+
+.muted {
+    color: #0e87d5;
+}
+
+.highlight {
+    color: #ff1200;
+}
+
+.course__desc {
+    margin: 0;
+    color: var(--text-color);
+}
+
+.course-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin: auto;
+    padding: 8px 14px;
+    border-radius: 999px;
+    background: linear-gradient(90deg, #ff1200, #ff5a3a);
+    color: #fff;
+    text-decoration: none;
+    font-weight: 700;
+}
+
 
 .ratings__right {
     display: flex;
@@ -498,4 +568,21 @@ body {
     color: #fff;
     text-decoration: none;
     font-weight: 700;
+    width: fit-content;
+}
+
+@media screen and (min-width: 336px) and (max-width: 767px) {
+    .courses__list {
+        padding: 36px;
+    }
+
+    .course {
+        gap: 36px;
+    }
+
+    .course__desc {
+        text-align: center;
+    }
+
+
 }
