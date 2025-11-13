@@ -76,6 +76,11 @@
     .footer-list::-webkit-scrollbar {
         display: none;
     }
+
+    .site-footer__social {
+        display: flex;
+        justify-content: center;
+    }
 }
 
 /* ======================== HERO SECTION ======================== */

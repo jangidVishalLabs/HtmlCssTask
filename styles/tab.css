@@ -57,6 +57,8 @@
     .footer-list {
         gap: 10px;
     }
+
+
 }
 
 /* Hero + Courses (Tablet) */
@@ -158,6 +160,7 @@
         flex-direction: row;
         align-items: center;
         gap: 24px;
+
     }
 
     .tools-block__media {
@@ -406,6 +409,7 @@
         flex-direction: row;
         align-items: center;
         gap: 32px;
+        padding: 12px 26px;
     }
 
     .tools-block__media {
@@ -490,6 +494,8 @@
         flex: 0 0 420px;
     }
 }
+
+
 
 /* =========================================================
    📲 TABLET + DESKTOP SHARED STYLES (min-width: 768px)
@@ -660,6 +666,11 @@
 
     .site-footer__small {
         text-align: center;
+    }
+
+    .site-footer__copyright {
+        font-size: 16px;
+        line-height: 2rem;
     }
 }
 

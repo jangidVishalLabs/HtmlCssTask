@@ -1621,42 +1621,42 @@ body {
     font-weight: 700;
     font-size: 16px;
     border-radius: 8px;
+    position: relative;
 }
 
-.faq__item[open] summary {
-    background: #fff;
-}
-
-.faq__question {
-    color: #000;
-}
-
-.faq__answer {
-    padding: 12px 12px 18px 12px;
-    color: #374354;
-    font-size: 15px;
-    line-height: 1.5;
-    border-top: 1px solid #e6ebee;
-    background: #fff;
-}
-
-.faq__item summary::-webkit-details-marker {
-    display: none
-}
-
+/* Remove the old after element */
 .faq__item summary:after {
+    display: none;
+}
+
+/* Add circle before question text */
+.faq__item summary::before {
     content: '+';
-    display: inline-block;
+    flex-shrink: 0;
+    /* prevents it from resizing */
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 28px;
     height: 28px;
-    border-radius: 999px;
-    border: 1px solid #ff1200;
+    border-radius: 50%;
+    border: 1.8px solid #ff1200;
     color: #ff1200;
-    text-align: center;
-    line-height: 26px;
     font-weight: 700;
+    font-size: 18px;
+    transition: all 0.3s ease;
 }
 
-.faq__item[open] summary:after {
+/* Change symbol when opened */
+.faq__item[open] summary::before {
     content: '−';
+    background: #ff1200;
+    color: #fff;
+    transform: rotate(180deg);
+}
+
+/* Optional hover effect */
+.faq__item summary:hover::before {
+    background: #ff1200;
+    color: #fff;
 }
