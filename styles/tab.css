@@ -1,9 +1,7 @@
-/* =========================================================
-   📱 TABLET STYLES (768px – 1024px)
-   ========================================================= */
-
-/* Nav */
+/* ========================================================= 📱 TABLET STYLES (768px – 1024px) ========================================================= */
 @media screen and (min-width: 768px) and (max-width: 1024px) {
+
+    /* Nav Header */
     .nav-header {
         padding: 20px 28px;
         align-items: center;
@@ -41,7 +39,7 @@
         right: -6px;
     }
 
-    /* Footer styles for tablet */
+    /* Nav Footer */
     .nav-footer {
         padding: 12px 28px;
         flex-direction: row;
@@ -58,11 +56,7 @@
         gap: 10px;
     }
 
-
-}
-
-/* Hero + Courses (Tablet) */
-@media screen and (min-width: 768px) and (max-width: 1024px) {
+    /* Hero + Courses */
     .courses {
         padding: 28px;
     }
@@ -102,10 +96,8 @@
     .courses .button {
         padding: 8px 18px;
     }
-}
 
-/* Benefits (Tablet) */
-@media screen and (min-width: 768px) and (max-width: 1024px) {
+    /* Benefits */
     .benefits-1 {
         padding: 40px 28px;
         gap: 24px;
@@ -123,10 +115,8 @@
     .benefits-1 .button {
         padding: 10px 20px;
     }
-}
 
-/* Cards (Tablet) */
-@media screen and (min-width: 768px) and (max-width: 1024px) {
+    /* Cards */
     .cards {
         padding: 40px 28px;
     }
@@ -148,10 +138,8 @@
     .card__media {
         height: 160px;
     }
-}
 
-/* Tools Block (Tablet) */
-@media screen and (min-width: 768px) and (max-width: 1024px) {
+    /* Tools Block */
     .tools-block {
         padding: 28px 28px;
     }
@@ -160,7 +148,6 @@
         flex-direction: row;
         align-items: center;
         gap: 24px;
-
     }
 
     .tools-block__media {
@@ -176,12 +163,10 @@
     }
 }
 
-/* =========================================================
-   💻 DESKTOP STYLES (1025px and above)
-   ========================================================= */
-
-/* Nav */
+/* ========================================================= 💻 DESKTOP STYLES (1025px and above) ========================================================= */
 @media screen and (min-width: 1025px) {
+
+    /* Nav Header */
     .nav-header {
         padding: 24px 48px;
     }
@@ -220,6 +205,7 @@
         display: inline-flex;
     }
 
+    /* Nav Footer */
     .nav-footer {
         padding: 16px 48px;
     }
@@ -232,10 +218,8 @@
         font-size: 16px;
         padding: 10px 14px;
     }
-}
 
-/* Hero (Desktop) */
-@media screen and (min-width: 1025px) {
+    /* Hero */
     .hero {
         padding: 36px 48px;
     }
@@ -254,10 +238,8 @@
     .hero-card {
         padding: 24px;
     }
-}
 
-/* Courses (Desktop) */
-@media screen and (min-width: 1025px) {
+    /* Courses */
     .courses {
         padding: 40px 48px;
     }
@@ -299,10 +281,8 @@
     .course__title {
         font-size: 22px;
     }
-}
 
-/* Ratings (Desktop) */
-@media screen and (min-width: 1025px) {
+    /* Ratings */
     .ratings {
         padding: 40px 48px;
     }
@@ -328,10 +308,8 @@
         width: 48px;
         height: 48px;
     }
-}
 
-/* Benefits (Desktop) */
-@media screen and (min-width: 1025px) {
+    /* Benefits */
     .benefits-1 {
         display: flex;
         flex-direction: row;
@@ -366,10 +344,8 @@
         margin-top: 12px;
         text-decoration: none;
     }
-}
 
-/* Cards (Desktop) */
-@media screen and (min-width: 1025px) {
+    /* Cards */
     .cards {
         padding: 56px 48px;
     }
@@ -397,10 +373,8 @@
         padding: 12px 24px;
         justify-content: center;
     }
-}
 
-/* Tools Block (Desktop) */
-@media screen and (min-width: 1025px) {
+    /* Tools Block */
     .tools-block {
         padding: 40px 48px;
     }
@@ -423,10 +397,8 @@
     .tools-block__title {
         font-size: 32px;
     }
-}
 
-/* Contact (Desktop) */
-@media screen and (min-width: 1025px) {
+    /* Contact */
     .contact__container {
         flex-direction: row;
         gap: 40px;
@@ -439,10 +411,8 @@
     .contact__form {
         width: 100%;
     }
-}
 
-/* FAQ (Desktop) */
-@media screen and (min-width: 1025px) {
+    /* FAQ */
     .faq__wrap {
         max-width: 1280px;
     }
@@ -459,10 +429,8 @@
     .faq__answer {
         font-size: 15px;
     }
-}
 
-/* Bundles (Desktop) */
-@media screen and (min-width: 1025px) {
+    /* Bundles */
     .bundles-block__container {
         max-width: 1200px;
         margin: 0 auto;
@@ -471,7 +439,6 @@
 
     .bundle-card {
         height: 100%;
-
     }
 
     .big-bundle .bundle-card__desc {
@@ -483,7 +450,6 @@
         display: flex;
         height: 100%;
         gap: 25px;
-
     }
 
     .big-bundle .bundle-card__title {
@@ -495,10 +461,8 @@
         flex-direction: column;
         gap: 10px;
     }
-}
 
-/* Testimonials (Desktop) */
-@media screen and (min-width: 1025px) {
+    /* Testimonials */
     .testimonials__container {
         padding: 0 24px;
     }
@@ -508,14 +472,10 @@
     }
 }
 
-
-
-/* =========================================================
-   📲 TABLET + DESKTOP SHARED STYLES (min-width: 768px)
-   ========================================================= */
-
-/* Hero */
+/* ========================================================= 📲 TABLET + DESKTOP SHARED STYLES (768px and above) ========================================================= */
 @media screen and (min-width: 768px) {
+
+    /* Hero */
     .hero-grid {
         flex-direction: row;
         align-items: center;
@@ -589,10 +549,8 @@
     .stat__label {
         font-size: 16px;
     }
-}
 
-/* Courses */
-@media screen and (min-width: 768px) {
+    /* Courses */
     .courses__list {
         flex-direction: row;
         gap: 24px;
@@ -616,10 +574,8 @@
     .course-cta {
         align-self: flex-start;
     }
-}
 
-/* Ratings */
-@media screen and (min-width: 768px) {
+    /* Ratings */
     .ratings__container {
         flex-direction: row;
         align-items: center;
@@ -646,10 +602,8 @@
     .offer {
         min-width: 200px;
     }
-}
 
-/* Site Footer */
-@media screen and (min-width: 768px) {
+    /* Site Footer */
     .site-footer__container {
         flex-direction: row;
         align-items: flex-start;
@@ -685,10 +639,8 @@
         font-size: 16px;
         line-height: 2rem;
     }
-}
 
-/* FAQ */
-@media screen and (min-width: 768px) {
+    /* FAQ */
     .faq {
         padding: 72px 24px;
     }
@@ -710,10 +662,8 @@
     .faq__title {
         font-size: 20px;
     }
-}
 
-/* Bundles */
-@media screen and (min-width: 768px) {
+    /* Bundles */
     .bundles-block__grid {
         flex-direction: row;
         gap: 24px;
@@ -746,10 +696,8 @@
     .bundles-block__side .bundle-card__body {
         padding: 12px;
     }
-}
 
-/* Testimonials */
-@media screen and (min-width: 768px) {
+    /* Testimonials */
     .testimonials__track {
         gap: 24px;
     }

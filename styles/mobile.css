@@ -1,10 +1,10 @@
 /* =========================================================
-   📱 MOBILE STYLES (max-width: 767px)
+   MOBILE STYLES (max-width: 767px)
    Keep header compact and stack where needed
    ========================================================= */
-
-/* ======================== NAVBAR ======================== */
 @media screen and (max-width: 767px) {
+
+    /* ======================== NAVBAR ======================== */
     .nav-header {
         width: 100%;
         padding: 12px 16px;
@@ -40,7 +40,6 @@
         font-size: 14px;
     }
 
-    /* Make cart badge slightly smaller on small viewports */
     .cart-count {
         top: -5px;
         right: -5px;
@@ -48,17 +47,8 @@
         height: 16px;
         font-size: 10px;
     }
-}
 
-/* ======================== Bundle ======================== */
-@media screen and (max-width: 767px) {
-    .bundle-card__media {
-        height: 220px;
-    }
-}
-
-/* ======================== FOOTER ======================== */
-@media screen and (max-width: 767px) {
+    /* ======================== FOOTER ======================== */
     .nav-footer {
         padding: 12px 12px;
         flex-direction: column;
@@ -71,7 +61,6 @@
         justify-content: space-between;
     }
 
-    /* Make footer links horizontally scrollable on narrow screens */
     .footer-list {
         gap: 8px;
         overflow-x: auto;
@@ -88,10 +77,8 @@
         display: flex;
         justify-content: center;
     }
-}
 
-/* ======================== HERO SECTION ======================== */
-@media screen and (max-width: 767px) {
+    /* ======================== HERO SECTION ======================== */
     .hero-grid {
         display: flex;
         flex-direction: column-reverse;
@@ -123,10 +110,8 @@
         padding: 10px 12px;
         font-size: 14px;
     }
-}
 
-/* ======================== STATS SECTION ======================== */
-@media screen and (max-width: 767px) {
+    /* ======================== STATS SECTION ======================== */
     .stats {
         margin-top: 20px;
         padding: 16px 12px;
@@ -147,12 +132,11 @@
         width: 56px;
         height: 56px;
     }
-}
 
-/* ======================== COURSES SECTION ======================== */
-@media screen and (max-width: 767px) {
+    /* ======================== COURSES SECTION ======================== */
     .courses {
-        padding: 16px 12px;
+        padding: 20px 12px;
+        /* Override from legacy: 20px wins over 16px */
     }
 
     .courses__list {
@@ -176,14 +160,8 @@
         width: 100%;
         justify-content: center;
     }
-}
 
-/* ===== Legacy .courses markup (mobile) ===== */
-@media screen and (max-width: 767px) {
-    .courses {
-        padding: 20px 12px;
-    }
-
+    /* Legacy .courses markup (mobile) — merged */
     .courses .content {
         flex-direction: column;
         padding: 16px;
@@ -224,10 +202,8 @@
         justify-content: center;
         padding: 10px 12px;
     }
-}
 
-/* ======================== BENEFITS SECTION ======================== */
-@media screen and (max-width: 767px) {
+    /* ======================== BENEFITS SECTION ======================== */
     .benefits-1 {
         padding: 20px 12px;
         flex-direction: column;
@@ -275,10 +251,8 @@
         width: 100%;
         justify-content: center;
     }
-}
 
-/* ======================== CARDS SECTION ======================== */
-@media screen and (max-width: 767px) {
+    /* ======================== CARDS SECTION ======================== */
     .cards {
         padding: 20px 12px;
     }
@@ -304,10 +278,13 @@
         width: 100%;
         justify-content: center;
     }
-}
 
-/* ======================== PARTNERS SECTION ======================== */
-@media screen and (max-width: 767px) {
+    /* ======================== BUNDLE ======================== */
+    .bundle-card__media {
+        height: 220px;
+    }
+
+    /* ======================== PARTNERS SECTION ======================== */
     .partners-block {
         padding: 20px 12px;
     }
@@ -327,10 +304,8 @@
     .partners-block__pager {
         margin-top: 10px;
     }
-}
 
-/* ======================== TOOLS SECTION ======================== */
-@media screen and (max-width: 767px) {
+    /* ======================== TOOLS SECTION ======================== */
     .tools-block {
         padding: 16px 12px;
     }
