@@ -762,10 +762,19 @@
 
     .testimonial {
         flex: 0 0 auto;
+        height: 340px;
+        width: 240px;
+    }
+
+    .testimonial__text {
+        font-size: 16px;
     }
 
     .testimonial__card {
         max-width: 320px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
     }
 
     .testimonial--media {

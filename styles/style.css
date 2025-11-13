@@ -760,6 +760,7 @@ body {
     width: 100%;
     max-width: 1200px;
     padding: 20px 8px;
+
 }
 
 .cards__header {
@@ -807,6 +808,8 @@ body {
     border-radius: 12px;
     overflow: hidden;
     box-shadow: 0 6px 18px rgba(16, 24, 40, 0.08);
+
+
 }
 
 .card__media {
@@ -832,6 +835,9 @@ body {
 
 .card__body {
     padding: 12px;
+    position: relative;
+    bottom: 20px;
+
 }
 
 .card__title {
