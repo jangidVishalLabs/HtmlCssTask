@@ -50,6 +50,13 @@
     }
 }
 
+/* ======================== Bundle ======================== */
+@media screen and (max-width: 767px) {
+    .bundle-card__media {
+        height: 220px;
+    }
+}
+
 /* ======================== FOOTER ======================== */
 @media screen and (max-width: 767px) {
     .nav-footer {

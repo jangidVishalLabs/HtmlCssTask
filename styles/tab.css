@@ -469,12 +469,25 @@
         padding: 0 24px;
     }
 
-    .bundle-card--featured .bundle-card__media img {
-        height: 248px;
+    .bundle-card {
+        height: 100%;
+
     }
 
-    .bundles-block__side .bundle-card__media img {
+    .big-bundle .bundle-card__desc {
+        font-size: 18px;
+        line-height: 2rem;
+    }
+
+    .big-bundle {
+        display: flex;
         height: 100%;
+        gap: 25px;
+
+    }
+
+    .big-bundle .bundle-card__title {
+        font-size: 22px;
     }
 
     .side_meta {
@@ -725,8 +738,8 @@
 
     .bundles-block__side .bundle-card__media img {
         width: 140px;
-        height: 100px;
-        object-fit: cover;
+        height: 100%;
+        object-fit: contain;
         border-radius: 8px;
     }
 
