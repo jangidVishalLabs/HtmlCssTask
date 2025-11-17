@@ -1,6 +1,7 @@
 /* =========================================================
    MOBILE STYLES (max-width: 767px)
    Keep header compact and stack where needed
+   Font sizes increased by +2px across the board
    ========================================================= */
 @media screen and (max-width: 767px) {
 
@@ -37,7 +38,7 @@
 
     .btn-primary {
         padding: 8px 12px;
-        font-size: 14px;
+        font-size: 16px;     /* was 14px → +2px */
     }
 
     .cart-count {
@@ -45,7 +46,7 @@
         right: -5px;
         min-width: 16px;
         height: 16px;
-        font-size: 10px;
+        font-size: 12px;     /* was 10px → +2px */
     }
 
     /* ======================== FOOTER ======================== */
@@ -89,8 +90,8 @@
     }
 
     .hero-title {
-        font-size: 24px;
-        line-height: 32px;
+        font-size: 26px;     /* was 24px → +2px */
+        line-height: 34px;
     }
 
     .hero-image {
@@ -108,7 +109,7 @@
 
     .cta-btn {
         padding: 10px 12px;
-        font-size: 14px;
+        font-size: 16px;     /* was 14px → +2px */
     }
 
     /* ======================== STATS SECTION ======================== */
@@ -125,7 +126,7 @@
     }
 
     .stat__value {
-        font-size: 24px;
+        font-size: 26px;     /* was 24px → +2px */
     }
 
     .stat__icon img {
@@ -136,7 +137,6 @@
     /* ======================== COURSES SECTION ======================== */
     .courses {
         padding: 20px 12px;
-        /* Override from legacy: 20px wins over 16px */
     }
 
     .courses__list {
@@ -153,7 +153,7 @@
     }
 
     .course__title {
-        font-size: 18px;
+        font-size: 20px;     /* was 18px → +2px */
     }
 
     .course-cta {
@@ -189,12 +189,12 @@
 
     .courses .text {
         text-align: left;
-        font-size: 20px;
+        font-size: 22px;     /* was 20px → +2px */
     }
 
     .courses .text2 {
         text-align: left;
-        font-size: 16px;
+        font-size: 18px;     /* was 16px → +2px */
     }
 
     .courses .button {
@@ -232,13 +232,13 @@
     }
 
     .benefits-1 .text {
-        font-size: 20px;
-        line-height: 28px;
+        font-size: 22px;     /* was 20px → +2px */
+        line-height: 30px;
     }
 
     .benefits-1 .text2 {
-        font-size: 15px;
-        line-height: 22px;
+        font-size: 17px;     /* was 15px → +2px */
+        line-height: 24px;
     }
 
     .benefits-1 .text-2-span,
@@ -258,7 +258,7 @@
     }
 
     .cards__title {
-        font-size: 18px;
+        font-size: 20px;     /* was 18px → +2px */
     }
 
     .cards__list {
@@ -290,7 +290,7 @@
     }
 
     .partners-block__title {
-        font-size: 18px;
+        font-size: 20px;     /* was 18px → +2px */
     }
 
     .partners-block__list {
@@ -324,7 +324,7 @@
     }
 
     .tools-block__title {
-        font-size: 18px;
+        font-size: 20px;     /* was 18px → +2px */
     }
 
     .tools-block__hero {

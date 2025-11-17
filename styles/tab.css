@@ -1,4 +1,4 @@
-/* ========================================================= 📱 TABLET STYLES (768px – 1024px) ========================================================= */
+/* ========================================================= TABLET STYLES (768px – 1024px) ========================================================= */
 @media screen and (min-width: 768px) and (max-width: 1024px) {
 
     /* Nav Header */
@@ -13,7 +13,7 @@
     }
 
     .greeting {
-        font-size: 18px;
+        font-size: 20px;     /* 18 → 20 */
     }
 
     .actions-list {
@@ -22,7 +22,7 @@
 
     .btn-primary {
         padding: 10px 18px;
-        font-size: 15px;
+        font-size: 17px;     /* 15 → 17 */
     }
 
     .icon-btn {
@@ -86,11 +86,11 @@
     }
 
     .courses .text {
-        font-size: 20px;
+        font-size: 22px;     /* 20 → 22 */
     }
 
     .courses .text2 {
-        font-size: 16px;
+        font-size: 18px;     /* 16 → 18 */
     }
 
     .courses .button {
@@ -104,12 +104,12 @@
     }
 
     .benefits-1 .text {
-        font-size: 28px;
-        line-height: 36px;
+        font-size: 30px;     /* 28 → 30 */
+        line-height: 38px;
     }
 
     .benefits-1 .text2 {
-        font-size: 16px;
+        font-size: 18px;     /* 16 → 18 */
     }
 
     .benefits-1 .button {
@@ -126,7 +126,7 @@
     }
 
     .cards__title {
-        font-size: 26px;
+        font-size: 28px;     /* 26 → 28 */
     }
 
     .cards__list {
@@ -159,11 +159,11 @@
     }
 
     .tools-block__title {
-        font-size: 26px;
+        font-size: 28px;     /* 26 → 28 */
     }
 }
 
-/* ========================================================= 💻 DESKTOP STYLES (1025px and above) ========================================================= */
+/* ========================================================= DESKTOP STYLES (1025px and above) ========================================================= */
 @media screen and (min-width: 1025px) {
 
     /* Nav Header */
@@ -176,7 +176,7 @@
     }
 
     .greeting {
-        font-size: 20px;
+        font-size: 22px;     /* 20 → 22 */
     }
 
     .btn-primary {
@@ -215,7 +215,7 @@
     }
 
     .footer-link {
-        font-size: 16px;
+        font-size: 18px;     /* 16 → 18 */
         padding: 10px 14px;
     }
 
@@ -225,8 +225,8 @@
     }
 
     .hero-title {
-        font-size: 48px;
-        line-height: 56px;
+        font-size: 50px;     /* 48 → 50 */
+        line-height: 58px;
         max-width: 400px;
         margin-bottom: 2rem;
     }
@@ -263,11 +263,11 @@
     }
 
     .courses .text {
-        font-size: 24px;
+        font-size: 26px;     /* 24 → 26 */
     }
 
     .courses .text2 {
-        font-size: 18px;
+        font-size: 20px;     /* 18 → 20 */
     }
 
     .courses .button {
@@ -279,7 +279,7 @@
     }
 
     .course__title {
-        font-size: 22px;
+        font-size: 24px;     /* 22 → 24 */
     }
 
     /* Ratings */
@@ -301,7 +301,7 @@
     }
 
     .rating {
-        font-size: 28px;
+        font-size: 30px;     /* 28 → 30 */
     }
 
     .offer-icon {
@@ -331,12 +331,12 @@
     }
 
     .benefits-1 .text {
-        font-size: 32px;
-        line-height: 40px;
+        font-size: 34px;     /* 32 → 34 */
+        line-height: 42px;
     }
 
     .benefits-1 .text2 {
-        font-size: 18px;
+        font-size: 20px;     /* 18 → 20 */
     }
 
     .benefits-1 .button {
@@ -351,7 +351,7 @@
     }
 
     .cards__title {
-        font-size: 36px;
+        font-size: 38px;     /* 36 → 38 */
     }
 
     .cards__list {
@@ -395,7 +395,7 @@
     }
 
     .tools-block__title {
-        font-size: 32px;
+        font-size: 34px;     /* 32 → 34 */
     }
 
     /* Contact */
@@ -418,16 +418,16 @@
     }
 
     .faq__title {
-        font-size: 22px;
+        font-size: 24px;     /* 22 → 24 */
     }
 
     .faq__item summary {
         padding: 20px 18px;
-        font-size: 18px;
+        font-size: 20px;     /* 18 → 20 */
     }
 
     .faq__answer {
-        font-size: 15px;
+        font-size: 17px;     /* 15 → 17 */
     }
 
     /* Bundles */
@@ -442,7 +442,7 @@
     }
 
     .big-bundle .bundle-card__desc {
-        font-size: 18px;
+        font-size: 20px;     /* 18 → 20 */
         line-height: 2rem;
     }
 
@@ -453,7 +453,7 @@
     }
 
     .big-bundle .bundle-card__title {
-        font-size: 22px;
+        font-size: 24px;     /* 22 → 24 */
     }
 
     .side_meta {
@@ -472,7 +472,7 @@
     }
 }
 
-/* ========================================================= 📲 TABLET + DESKTOP SHARED STYLES (768px and above) ========================================================= */
+/* ========================================================= TABLET + DESKTOP SHARED STYLES (768px and above) ========================================================= */
 @media screen and (min-width: 768px) {
 
     /* Hero */
@@ -497,8 +497,8 @@
     }
 
     .hero-title {
-        font-size: 36px;
-        line-height: 44px;
+        font-size: 38px;     /* 36 → 38 */
+        line-height: 46px;
     }
 
     .hero-card {
@@ -542,12 +542,16 @@
         height: 64px;
     }
 
+    .stat__content {
+        margin-left: 2.2rem;
+    }
+
     .stat__value {
-        font-size: 32px;
+        font-size: 34px;     /* 32 → 34 */
     }
 
     .stat__label {
-        font-size: 16px;
+        font-size: 18px;     /* 16 → 18 */
     }
 
     /* Courses */
@@ -607,7 +611,7 @@
     .site-footer__container {
         flex-direction: row;
         align-items: flex-start;
-        justify-content: space-around;
+        justify-content: space-between;
         gap: 24px;
     }
 
@@ -636,7 +640,7 @@
     }
 
     .site-footer__copyright {
-        font-size: 16px;
+        font-size: 18px;     /* 16 → 18 */
         line-height: 2rem;
     }
 
@@ -660,7 +664,7 @@
     }
 
     .faq__title {
-        font-size: 20px;
+        font-size: 22px;     /* 20 → 22 */
     }
 
     /* Bundles */
@@ -715,7 +719,7 @@
     }
 
     .testimonial__text {
-        font-size: 16px;
+        font-size: 18px;     /* 16 → 18 */
     }
 
     .testimonial__card {
