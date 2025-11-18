@@ -55,11 +55,16 @@
         </header>
         <!-- Top utility navigation (location and quick links) -->
         <nav class="nav-footer" aria-label="Top utility navigation">
-            <div class="content">
+            <div class="content nav-content">
                 <button class="location" aria-haspopup="listbox" aria-expanded="false">
                     <span class="location-text">Nevada</span>
                     <img class="mdi-chevron-down" src="images/icons/downArrow.svg" alt="open location selector">
                 </button>
+                <div class="dropdown" id="dropdownMenu">
+    <input type="text" id="searchInput" class="search" placeholder="Search state...">
+    <ul id="stateList" class="state-list"></ul>
+</div>
+
             </div>
             <nav class="footer-nav" aria-label="Footer navigation">
                 <ul class="footer-list">
@@ -291,82 +296,78 @@
         </section>
 
         <!-- Cards: Digital downloads (semantic, namespaced classes) -->
-        <section class="cards" aria-label="Digital downloads">
-            <div class="cards__container">
-                <header class="cards__header">
-                    <h2 class="cards__title">DIGITAL DOWNLOADS TO ELEVATE YOUR GAME!</h2>
-                    <div class="cards__controls" aria-hidden="true">
-                        <button class="cards__control cards__control--prev" type="button" aria-hidden="true">
-                            <img src="images/chevron-left.svg" alt="">
-                        </button>
-                        <button class="cards__control cards__control--next" type="button" aria-hidden="true">
-                            <img src="images/chevron-right.svg" alt="">
-                        </button>
+<section class="cards" aria-label="Digital downloads">
+    <div class="cards__container">
+
+        <header class="cards__header">
+            <h2 class="cards__title">DIGITAL DOWNLOADS TO ELEVATE YOUR GAME!</h2>
+
+            <button class="cards__control cards__control--prev">
+                <img src="images/chevron-left.svg" alt="">
+            </button>
+            <button class="cards__control cards__control--next">
+                <img src="images/chevron-right.svg" alt="">
+            </button>
+        </header>
+
+        <!-- Viewport wrapper for sliding -->
+        <div class="cards__viewport">
+            <ul class="cards__list">
+                <li class="card">
+                    <figure class="card__media-wrap">
+                        <img class="card__media" src="images/digital-1.png" alt="">
+                    </figure>
+                    <div class="card__body">
+                        <h3 class="card__title">Link select distribute auto</h3>
+                        <p class="card__desc">Device prototype thumbnail vertical share list scrolling figjam.</p>
                     </div>
-                </header>
+                </li>
 
-                <ul class="cards__list">
-                    <li class="card">
-                        <figure class="card__media-wrap">
-                            <img class="card__media" src="images/digital-1.png" alt="Link select distribute product">
-                        </figure>
-                        <div class="card__body">
-                            <h3 class="card__title">Link select distribute auto</h3>
-                            <p class="card__desc">Device prototype thumbnail vertical share list scrolling figjam.
-                                Object
-                                horizontal comment arrow.</p>
-                        </div>
-                    </li>
+                <li class="card">
+                    <figure class="card__media-wrap">
+                        <img class="card__media" src="images/digital-2.png" alt="">
+                    </figure>
+                    <div class="card__body">
+                        <h3 class="card__title">Create pencil object</h3>
+                        <p class="card__desc">Mask team object editor thumbnail. Stroke vertical.</p>
+                    </div>
+                </li>
 
-                    <li class="card">
-                        <figure class="card__media-wrap">
-                            <img class="card__media" src="images/digital-2.png" alt="Create pencil object product">
-                        </figure>
-                        <div class="card__body">
-                            <h3 class="card__title">Create pencil object</h3>
-                            <p class="card__desc">Figjam hand follower move mask undo plugin. Mask team object editor
-                                thumbnail. Stroke vertical.</p>
-                        </div>
-                    </li>
+                <li class="card">
+                    <figure class="card__media-wrap">
+                        <img class="card__media" src="images/digital-3.png" alt="">
+                    </figure>
+                    <div class="card__body">
+                        <h3 class="card__title">Vector distribute</h3>
+                        <p class="card__desc">Undo distribute outline comment mask scale rectangle.</p>
+                    </div>
+                </li>
 
-                    <li class="card">
-                        <figure class="card__media-wrap">
-                            <img class="card__media" src="images/digital-3.png" alt="Vector distribute product">
-                        </figure>
-                        <div class="card__body">
-                            <h3 class="card__title">Vector distribute</h3>
-                            <p class="card__desc">Undo distribute outline comment mask scale flatten rectangle. Shadow
-                                team
-                                library line italic.</p>
-                        </div>
-                    </li>
+                <li class="card">
+                    <figure class="card__media-wrap">
+                        <img class="card__media" src="images/digital-4.png" alt="">
+                    </figure>
+                    <div class="card__body">
+                        <h3 class="card__title">Background union union</h3>
+                        <p class="card__desc">Horizontal community create arrange scale distribute.</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
 
-                    <li class="card">
-                        <figure class="card__media-wrap">
-                            <img class="card__media" src="images/digital-4.png" alt="Background union product">
-                        </figure>
-                        <div class="card__body">
-                            <h3 class="card__title">Background union union</h3>
-                            <p class="card__desc">Horizontal community create distribute arrange scale distribute object
-                                effect rectangle. Share.</p>
-                        </div>
-                    </li>
-                </ul>
+        <div class="cards__pager">
+            <button class="cards__dot is-active"></button>
+            <button class="cards__dot"></button>
+            <button class="cards__dot"></button>
+            <button class="cards__dot"></button>
+        </div>
 
-                <div class="cards__pager" aria-hidden="true">
-                    <button class="cards__dot is-active" aria-hidden="true"></button>
-                    <button class="cards__dot" aria-hidden="true"></button>
-                    <button class="cards__dot" aria-hidden="true"></button>
-                    <button class="cards__dot" aria-hidden="true"></button>
-                </div>
-                <div class="cards__action">
-                    <a class="cards__cta" href="#" role="button">Explore All <span class="sr-only">digital
-                            downloads</span></a>
+        <div class="cards__action">
+            <a class="cards__cta" href="#">Explore All</a>
+        </div>
 
-                </div>
-
-            </div>
-        </section>
+    </div>
+</section>
 
         <!-- Testimonials / Reviews -->
         <section class="testimonials" aria-label="Student reviews and testimonials">
@@ -798,6 +799,8 @@
         </div>
         <div class="site-footer__small">© 2025 ceASAP.com - All rights reserved.</div>
     </footer>
+
+    <script src="./script/script.js" defer></script>
 </body>
 
 </html>

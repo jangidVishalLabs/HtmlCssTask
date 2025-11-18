@@ -130,9 +130,17 @@
     }
 
     .cards__list {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
         gap: 16px;
+        align-items: stretch;
+    }
+
+    /* tablet: show one card at a time to behave like a carousel */
+    .card {
+        flex: 0 0 100%;
+        min-width: 100%;
     }
 
     .card__media {
@@ -355,9 +363,16 @@
     }
 
     .cards__list {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
         gap: 24px;
+        align-items: stretch;
+    }
+
+    .card {
+        flex: 0 0 calc(25% - 18px);
+        min-width: 220px;
     }
 
     .card__media {

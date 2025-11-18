@@ -264,6 +264,17 @@
     .cards__list {
         gap: 14px;
         margin-top: 16px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: stretch;
+    }
+
+    /* show one card per viewport on mobile */
+    .card {
+        flex: 0 0 100%;
+        min-width: 100%;
+        width: 100%;
     }
 
     .card__media {
