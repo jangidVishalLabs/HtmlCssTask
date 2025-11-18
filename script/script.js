@@ -1,3 +1,48 @@
+// Small, dependency-free navigation toggle
+(function () {
+  const header = document.querySelector(".nav-header");
+  const toggle = document.querySelector(".nav-toggle");
+  const menu = document.getElementById("nav-menu");
+
+  if (!toggle || !menu || !header) return;
+
+  function openMenu() {
+    header.classList.add("nav-open");
+    toggle.setAttribute("aria-expanded", "true");
+    menu.classList.add("is-open");
+  }
+
+  function closeMenu() {
+    header.classList.remove("nav-open");
+    toggle.setAttribute("aria-expanded", "false");
+    menu.classList.remove("is-open");
+  }
+
+  toggle.addEventListener("click", function (e) {
+    const expanded = toggle.getAttribute("aria-expanded") === "true";
+    if (expanded) closeMenu();
+    else openMenu();
+  });
+
+  // Close on ESC
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape") closeMenu();
+  });
+
+  // Close when clicking outside the menu
+  document.addEventListener("click", function (e) {
+    if (!header.contains(e.target)) closeMenu();
+  });
+
+  // Close on navigation (tap) inside menu
+  menu.addEventListener("click", function (e) {
+    const target = e.target.closest("a,button");
+    if (target) closeMenu();
+  });
+})();
+
+
+
 const apiURL = "https://gist.githubusercontent.com/mshafrir/2646763/raw/states_titlecase.json";
 
 const locationBtn = document.querySelector(".location");
@@ -50,260 +95,332 @@ document.addEventListener("click", (e) => {
     }
 });
 
-const viewport = document.querySelector('.cards__viewport');
-const list = document.querySelector('.cards__list');
-const cards = document.querySelectorAll('.card');
-const prev = document.querySelector('.cards__control--prev');
-const next = document.querySelector('.cards__control--next');
-const dots = document.querySelectorAll('.cards__dot');
+// ============================================
+// CAROUSEL SCRIPT FOR CARDS, TESTIMONIALS, AND PARTNERS
+// ============================================
 
-let index = 0;
-const total = cards.length;
-let cardWidth;
+document.addEventListener('DOMContentLoaded', function() {
+    
+    // ============================================
+    // 1. CARDS CAROUSEL
+    // ============================================
+    const cardsViewport = document.querySelector('.cards__viewport');
+    const cardsList = document.querySelector('.cards__list');
+    const cardItems = document.querySelectorAll('.card');
+    const cardsPrevBtn = document.querySelector('.cards__control--prev');
+    const cardsNextBtn = document.querySelector('.cards__control--next');
+    const cardsDots = document.querySelectorAll('.cards__dot');
+    
+    let cardsCurrentIndex = 0;
+    let cardsAutoplayInterval;
+    const cardsAutoplayDelay = 4000;
+    
+    function getCardsPerView() {
+        const width = window.innerWidth;
+        if (width < 768) return 1;
+        if (width < 1025) return 1;
+        return 4;
+    }
+    
+    function updateCardsCarousel() {
+        const cardsPerView = getCardsPerView();
+        const cardWidth = cardItems[0].offsetWidth;
+        const gap = 16;
+        const offset = -(cardsCurrentIndex * (cardWidth + gap));
+        
+        cardsList.style.transform = `translateX(${offset}px)`;
+        
+        // Update dots
+        cardsDots.forEach((dot, index) => {
+            dot.classList.toggle('is-active', index === cardsCurrentIndex);
+        });
+    }
+    
+    function cardsNext() {
+        const cardsPerView = getCardsPerView();
+        const maxIndex = Math.ceil(cardItems.length / cardsPerView) - 1;
+        
+        cardsCurrentIndex = (cardsCurrentIndex + 1) > maxIndex ? 0 : cardsCurrentIndex + 1;
+        updateCardsCarousel();
+    }
+    
+    function cardsPrev() {
+        const cardsPerView = getCardsPerView();
+        const maxIndex = Math.ceil(cardItems.length / cardsPerView) - 1;
+        
+        cardsCurrentIndex = (cardsCurrentIndex - 1) < 0 ? maxIndex : cardsCurrentIndex - 1;
+        updateCardsCarousel();
+    }
+    
+    function startCardsAutoplay() {
+        cardsAutoplayInterval = setInterval(cardsNext, cardsAutoplayDelay);
+    }
+    
+    function stopCardsAutoplay() {
+        clearInterval(cardsAutoplayInterval);
+    }
+    
+    // Event listeners for Cards
+    if (cardsNextBtn) {
+        cardsNextBtn.addEventListener('click', () => {
+            cardsNext();
+            stopCardsAutoplay();
+            startCardsAutoplay();
+        });
+    }
+    
+    if (cardsPrevBtn) {
+        cardsPrevBtn.addEventListener('click', () => {
+            cardsPrev();
+            stopCardsAutoplay();
+            startCardsAutoplay();
+        });
+    }
+    
+    cardsDots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+            cardsCurrentIndex = index;
+            updateCardsCarousel();
+            stopCardsAutoplay();
+            startCardsAutoplay();
+        });
+    });
+    
+    // Pause on hover for Cards
+    if (cardsViewport) {
+        cardsViewport.addEventListener('mouseenter', stopCardsAutoplay);
+        cardsViewport.addEventListener('mouseleave', startCardsAutoplay);
+    }
+    
+    // Initialize Cards carousel
+    updateCardsCarousel();
+    startCardsAutoplay();
+    
+    // ============================================
+    // 2. TESTIMONIALS CAROUSEL
+    // ============================================
+const testimonialsTrack = document.querySelector('.testimonials__track');
+const testimonialsList = document.querySelector('.testimonials__list');
+const testimonialItems = document.querySelectorAll('.testimonial');
+const testimonialsPrevBtn = document.querySelector('.testimonials__control--prev');
+const testimonialsNextBtn = document.querySelector('.testimonials__control--next');
+const testimonialsDots = document.querySelectorAll('.testimonials__pager .dot');
 
-// Update card width after render
-function updateWidth() {
-    // compute current gap from CSS (falls back to 16 if not available)
-    const style = window.getComputedStyle(list);
-    const gapValue = style && style.gap ? parseInt(style.gap, 10) : 16;
-    const gap = Number.isFinite(gapValue) ? gapValue : 16;
-    cardWidth = cards[0].offsetWidth + gap; // card + gap
+let testimonialsCurrentIndex = 0;
+let testimonialsAutoplayInterval;
+const testimonialsAutoplayDelay = 5000;
+
+// -------- NEW FUNCTION (IMPORTANT) --------
+function getSlideWidth() {
+    return testimonialsTrack.offsetWidth;   // full visible width
 }
-updateWidth();
-window.addEventListener("resize", updateWidth);
 
-function updateCarousel() {
-    list.style.transform = `translateX(${-index * cardWidth}px)`;
-    dots.forEach(d => d.classList.remove("is-active"));
-    dots[index].classList.add("is-active");
+function getTestimonialsPerView() {
+    const width = window.innerWidth;
+    if (width < 768) return 1;
+    if (width < 1025) return 2; // better UX for tablets
+    return 3;
 }
 
-next.addEventListener("click", () => {
-    index = (index + 1) % total;
-    updateCarousel();
+function updateTestimonialsCarousel() {
+    const slideWidth = getSlideWidth();
+    const offset = -(testimonialsCurrentIndex * slideWidth);
+
+    testimonialsList.style.transform = `translateX(${offset}px)`;
+
+    testimonialsDots.forEach((dot, index) => {
+        dot.classList.toggle('is-active', index === testimonialsCurrentIndex);
+    });
+}
+
+function testimonialsNext() {
+    const testimonialsPerView = getTestimonialsPerView();
+    const maxIndex = Math.ceil(testimonialItems.length / testimonialsPerView) - 1;
+
+    testimonialsCurrentIndex++;
+    if (testimonialsCurrentIndex > maxIndex) testimonialsCurrentIndex = 0;
+
+    updateTestimonialsCarousel();
+}
+
+function testimonialsPrev() {
+    const testimonialsPerView = getTestimonialsPerView();
+    const maxIndex = Math.ceil(testimonialItems.length / testimonialsPerView) - 1;
+
+    testimonialsCurrentIndex--;
+    if (testimonialsCurrentIndex < 0) testimonialsCurrentIndex = maxIndex;
+
+    updateTestimonialsCarousel();
+}
+
+function startTestimonialsAutoplay() {
+    testimonialsAutoplayInterval = setInterval(testimonialsNext, testimonialsAutoplayDelay);
+}
+
+function stopTestimonialsAutoplay() {
+    clearInterval(testimonialsAutoplayInterval);
+}
+
+
+// Controls
+testimonialsNextBtn?.addEventListener("click", () => {
+    testimonialsNext();
+    stopTestimonialsAutoplay();
+    startTestimonialsAutoplay();
 });
 
-prev.addEventListener("click", () => {
-    index = (index - 1 + total) % total;
-    updateCarousel();
+testimonialsPrevBtn?.addEventListener("click", () => {
+    testimonialsPrev();
+    stopTestimonialsAutoplay();
+    startTestimonialsAutoplay();
 });
 
-dots.forEach((dot, i) => {
+// Dots
+testimonialsDots.forEach((dot, index) => {
     dot.addEventListener("click", () => {
-        index = i;
-        updateCarousel();
+        testimonialsCurrentIndex = index;
+        updateTestimonialsCarousel();
+        stopTestimonialsAutoplay();
+        startTestimonialsAutoplay();
     });
 });
 
-// Autoplay
-setInterval(() => {
-    index = (index + 1) % total;
-    updateCarousel();
-}, 3000);
+// Pause on hover (desktop only)
+testimonialsTrack?.addEventListener("mouseenter", stopTestimonialsAutoplay);
+testimonialsTrack?.addEventListener("mouseleave", startTestimonialsAutoplay);
 
+// Recalculate on window resize (IMPORTANT FIX)
+window.addEventListener("resize", updateTestimonialsCarousel);
 
+// Init
+updateTestimonialsCarousel();
+startTestimonialsAutoplay();
 
-
-// --------------------- TESTIMONIAL CAROUSEL ----------------------
-document.addEventListener("DOMContentLoaded", () => {
-  const tList = document.querySelector(".testimonials__list");
-  let tSlides = document.querySelectorAll(".testimonial");
-  let tDots = document.querySelectorAll(".testimonials__pager .dot");
-  const tPrev = document.querySelector(".testimonials__control--prev");
-  const tNext = document.querySelector(".testimonials__control--next");
-  const pager = document.querySelector(".testimonials__pager");
-
-  if (!tList) {
-    console.error("Testimonials: .testimonials__list not found.");
-    return;
-  }
-
-  // Helper: read gap between slides (fallback to 16)
-  function getGap() {
-    try {
-      const styles = getComputedStyle(tList);
-      const gap = parseFloat(styles.gap || styles.columnGap || "16");
-      return Number.isFinite(gap) ? gap : 16;
-    } catch (e) { return 16; }
-  }
-
-  // Wait for images to be ready so sizes are correct
-  const images = tList.querySelectorAll("img");
-  const imagesLoaded = Array.from(images).map(img => {
-    if (img.complete) return Promise.resolve();
-    return new Promise(res => img.addEventListener("load", res, { once: true }));
-  });
-
-  Promise.all(imagesLoaded).then(initCarousel).catch(initCarousel);
-
-  function initCarousel() {
-    // refresh slides & dots
-    tSlides = document.querySelectorAll(".testimonial");
-    let tTotal = tSlides.length;
-
-    if (tTotal === 0) {
-      console.warn("Testimonials: no .testimonial items found.");
-      return;
+    // ============================================
+    // 3. PARTNERS CAROUSEL
+    // ============================================
+    const partnersList = document.querySelector('.partners-block__list');
+    const partnerItems = document.querySelectorAll('.partners-block__item');
+    const partnersPrevBtn = document.querySelector('.partners-prev');
+    const partnersNextBtn = document.querySelector('.partners-next');
+    const partnersPager = document.querySelector('.partners-block__pager');
+    
+    let partnersCurrentIndex = 0;
+    let partnersAutoplayInterval;
+    const partnersAutoplayDelay = 3500;
+    
+    function getPartnersPerView() {
+        const width = window.innerWidth;
+        if (width < 768) return 1;
+        if (width < 1024) return 3;
+        return 5;
     }
-
-    // if only one slide, disable controls & pager
-    if (tTotal === 1) {
-      if (tPrev) tPrev.style.display = "none";
-      if (tNext) tNext.style.display = "none";
-      if (pager) pager.style.display = "none";
-      return;
-    }
-
-    // Remove existing clones if any (in case of hot-reload)
-    tList.querySelectorAll(".clone").forEach(n => n.remove());
-    // Recalc slides after cleanup
-    tSlides = document.querySelectorAll(".testimonial");
-    tTotal = tSlides.length;
-
-    // Clone first + last
-    const tFirstClone = tSlides[0].cloneNode(true);
-    const tLastClone = tSlides[tTotal - 1].cloneNode(true);
-    tFirstClone.classList.add("clone");
-    tLastClone.classList.add("clone");
-    tList.appendChild(tFirstClone);
-    tList.insertBefore(tLastClone, tSlides[0]);
-
-    // Refresh NodeList
-    tSlides = document.querySelectorAll(".testimonial");
-    // create/refresh dot elements to match real slides
-    if (pager) {
-      pager.innerHTML = "";
-      for (let i = 0; i < tTotal; i++) {
-        const span = document.createElement("span");
-        span.className = "dot" + (i === 0 ? " is-active" : "");
-        pager.appendChild(span);
-      }
-    }
-    // refresh references
-    const dots = document.querySelectorAll(".testimonials__pager .dot");
-
-    // width calc
-    let tWidth;
-    function updateTestimonialWidth() {
-      // Use the *first* slide (may be clone) width + gap
-      const first = tSlides[0];
-      if (!first) return;
-      // getBoundingClientRect is more reliable than offsetWidth when transforms are applied
-      const rect = first.getBoundingClientRect();
-      const gap = getGap();
-      tWidth = Math.round(rect.width + gap);
-    }
-    updateTestimonialWidth();
-    window.addEventListener("resize", debounce(() => {
-      updateTestimonialWidth();
-      // reposition at current index after resize
-      tList.style.transition = "none";
-      tList.style.transform = `translateX(-${tIndex * tWidth}px)`;
-    }, 120));
-
-    // slider state
-    let tIndex = 1; // start at first real slide (after last-clone)
-    tList.style.transform = `translateX(-${tIndex * tWidth}px)`;
-
-    let isTransitioning = false;
-    function moveTestimonials(animate = true) {
-      if (animate) tList.style.transition = "transform 0.45s ease";
-      else tList.style.transition = "none";
-      tList.style.transform = `translateX(-${tIndex * tWidth}px)`;
-      updateTestimonialDots();
-    }
-
-    // Transition end: handle clones
-    tList.addEventListener("transitionend", () => {
-      isTransitioning = false;
-      if (tSlides[tIndex] && tSlides[tIndex].classList.contains("clone")) {
-        tList.style.transition = "none";
-        if (tIndex === tSlides.length - 1) {
-          tIndex = 1;
-        } else if (tIndex === 0) {
-          tIndex = tSlides.length - 2;
+    
+    function createPartnersDots() {
+        if (!partnersPager) return;
+        partnersPager.innerHTML = '';
+        
+        const partnersPerView = getPartnersPerView();
+        const totalDots = Math.ceil(partnerItems.length / partnersPerView);
+        
+        for (let i = 0; i < totalDots; i++) {
+            const dot = document.createElement('span');
+            dot.classList.add('partners-block__dot');
+            if (i === 0) dot.classList.add('is-active');
+            dot.addEventListener('click', () => {
+                partnersCurrentIndex = i;
+                updatePartnersCarousel();
+                stopPartnersAutoplay();
+                startPartnersAutoplay();
+            });
+            partnersPager.appendChild(dot);
         }
-        tList.style.transform = `translateX(-${tIndex * tWidth}px)`;
-      }
+    }
+    
+    function updatePartnersCarousel() {
+        const partnersPerView = getPartnersPerView();
+        const partnerWidth = partnerItems[0].offsetWidth;
+        const gap = 16;
+        const offset = -(partnersCurrentIndex * partnersPerView * (partnerWidth + gap));
+        
+        partnersList.style.transform = `translateX(${offset}px)`;
+        
+        // Update dots
+        const dots = document.querySelectorAll('.partners-block__dot');
+        dots.forEach((dot, index) => {
+            dot.classList.toggle('is-active', index === partnersCurrentIndex);
+        });
+    }
+    
+    function partnersNext() {
+        const partnersPerView = getPartnersPerView();
+        const maxIndex = Math.ceil(partnerItems.length / partnersPerView) - 1;
+        
+        partnersCurrentIndex = (partnersCurrentIndex + 1) > maxIndex ? 0 : partnersCurrentIndex + 1;
+        updatePartnersCarousel();
+    }
+    
+    function partnersPrev() {
+        const partnersPerView = getPartnersPerView();
+        const maxIndex = Math.ceil(partnerItems.length / partnersPerView) - 1;
+        
+        partnersCurrentIndex = (partnersCurrentIndex - 1) < 0 ? maxIndex : partnersCurrentIndex - 1;
+        updatePartnersCarousel();
+    }
+    
+    function startPartnersAutoplay() {
+        partnersAutoplayInterval = setInterval(partnersNext, partnersAutoplayDelay);
+    }
+    
+    function stopPartnersAutoplay() {
+        clearInterval(partnersAutoplayInterval);
+    }
+    
+    // Event listeners for Partners
+    if (partnersNextBtn) {
+        partnersNextBtn.addEventListener('click', () => {
+            partnersNext();
+            stopPartnersAutoplay();
+            startPartnersAutoplay();
+        });
+    }
+    
+    if (partnersPrevBtn) {
+        partnersPrevBtn.addEventListener('click', () => {
+            partnersPrev();
+            stopPartnersAutoplay();
+            startPartnersAutoplay();
+        });
+    }
+    
+    // Pause on hover for Partners
+    if (partnersList) {
+        partnersList.addEventListener('mouseenter', stopPartnersAutoplay);
+        partnersList.addEventListener('mouseleave', startPartnersAutoplay);
+    }
+    
+    // Initialize Partners carousel
+    createPartnersDots();
+    updatePartnersCarousel();
+    startPartnersAutoplay();
+    
+    // ============================================
+    // WINDOW RESIZE HANDLER
+    // ============================================
+    let resizeTimer;
+    window.addEventListener('resize', () => {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(() => {
+            // Reset indices on resize
+            cardsCurrentIndex = 0;
+            testimonialsCurrentIndex = 0;
+            partnersCurrentIndex = 0;
+            
+            // Update all carousels
+            updateCardsCarousel();
+            updateTestimonialsCarousel();
+            createPartnersDots();
+            updatePartnersCarousel();
+        }, 250);
     });
-
-    // Update dots safely
-    function updateTestimonialDots() {
-      const realSlideCount = tSlides.length - 2; // excluding clones
-      const current = tIndex - 1; // 0-based for real slides
-      const safeIndex = ((current % realSlideCount) + realSlideCount) % realSlideCount;
-      const allDots = document.querySelectorAll(".testimonials__pager .dot");
-      allDots.forEach(d => d.classList.remove("is-active"));
-      if (allDots[safeIndex]) allDots[safeIndex].classList.add("is-active");
-    }
-
-    // Controls
-    if (tNext) {
-      tNext.addEventListener("click", () => {
-        if (isTransitioning) return;
-        isTransitioning = true;
-        tIndex++;
-        moveTestimonials();
-      });
-    }
-    if (tPrev) {
-      tPrev.addEventListener("click", () => {
-        if (isTransitioning) return;
-        isTransitioning = true;
-        tIndex--;
-        moveTestimonials();
-      });
-    }
-
-    // Dot clicks (delegated)
-    if (pager) {
-      pager.addEventListener("click", (e) => {
-        const dot = e.target.closest(".dot");
-        if (!dot) return;
-        const allDots = Array.from(document.querySelectorAll(".testimonials__pager .dot"));
-        const clickedIndex = allDots.indexOf(dot);
-        if (clickedIndex === -1) return;
-        tIndex = clickedIndex + 1;
-        moveTestimonials();
-      });
-    }
-
-    // Autoplay with pause on hover/focus
-    let autoplayId = null;
-    function startAutoplay() {
-      stopAutoplay();
-      autoplayId = setInterval(() => {
-        if (isTransitioning) return;
-        isTransitioning = true;
-        tIndex++;
-        moveTestimonials();
-      }, 3000);
-    }
-    function stopAutoplay() {
-      if (autoplayId) {
-        clearInterval(autoplayId);
-        autoplayId = null;
-      }
-    }
-    tList.addEventListener("mouseenter", stopAutoplay);
-    tList.addEventListener("mouseleave", startAutoplay);
-    tList.addEventListener("focusin", stopAutoplay);
-    tList.addEventListener("focusout", startAutoplay);
-
-    // Start autoplay
-    // slight delay to ensure initial transform has been applied
-    setTimeout(() => {
-      updateTestimonialDots();
-      startAutoplay();
-    }, 50);
-  }
-
-  // simple debounce
-  function debounce(fn, wait = 100) {
-    let t;
-    return (...args) => {
-      clearTimeout(t);
-      t = setTimeout(() => fn(...args), wait);
-    };
-  }
 });

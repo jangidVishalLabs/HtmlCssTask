@@ -11,7 +11,6 @@
 </head>
 
 <body>
-    <script src="script.js" defer></script>
     <!-- Site header -->
     <header class="site-header">
         <header class="nav-header" role="banner">
@@ -303,10 +302,10 @@
             <h2 class="cards__title">DIGITAL DOWNLOADS TO ELEVATE YOUR GAME!</h2>
 
             <button class="cards__control cards__control--prev">
-                <img src="images/chevron-left.svg" alt="">
+                <img src="images/icons/left-arrow.png" alt="">
             </button>
             <button class="cards__control cards__control--next">
-                <img src="images/chevron-right.svg" alt="">
+                <img src="images/icons/right-arrow.png" alt="">
             </button>
         </header>
 
@@ -352,6 +351,8 @@
                         <p class="card__desc">Horizontal community create arrange scale distribute.</p>
                     </div>
                 </li>
+
+                
             </ul>
         </div>
 
@@ -448,11 +449,11 @@
                     </ul>
                     <div class="testimonials__nav">
     <button class="testimonials__control testimonials__control--prev">
-        <img src="images/chevron-left.svg" alt="">
+        <img src="images/icons/left-arrow.png" alt="">
     </button>
 
     <button class="testimonials__control testimonials__control--next">
-        <img src="images/chevron-right.svg" alt="">
+        <img src="images/icons/right-arrow.png" alt="">
     </button>
 </div>
 
@@ -682,52 +683,25 @@
             </div>
         </section>
         <!-- Partners: industry partners (semantic, namespaced) -->
-        <section class="partners-block" aria-label="Our industry partners">
-            <div class="partners-block__container">
-                <header class="partners-block__header">
-                    <h2 class="partners-block__title"><span class="partners-block__title-strong">Our Amazing
-                            Industry</span>
-                        <span class="partners-block__title-accent">Partners</span>
-                    </h2>
-                </header>
+<ul class="partners-block__list" aria-label="Partner logos">
+    <li class="partners-block__item"><img src="images/icons/s1.svg" alt="Partner 1"></li>
+    <li class="partners-block__item"><img src="images/icons/s2.svg" alt="Partner 2"></li>
+    <li class="partners-block__item"><img src="images/icons/s3.svg" alt="Partner 3"></li>
+    <li class="partners-block__item"><img src="images/icons/s4.svg" alt="Partner 4"></li>
+    <li class="partners-block__item"><img src="images/icons/s4.svg" alt="Partner 5"></li>
+</ul>
 
-                <ul class="partners-block__list" aria-label="Partner logos">
-                    <li class="partners-block__item">
-                        <figure class="partners-block__logo">
-                            <img src="images/icons/s1.svg" alt="Partner 1 logo" width="148" height="61">
-                        </figure>
-                    </li>
-                    <li class="partners-block__item">
-                        <figure class="partners-block__logo">
-                            <img src="images/icons/s2.svg" alt="Partner 2 logo" width="151" height="64">
-                        </figure>
-                    </li>
-                    <li class="partners-block__item">
-                        <figure class="partners-block__logo">
-                            <img src="images/icons/s3.svg" alt="Partner 3 logo" width="154" height="63">
-                        </figure>
-                    </li>
-                    <li class="partners-block__item">
-                        <figure class="partners-block__logo">
-                            <img src="images/icons/s4.svg" alt="Partner 4 logo" width="148" height="61">
-                        </figure>
-                    </li>
-                    <li class="partners-block__item">
-                        <figure class="partners-block__logo">
-                            <img src="images/icons/s4.svg" alt="Partner 5 logo" width="151" height="64">
-                        </figure>
-                    </li>
-                </ul>
+<!-- Carousel Dots -->
+<div class="partners-block__pager">
+    <!-- JS will auto-generate dots -->
+</div>
 
-                <div class="partners-block__pager" aria-hidden="true">
-                    <span class="partners-block__dot"></span>
-                    <span class="partners-block__dot"></span>
-                    <span class="partners-block__dot"></span>
-                    <span class="partners-block__dot"></span>
-                    <span class="partners-block__dot"></span>
-                </div>
-            </div>
-        </section>
+<!-- Prev / Next Buttons -->
+<div class="partners-block__controls">
+    <button class="partners-prev" aria-label="Previous">‹</button>
+    <button class="partners-next" aria-label="Next">›</button>
+</div>
+
 
         <!-- Contact / Support -->
         <section class="contact" aria-label="Contact support">
