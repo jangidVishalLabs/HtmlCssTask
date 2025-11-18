@@ -1533,3 +1533,27 @@ div {
     background: #ff1200;
     color: #fff;
 }
+
+/* Smooth open/close transition for the FAQ answer panel (slower & smoother) */
+.faq__answer {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    padding: 0 12px; /* horizontal padding preserved, vertical collapsed when closed */
+    will-change: max-height, opacity, padding;
+    transition:
+        max-height 640ms cubic-bezier(.16,.84,.28,1),
+        opacity 360ms ease,
+        padding 360ms cubic-bezier(.16,.84,.28,1);
+}
+
+.faq__item[open] .faq__answer {
+    /* generous max-height to accommodate content; clipped to actual content height */
+    max-height: 1200px;
+    opacity: 1;
+    padding: 12px;
+    transition:
+        max-height 640ms cubic-bezier(.16,.84,.28,1),
+        opacity 360ms ease 40ms,
+        padding 360ms cubic-bezier(.16,.84,.28,1);
+}
