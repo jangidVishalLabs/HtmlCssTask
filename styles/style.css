@@ -1178,6 +1178,27 @@ div {
     text-decoration: none;
     display: inline-flex
 }
+
+.testimonials__nav {
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+    margin-top: 10px;
+}
+
+.testimonials__control {
+    width: 42px;
+    height: 42px;
+    background: #ffffffcc;
+    border: 0;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    backdrop-filter: blur(6px);
+}
+
 /* ====================================================================
    TOOLS SECTION
    ==================================================================== */

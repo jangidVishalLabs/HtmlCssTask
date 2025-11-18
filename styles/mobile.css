@@ -346,4 +346,26 @@
         width: 100%;
         justify-content: center;
     }
+
+    /* Testimonials: show one testimonial per viewport on mobile */
+    .testimonials__track {
+        overflow: hidden;
+        position: relative;
+    }
+
+    .testimonials__list {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        gap: 12px;
+        transition: transform 360ms cubic-bezier(.22,.9,.32,1);
+        will-change: transform;
+        align-items: stretch;
+    }
+
+    .testimonial {
+        flex: 0 0 100%;
+        min-width: 100%;
+        height: auto;
+    }
 }

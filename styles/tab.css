@@ -477,10 +477,28 @@
         gap: 10px;
     }
 
-    /* Testimonials */
+    /* Testimonials: make carousel-style on tablet (one per view) */
     .testimonials__container {
         padding: 0 24px;
     }
+
+    .testimonials__track {
+        overflow: hidden;
+        position: relative;
+    }
+
+    .testimonials__list {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        gap: 16px;
+        transition: transform 360ms cubic-bezier(.22,.9,.32,1);
+        will-change: transform;
+        align-items: stretch;
+    }
+
+    /* show one testimonial at a time on tablet */
+  
 
     .testimonial--media {
         flex: 0 0 420px;
