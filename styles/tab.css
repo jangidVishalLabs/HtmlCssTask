@@ -455,11 +455,15 @@
     .big-bundle .bundle-card__title {
         font-size: 24px;     /* 22 → 24 */
     }
+    .bundle-card__prices {
+        font-size: 14px;  
+    }
 
     .side_meta {
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
         gap: 10px;
+        font-size: 14px;
     }
 
     /* Testimonials */
@@ -600,7 +604,8 @@
     .offers {
         flex-direction: column;
         flex-wrap: wrap;
-        gap: 12px;
+        gap: 18px;
+        font-size: 26px;
     }
 
     .offer {
@@ -640,7 +645,7 @@
     }
 
     .site-footer__copyright {
-        font-size: 18px;     /* 16 → 18 */
+        font-size: 14px;     /* 16 → 18 */
         line-height: 2rem;
     }
 
