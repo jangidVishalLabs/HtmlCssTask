@@ -290,6 +290,28 @@
         justify-content: center;
     }
 
+
+            .testimonials {
+                padding: 56px 24px;
+            }
+
+            .testimonials__title {
+                font-size: 36px;
+            }
+
+            .testimonial {
+                flex: 0 0 1;
+                min-width: 100%;
+            }
+
+            .testimonial__card {
+                min-width: 80%;
+            }
+
+            .testimonials__list{
+                gap: 10px;
+            }
+
     /* ======================== BUNDLE ======================== */
     .bundle-card__media {
         height: 220px;

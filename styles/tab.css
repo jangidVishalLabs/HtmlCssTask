@@ -478,13 +478,19 @@
     }
 
     /* Testimonials */
-    .testimonials__container {
-        padding: 0 24px;
-    }
+            .testimonials {
+                padding: 72px 48px;
+            }
 
-    .testimonial--media {
-        flex: 0 0 420px;
-    }
+            .testimonials__title {
+                font-size: 42px;
+            }
+
+            .testimonial {
+                flex: 0 0 calc(33.333% - 11px);
+                min-width: calc(33.333% - 11px);
+            }
+        
 }
 
 /* ========================================================= TABLET + DESKTOP SHARED STYLES (768px and above) ========================================================= */

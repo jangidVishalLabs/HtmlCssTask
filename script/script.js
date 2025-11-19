@@ -101,3 +101,95 @@ setInterval(() => {
     updateCarousel();
 }, 3000);
 
+        class Carousel {
+            constructor() {
+                this.list = document.getElementById('carouselList');
+                this.items = this.list.querySelectorAll('.testimonial');
+                this.pagerContainer = document.getElementById('pagerContainer');
+                this.prevBtn = document.getElementById('prevBtn');
+                this.nextBtn = document.getElementById('nextBtn');
+                this.currentIndex = 0;
+                this.itemsPerView = this.getItemsPerView();
+                this.autoplayInterval = null;
+                this.autoplayDelay = 5000; // 5 seconds
+
+                this.init();
+                this.setupEventListeners();
+                this.startAutoplay();
+                window.addEventListener('resize', () => this.handleResize());
+            }
+
+            init() {
+                this.createPagerDots();
+                this.updateCarousel();
+            }
+
+            getItemsPerView() {
+                if (window.innerWidth >= 1025) return 3;
+                if (window.innerWidth >= 768) return 2;
+                return 1;
+            }
+
+            createPagerDots() {
+                this.pagerContainer.innerHTML = '';
+                const totalPages = Math.ceil(this.items.length / this.itemsPerView);
+                
+                for (let i = 0; i < totalPages; i++) {
+                    const dot = document.createElement('span');
+                    dot.className = `dot ${i === 0 ? 'is-active' : ''}`;
+                    dot.addEventListener('click', () => this.goToPage(i));
+                    this.pagerContainer.appendChild(dot);
+                }
+            }
+            updateCarousel() {
+                const offset = -this.currentIndex * (100 / this.itemsPerView);
+                const extraShift = window.innerWidth > 768 ? '200px' : '0px';
+                this.list.style.transform = `translateX(calc(${offset}% + ${extraShift}))`;
+                this.updatePagerDots();
+            }
+
+            updatePagerDots() {
+                const dots = this.pagerContainer.querySelectorAll('.dot');
+                const activePage = Math.floor(this.currentIndex / this.itemsPerView);
+                
+                dots.forEach((dot, idx) => {
+                    dot.classList.toggle('is-active', idx === activePage);
+                });
+            }
+
+            next() {
+                const maxIndex = this.items.length  - this.itemsPerView;
+                this.currentIndex = this.currentIndex < maxIndex ? this.currentIndex + 1 : 0;
+                this.updateCarousel();
+            }
+
+            prev() {
+                const maxIndex = this.items.length - this.itemsPerView;
+                this.currentIndex = this.currentIndex > 0 ? this.currentIndex - 1 : maxIndex;
+                this.updateCarousel();
+            }
+
+            goToPage(pageIndex) {
+                this.currentIndex = pageIndex * this.itemsPerView;
+                this.updateCarousel();
+            }
+
+            setupEventListeners() {
+                this.nextBtn.addEventListener('click', () => this.next());
+                this.prevBtn.addEventListener('click', () => this.prev());
+            }
+
+            handleResize() {
+                const newItemsPerView = this.getItemsPerView();
+                if (newItemsPerView !== this.itemsPerView) {
+                    this.itemsPerView = newItemsPerView;
+                    this.currentIndex = 0;
+                    this.createPagerDots();
+                    this.updateCarousel();
+                }
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            new Carousel();
+        });
