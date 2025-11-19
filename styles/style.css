@@ -690,7 +690,10 @@ h1,h2,h3, .title{
     box-sizing: border-box;
 }
 .cards {
-    background: #0e86d4;
+        background-image: url('../images/Cards-bg.png');
+    background-size: cover;
+    background-position: center;
+    background-color: #0E86D4;
     padding: 24px 16px;
     display: flex;
     flex-direction: column;
@@ -1242,7 +1245,7 @@ h1,h2,h3, .title{
     box-sizing: border-box;
 }
 .contact {
-    background-image: url('../images/illu.png');
+    background-image: url('../images/card-bg.png');
     background-size: cover;
     background-position: center;
     padding: 24px 16px;
