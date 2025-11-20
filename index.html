@@ -296,78 +296,77 @@
         </section>
 
         <!-- Cards: Digital downloads (semantic, namespaced classes) -->
-<section class="cards" aria-label="Digital downloads">
-    <div class="cards__container">
+  <section class="cards" aria-label="Digital downloads">
+        <div class="cards__container">
 
-        <header class="cards__header">
-            <h2 class="cards__title">DIGITAL DOWNLOADS TO ELEVATE YOUR GAME!</h2>
+            <header class="cards__header">
+                <h2 class="cards__title">DIGITAL DOWNLOADS TO ELEVATE YOUR GAME!</h2>
+            </header>
 
-            <button class="cards__control cards__control--prev">
-                <img src="images/chevron-left.svg" alt="">
-            </button>
-            <button class="cards__control cards__control--next">
-                <img src="images/chevron-right.svg" alt="">
-            </button>
-        </header>
+            <!-- Viewport wrapper for sliding -->
+            <div class="cards__viewport">
+                <ul class="cards__list" id="cardsCarouselList">
+                    <li class="card">
+                        <figure class="card__media-wrap">
+                            <img class="card__media" src="./images/digital-1.png" alt="Digital download 1">
+                        </figure>
+                        <div class="card__body">
+                            <h3 class="card__title">Link select distribute auto</h3>
+                            <p class="card__desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo natus impedit expedita maxime eveniet iure ut cumque laboriosam ea reprehenderit!</p>
+                        </div>
+                    </li>
 
-        <!-- Viewport wrapper for sliding -->
-        <div class="cards__viewport">
-            <ul class="cards__list">
-                <li class="card">
-                    <figure class="card__media-wrap">
-                        <img class="card__media" src="images/digital-1.png" alt="">
-                    </figure>
-                    <div class="card__body">
-                        <h3 class="card__title">Link select distribute auto</h3>
-                        <p class="card__desc">Device prototype thumbnail vertical share list scrolling figjam.</p>
-                    </div>
-                </li>
+                    <li class="card">
+                        <figure class="card__media-wrap">
+                            <img class="card__media" src="./images/digital-2.png" alt="Digital download 2">
+                        </figure>
+                        <div class="card__body">
+                            <h3 class="card__title">Create pencil object</h3>
+                            <p class="card__desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas fuga dolorum ducimus magni veritatis officia ad ipsa officiis molestiae odio!</p>
+                        </div>
+                    </li>
 
-                <li class="card">
-                    <figure class="card__media-wrap">
-                        <img class="card__media" src="images/digital-2.png" alt="">
-                    </figure>
-                    <div class="card__body">
-                        <h3 class="card__title">Create pencil object</h3>
-                        <p class="card__desc">Mask team object editor thumbnail. Stroke vertical.</p>
-                    </div>
-                </li>
+                    <li class="card">
+                        <figure class="card__media-wrap">
+                            <img class="card__media" src="./images/digital-3.png" alt="Digital download 3">
+                        </figure>
+                        <div class="card__body">
+                            <h3 class="card__title">Vector distribute</h3>
+                            <p class="card__desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore, odio sint architecto aliquam praesentium ipsam fuga magni placeat incidunt nemo!</p>
+                        </div>
+                    </li>
 
-                <li class="card">
-                    <figure class="card__media-wrap">
-                        <img class="card__media" src="images/digital-3.png" alt="">
-                    </figure>
-                    <div class="card__body">
-                        <h3 class="card__title">Vector distribute</h3>
-                        <p class="card__desc">Undo distribute outline comment mask scale rectangle.</p>
-                    </div>
-                </li>
+                    <li class="card">
+                        <figure class="card__media-wrap">
+                            <img class="card__media" src="./images/digital-4.png" alt="Digital download 4">
+                        </figure>
+                        <div class="card__body">
+                            <h3 class="card__title">Background union union</h3>
+                            <p class="card__desc">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rerum doloremque odio commodi, maiores culpa itaque tempora exercitationem possimus explicabo fugiat.</p>
+                        </div>
+                    </li>
 
-                <li class="card">
-                    <figure class="card__media-wrap">
-                        <img class="card__media" src="images/digital-4.png" alt="">
-                    </figure>
-                    <div class="card__body">
-                        <h3 class="card__title">Background union union</h3>
-                        <p class="card__desc">Horizontal community create arrange scale distribute.</p>
-                    </div>
-                </li>
-            </ul>
+
+                </ul>
+            </div>
+
+            <!-- Controls -->
+            <div class="cards__controls">
+                <button class="cards__control" id="cardsPrevBtn">❮</button>
+                <button class="cards__control" id="cardsNextBtn">❯</button>
+            </div>
+
+            <!-- Pager Dots -->
+            <div class="cards__pager" id="cardsPagerContainer"></div>
+
+            <!-- CTA -->
+            <div class="cards__action">
+                <a class="cards__cta" href="#">Explore All</a>
+            </div>
+
         </div>
+    </section>
 
-        <div class="cards__pager">
-            <button class="cards__dot is-active"></button>
-            <button class="cards__dot"></button>
-            <button class="cards__dot"></button>
-            <button class="cards__dot"></button>
-        </div>
-
-        <div class="cards__action">
-            <a class="cards__cta" href="#">Explore All</a>
-        </div>
-
-    </div>
-</section>
 
         <!-- Testimonials / Reviews -->
   <section class="testimonials">
@@ -691,52 +690,54 @@
             </div>
         </section>
         <!-- Partners: industry partners (semantic, namespaced) -->
-        <section class="partners-block" aria-label="Our industry partners">
-            <div class="partners-block__container">
-                <header class="partners-block__header">
-                    <h2 class="partners-block__title"><span class="partners-block__title-strong">Our Amazing
-                            Industry</span>
-                        <span class="partners-block__title-accent">Partners</span>
-                    </h2>
-                </header>
 
-                <ul class="partners-block__list" aria-label="Partner logos">
+    <section class="partners-block" aria-label="Our industry partners">
+        <div class="partners-block__container">
+            <header class="partners-block__header">
+                <h2 class="partners-block__title">
+                    <span class="partners-block__title-strong">Our Amazing Industry</span>
+                    <span class="partners-block__title-accent"> Partners</span>
+                </h2>
+            </header>
+
+            <div class="carousel-wrapper">
+                <ul class="partners-block__list" id="partnersCarouselList" aria-label="Partner logos">
                     <li class="partners-block__item">
                         <figure class="partners-block__logo">
-                            <img src="images/icons/s1.svg" alt="Partner 1 logo" width="148" height="61">
+                            <img src="./images/icons/s1.svg" alt="Partner 1 logo" width="148" height="61">
                         </figure>
                     </li>
                     <li class="partners-block__item">
                         <figure class="partners-block__logo">
-                            <img src="images/icons/s2.svg" alt="Partner 2 logo" width="151" height="64">
+                            <img src="./images/icons/s2.svg" alt="Partner 2 logo" width="151" height="64">
                         </figure>
                     </li>
                     <li class="partners-block__item">
                         <figure class="partners-block__logo">
-                            <img src="images/icons/s3.svg" alt="Partner 3 logo" width="154" height="63">
+                            <img src="./images/icons/s3.svg" alt="Partner 3 logo" width="154" height="63">
                         </figure>
                     </li>
                     <li class="partners-block__item">
                         <figure class="partners-block__logo">
-                            <img src="images/icons/s4.svg" alt="Partner 4 logo" width="148" height="61">
+                            <img src="./images/icons/s4.svg" alt="Partner 4 logo" width="148" height="61">
                         </figure>
                     </li>
                     <li class="partners-block__item">
                         <figure class="partners-block__logo">
-                            <img src="images/icons/s4.svg" alt="Partner 5 logo" width="151" height="64">
+                            <img src="./images/icons/s1.svg" alt="Partner 5 logo" width="151" height="64">
                         </figure>
                     </li>
                 </ul>
-
-                <div class="partners-block__pager" aria-hidden="true">
-                    <span class="partners-block__dot"></span>
-                    <span class="partners-block__dot"></span>
-                    <span class="partners-block__dot"></span>
-                    <span class="partners-block__dot"></span>
-                    <span class="partners-block__dot"></span>
-                </div>
             </div>
-        </section>
+
+            <div class="carousel-controls">
+                <button class="carousel-btn" id="partnersPrevBtn">❮</button>
+                <button class="carousel-btn" id="partnersNextBtn">❯</button>
+            </div>
+
+            <div class="partners-block__pager" id="partnersPagerContainer"></div>
+        </div>
+    </section>
 
         <!-- Contact / Support -->
         <section class="contact" aria-label="Contact support">

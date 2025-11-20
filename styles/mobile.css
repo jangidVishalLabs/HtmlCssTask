@@ -267,14 +267,15 @@
         display: flex;
         flex-direction: row;
         flex-wrap: nowrap;
-        align-items: stretch;
+        align-items: center;
     }
 
     /* show one card per viewport on mobile */
     .card {
         flex: 0 0 100%;
-        min-width: 100%;
-        width: 100%;
+        min-width: 80%;
+        width: 200px;
+        background-color:black;
     }
 
     .card__media {
@@ -301,7 +302,7 @@
 
             .testimonial {
                 flex: 0 0 1;
-                min-width: 100%;
+                min-width: 80%;
             }
 
             .testimonial__card {
@@ -318,26 +319,22 @@
     }
 
     /* ======================== PARTNERS SECTION ======================== */
-    .partners-block {
-        padding: 20px 12px;
-    }
+           /* .partners-block {
+                padding: 40px 28px;
+            } */
 
-    .partners-block__title {
-        font-size: 20px;     /* was 18px → +2px */
-    }
+            .partners-block__title {
+                font-size: 28px;
+            }
 
-    .partners-block__list {
-        gap: 12px;
-    }
+            .partners-block__item {
+                flex: 0 0 calc(50% - 8px);
+                max-width: calc(50% - 8px);
+            }
 
-    .partners-block__logo img {
-        height: 48px;
-    }
-
-    .partners-block__pager {
-        margin-top: 10px;
-    }
-
+            .partners-block__list{
+                gap: 12px;
+            }
     /* ======================== TOOLS SECTION ======================== */
     .tools-block {
         padding: 16px 12px;

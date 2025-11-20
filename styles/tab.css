@@ -117,35 +117,22 @@
     }
 
     /* Cards */
-    .cards {
-        padding: 40px 28px;
-    }
+     .cards {
+                padding: 40px 28px;
+            }
 
-    .cards__header {
-        gap: 20px;
-    }
+            .cards__title {
+                font-size: 28px;
+            }
 
-    .cards__title {
-        font-size: 28px;     /* 26 → 28 */
-    }
+            .card {
+                flex: 0 0 calc(50% - 8px);
+                min-width: calc(50% - 8px);
+            }
 
-    .cards__list {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: nowrap;
-        gap: 16px;
-        align-items: stretch;
-    }
-
-    /* tablet: show one card at a time to behave like a carousel */
-    .card {
-        flex: 0 0 100%;
-        min-width: 100%;
-    }
-
-    .card__media {
-        height: 160px;
-    }
+            .card__media {
+                height: 160px;
+            }
 
     /* Tools Block */
     .tools-block {
@@ -355,39 +342,25 @@
 
     /* Cards */
     .cards {
-        padding: 56px 48px;
-    }
+                padding: 56px 48px;
+            }
 
-    .cards__title {
-        font-size: 38px;     /* 36 → 38 */
-    }
+            .cards__container {
+                padding: 20px 8px;
+            }
 
-    .cards__list {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        gap: 24px;
-        align-items: stretch;
-    }
+            .cards__title {
+                font-size: 38px;
+            }
 
-    .card {
-        flex: 0 0 calc(25% - 18px);
-        min-width: 220px;
-    }
+            .card {
+                flex: 0 0 calc(25% - 12px);
+                min-width: 220px;
+            }
 
-    .card__media {
-        height: 200px;
-    }
-
-    .cards__controls {
-        display: block;
-        margin-top: 16px;
-    }
-
-    .cards__cta {
-        padding: 12px 24px;
-        justify-content: center;
-    }
+            .card__media {
+                height: 200px;
+            }
 
     /* Tools Block */
     .tools-block {
@@ -476,6 +449,19 @@
         flex-direction: column;
         gap: 10px;
     }
+
+                .partners-block {
+                padding: 56px 48px;
+            }
+
+            .partners-block__title {
+                font-size: 36px;
+            }
+
+            .partners-block__item {
+                flex: 0 0 calc(20% - 13px);
+                min-width: calc(20% - 13px);
+            }
 
     /* Testimonials */
             .testimonials {
