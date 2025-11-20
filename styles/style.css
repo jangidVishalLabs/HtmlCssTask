@@ -12,6 +12,9 @@
 *::after {
     box-sizing: border-box
 }
+html{
+    font-display: swap;
+}
 html,
 body {
     height: 100%;
@@ -40,6 +43,11 @@ div {
 h1,h2,h3, .title{
     font-weight: bold;
 }
+
+img {
+  aspect-ratio: attr(width) / attr(height);
+}
+
 /* ====================================================================
    UTILITIES
    ==================================================================== */
