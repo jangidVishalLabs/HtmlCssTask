@@ -513,7 +513,9 @@
     .hero-ctas {
         justify-content: flex-start;
     }
-
+    .cta-btn{
+        font-size: 12px;
+    }
     .hero-decor--right {
         right: -80px;
         top: 10%;
@@ -557,6 +559,13 @@
     .stat__label {
         font-size: 18px;     /* 16 → 18 */
     }
+    .benefits-container{
+        flex-direction: row;
+    }
+
+    .benefit-right >.benefits-container {
+    flex-direction: row-reverse;
+}
 
     /* Courses */
     .courses__list {

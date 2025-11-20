@@ -608,13 +608,12 @@ h1,h2,h3, .title{
     max-width: 1200px;
     margin: 0 auto;
     display: flex;
+    flex-direction: column;
     gap: 32px;
     align-items: center;
     justify-content: center;
 }
-.benefit-right >.benefits-container {
-    flex-direction: row-reverse;
-}
+
 
 .benefits__media {
     display: block;

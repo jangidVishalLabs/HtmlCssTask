@@ -105,11 +105,14 @@
 
     .hero-ctas {
         gap: 8px;
+        display: flex;
+        flex-direction: column;
     }
 
     .cta-btn {
         padding: 10px 12px;
-        font-size: 16px;     /* was 14px → +2px */
+        font-size: 16px; 
+        width: fit-content;    /* was 14px → +2px */
     }
 
     /* ======================== STATS SECTION ======================== */
@@ -204,7 +207,7 @@
     }
 
     /* ======================== BENEFITS SECTION ======================== */
-    .benefits-1 {
+    .benefits-1, .benefits-container{
         padding: 20px 12px;
         flex-direction: column;
         gap: 20px;
@@ -335,4 +338,12 @@
         width: 100%;
         justify-content: center;
     }
+}
+
+@media screen and (max-width: 336px){
+    .benefits-container {
+        flex-direction: column;
+    }
+
+    
 }
