@@ -289,6 +289,8 @@
 
     .ratings__left {
         flex: 0 0 360px;
+        width: 600px;
+        height: 400px;
     }
 
     .ratings__logo {
