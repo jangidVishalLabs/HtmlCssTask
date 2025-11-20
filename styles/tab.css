@@ -347,10 +347,14 @@
 
             .cards__container {
                 padding: 20px 8px;
+
             }
 
             .cards__title {
                 font-size: 38px;
+            }
+            .cards__list{
+                margin-left: 20px;
             }
 
             .card {

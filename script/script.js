@@ -52,13 +52,7 @@ document.addEventListener("click", (e) => {
 
  class CardsCarousel {
             constructor() {
-                this.list = document.getElementById('cardsCarouselList');
-                        this.applyLeftSpace = () => {
-            this.list.style.marginLeft = window.innerWidth > 767 ? '13px' : '-10px';
-        };
-
-        // apply now and keep in sync on resize
-        this.applyLeftSpace();
+                this.list = document.getElementById('cardsCarouselList');      
                 this.items = this.list.querySelectorAll('.card');
                 this.pagerContainer = document.getElementById('cardsPagerContainer');
                 this.prevBtn = document.getElementById('cardsPrevBtn');
@@ -98,8 +92,32 @@ document.addEventListener("click", (e) => {
             }
 
             updateCarousel() {
-                const offset = -this.currentIndex * (100 / this.itemsPerView);
-                this.list.style.transform = `translateX(${offset}%)`;
+                const isSmall = window.innerWidth < 767;
+                if (this.items.length === 0) return;
+
+                if (isSmall) {
+                    // For small screens card width is 150px (use actual measured width if available)
+                    const firstCard = this.items[0];
+                    const cardWidth = firstCard ? firstCard.getBoundingClientRect().width || 150 : 150;
+
+                    // Try to estimate gap between cards (if any)
+                    let gap = 0;
+                    if (this.items.length > 1) {
+                        const r1 = this.items[0].getBoundingClientRect();
+                        const r2 = this.items[1].getBoundingClientRect();
+                        gap = Math.round(r2.left - r1.right);
+                        if (isNaN(gap) || gap < 0) gap = 0;
+                    }
+
+                    const step = cardWidth + gap;
+                    const offsetPx = -this.currentIndex * step;
+                    this.list.style.transform = `translateX(${offsetPx}px)`;
+                } else {
+                    // Desktop/tablet: keep percent-based behavior
+                    const offset = -this.currentIndex * (100 / this.itemsPerView);
+                    this.list.style.transform = `translateX(calc(${offset}% - 20px))`;
+                }
+
                 this.updatePagerDots();
             }
 
@@ -226,8 +244,31 @@ class Carousel {
     }
 
     updateCarousel() {
-        const offset = -this.currentIndex * (100 / this.itemsPerView);
-        this.list.style.transform = `translateX(calc(${offset}% - 20px))`;
+        if (this.items.length === 0) return;
+        const isSmall = window.innerWidth < 767;
+
+        if (isSmall) {
+            // For small screens estimate item width as 150px (or actual measured width)
+            const firstItem = this.items[0];
+            const itemWidth = firstItem ? firstItem.getBoundingClientRect().width || 150 : 150;
+
+            // Estimate gap between items (if any)
+            let gap = 0;
+            if (this.items.length > 1) {
+                const r1 = this.items[0].getBoundingClientRect();
+                const r2 = this.items[1].getBoundingClientRect();
+                gap = Math.round(r2.left - r1.right);
+                if (isNaN(gap) || gap < 0) gap = 0;
+            }
+
+            const step = itemWidth + gap;
+            const offsetPx = -this.currentIndex * step;
+            this.list.style.transform = `translateX(${offsetPx}px)`;
+        } else {
+            const offset = -this.currentIndex * (100 / this.itemsPerView);
+            this.list.style.transform = `translateX(calc(${offset}% - 20px))`;
+        }
+
         this.updatePagerDots();
     }
 
@@ -345,10 +386,32 @@ document.addEventListener('DOMContentLoaded', () => {
                     this.pagerContainer.appendChild(dot);
                 }
             }
-
             updateCarousel() {
-                const offset = -this.currentIndex * (100 / this.itemsPerView);
-                this.list.style.transform = `translateX(calc(${offset}% - 20px))`;
+                if (this.items.length === 0) return;
+                const isSmall = window.innerWidth < 767;
+
+                if (isSmall) {
+                    // For small screens estimate item width as 120px (or actual measured width)
+                    const firstItem = this.items[0];
+                    const itemWidth = firstItem ? firstItem.getBoundingClientRect().width || 120 : 120;
+
+                    // Estimate gap between items (if any)
+                    let gap = 0;
+                    if (this.items.length > 1) {
+                        const r1 = this.items[0].getBoundingClientRect();
+                        const r2 = this.items[1].getBoundingClientRect();
+                        gap = Math.round(r2.left - r1.right);
+                        if (isNaN(gap) || gap < 0) gap = 0;
+                    }
+
+                    const step = itemWidth + gap;
+                    const offsetPx = -this.currentIndex * step;
+                    this.list.style.transform = `translateX(${offsetPx}px)`;
+                } else {
+                    const offset = -this.currentIndex * (100 / this.itemsPerView);
+                    this.list.style.transform = `translateX(calc(${offset}% - 20px))`;
+                }
+
                 this.updatePagerDots();
             }
 

@@ -262,7 +262,7 @@
     }
 
     .cards__list {
-        gap: 14px;
+        /* gap: 14px; */
         margin-top: 16px;
         display: flex;
         flex-direction: row;
@@ -273,9 +273,8 @@
     /* show one card per viewport on mobile */
     .card {
         flex: 0 0 100%;
-        min-width: 80%;
-        width: 200px;
-        background-color:black;
+        
+        /* background-color:black; */
     }
 
     .card__media {
@@ -302,7 +301,7 @@
 
             .testimonial {
                 flex: 0 0 1;
-                min-width: 80%;
+                width: 150px;
             }
 
             .testimonial__card {
@@ -330,6 +329,11 @@
             .partners-block__item {
                 flex: 0 0 calc(50% - 8px);
                 max-width: calc(50% - 8px);
+                background-color: black;
+            }
+
+            .partners-block__logo   {
+                max-width: 120px;
             }
 
             .partners-block__list{
