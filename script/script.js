@@ -200,13 +200,13 @@ class CardsCarousel {
                 if (isNaN(gap) || gap < 0) gap = 0;
             }
 
-            const step = cardWidth + gap;
+            const step = cardWidth + gap + 10;
             const offsetPx = -this.currentIndex * step;
             this.list.style.transform = `translateX(${offsetPx}px)`;
         } else {
             // Percent-based transform keeps things responsive on wider screens
             const offset = -this.currentIndex * (100 / this.itemsPerView);
-            this.list.style.transform = `translateX(calc(${offset}% - 20px))`;
+            this.list.style.transform = `translateX(calc(${offset}% - 10px))`;
         }
 
         this.updatePagerDots();

@@ -13,6 +13,7 @@
         justify-content: space-around;
         gap: 10px;
         position: relative;
+        z-index: 10000;
     }
 
     .brand-logo {
@@ -25,15 +26,21 @@
         align-items: center;
         justify-content: space-between;
         gap: 8px;
+        position: relative;
     }
 
     .nav-toggle {
         position: absolute;
-        right: 1rem;
+        right: .5rem;
+        
+    }
+    .nav-menu{
+        z-index: 1000;
     }
 
     .actions-list {
         gap: 8px;
+
     }
 
     .btn-primary {
@@ -329,7 +336,6 @@
             .partners-block__item {
                 flex: 0 0 calc(50% - 8px);
                 max-width: calc(50% - 8px);
-                background-color: black;
             }
 
             .partners-block__logo   {
