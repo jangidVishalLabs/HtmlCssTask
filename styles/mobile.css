@@ -255,7 +255,7 @@
         justify-content: center;
     }
 
-    /* ======================== CARDS SECTION ======================== */
+     /* ======================== CARDS SECTION ======================== */
     .cards {
         padding: 20px 12px;
     }
@@ -265,23 +265,35 @@
     }
 
     .cards__list {
-        gap: 14px;
+        /* gap: 14px; */
         margin-top: 16px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: center;
+    }
+
+    /* show one card per viewport on mobile */
+    .card {
+        flex: 0 0 100%;
+        background-color: black;
+
+        
     }
 
     .card__media {
         height: 140px;
     }
-
     .cards__controls {
-        display: none;
-    }
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }   
 
     .cards__cta {
         width: 100%;
         justify-content: center;
     }
-
     /* ======================== BUNDLE ======================== */
     .bundle-card__media {
         height: 220px;

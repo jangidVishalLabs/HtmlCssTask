@@ -55,11 +55,15 @@
         </header>
         <!-- Top utility navigation (location and quick links) -->
         <nav class="nav-footer" aria-label="Top utility navigation">
-            <div class="content">
+            <div class="content nav-content">
                 <button class="location" aria-haspopup="listbox" aria-expanded="false">
                     <span class="location-text">Nevada</span>
                     <img loading="lazy" class="mdi-chevron-down" src="images/icons/downArrow.svg" alt="open location selector">
                 </button>
+            <div class="dropdown" id="dropdownMenu">
+                 <input type="text" id="searchInput" class="search" placeholder="Search state...">
+                <ul id="stateList" class="state-list"></ul>
+            </div>
             </div>
             <nav class="footer-nav" aria-label="Footer navigation">
                 <ul class="footer-list">
@@ -295,19 +299,19 @@
         <!-- Cards: Digital downloads (semantic, namespaced classes) -->
         <section class="cards" aria-label="Digital downloads">
             <div class="cards__container">
-                <header class="cards__header">
-                    <h2 class="cards__title">DIGITAL DOWNLOADS TO ELEVATE YOUR GAME!</h2>
-                    <div class="cards__controls">
-                        <button class="cards__control cards__control--prev" type="button">
+            <header class="cards__header">
+                <h2 class="cards__title">DIGITAL DOWNLOADS TO ELEVATE YOUR GAME!</h2>
+                <div class="cards__controls">
+                        <button class="cards__control cards__control--prev" id="cardsPrevBtn" type="button">
                             <img loading="lazy" src="images/icons/card-left.svg" alt="">
                         </button>
-                        <button class="cards__control cards__control--next" type="button">
+                        <button class="cards__control cards__control--next" id="cardsNextBtn" type="button">
                             <img loading="lazy" src="images/icons/card-right.svg" alt="">
                         </button>
                     </div>
                 </header>
-
-                <ul class="cards__list">
+                <div class="cards__viewport">
+                <ul class="cards__list" id="cardsCarouselList">
                     <li class="card">
                             <figure class="card__media-wrap">
                             <img loading="lazy" class="card__media" src="images/digital-1.webp" alt="Link select distribute product">
@@ -319,6 +323,32 @@
                                 horizontal comment arrow.</p>
                         </div>
                     </li>
+
+                                        <li class="card">
+                            <figure class="card__media-wrap">
+                            <img loading="lazy" class="card__media" src="images/digital-1.webp" alt="Link select distribute product">
+                        </figure>
+                        <div class="card__body">
+                            <h3 class="card__title">Link select distribute auto</h3>
+                            <p class="card__desc">Device prototype thumbnail vertical share list scrolling figjam.
+                                Object
+                                horizontal comment arrow.</p>
+                        </div>
+                    </li>
+
+
+                                        <li class="card">
+                            <figure class="card__media-wrap">
+                            <img loading="lazy" class="card__media" src="images/digital-1.webp" alt="Link select distribute product">
+                        </figure>
+                        <div class="card__body">
+                            <h3 class="card__title">Link select distribute auto</h3>
+                            <p class="card__desc">Device prototype thumbnail vertical share list scrolling figjam.
+                                Object
+                                horizontal comment arrow.</p>
+                        </div>
+                    </li>
+
 
                     <li class="card">
                             <figure class="card__media-wrap">
@@ -354,12 +384,9 @@
                         </div>
                     </li>
                 </ul>
+                </div>
 
-                <div class="cards__pager">
-                    <button class="cards__dot is-active"></button>
-                    <button class="cards__dot"></button>
-                    <button class="cards__dot"></button>
-                    <button class="cards__dot"></button>
+                <div class="cards__pager" id="cardsPagerContainer">
                 </div>
                 <div class="cards__action">
                    <a class="bundle-cta" href="#" role="button">Explore All <span
@@ -459,7 +486,8 @@
                 </header>
 
                 <div class="testimonials__track">
-                    <ul class="testimonials__list">
+        <div class="carousel-wrapper">
+            <ul class="testimonials__list" id="carouselList">
                         <li class="testimonial">
                             <div class="testimonial__card">
                                 <div class="testimonial__meta">
@@ -476,6 +504,25 @@
                                     2024</time><img loading="lazy" src="images/icons/google.svg" alt=""></div>
                             </div>
                         </li>
+
+                                                <li class="testimonial">
+                            <div class="testimonial__card">
+                                <div class="testimonial__meta">
+                                    <img loading="lazy" class="testimonial__avatar" src="images/icons/avatar1.svg" alt="Lisa Foster">
+                                    <div class="testimonial__who">
+                                        <div class="testimonial__name">Lisa Foster</div>
+                                        <div class="testimonial__stars">★★★★★</div>
+                                    </div>
+                                </div>
+                                <p class="testimonial__text">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                    Hic quibusdam assumenda omnis, autem ipsa porro cupiditate dolor facere id explicabo
+                                    pariatur, aliquam.</p>
+                                <div class="testimonial__meta-footer"><time datetime="2024-12-14">December 14,
+                                    2024</time><img loading="lazy" src="images/icons/google.svg" alt=""></div>
+                            </div>
+                        </li>
+ 
+                        
                         <li class="testimonial">
                             <div class="testimonial__card">
                                 <div class="testimonial__meta">
@@ -528,6 +575,7 @@
                         </li>
 
                     </ul>
+                    </div>
 
                     <div class="testimonials__pager">
                         <span class="dot is-active"></span>
@@ -606,18 +654,27 @@
                                 <summary class="faq__question">Where can I go to get the most up-to-date real estate
                                     license
                                     renewal information?</summary>
+                                <div class="faq__answer">This is a placeholder answer. For the most current renewal
+                                    information, check the official state real estate division website or contact their
+                                    support. Replace this text with the real answer.</div>
                             </details>
 
                             <details class="faq__item">
                                 <summary class="faq__question">If this is my first renewal, how many hours of education
                                     do I
                                     need to renew my real estate license?</summary>
+                                <div class="faq__answer">This is a placeholder answer. Renewal hour requirements vary by
+                                    license type and state—consult the state real estate division or your licensing
+                                    guide. Replace with actual details.</div>
                             </details>
 
                             <details class="faq__item">
                                 <summary class="faq__question">How many CE credits do I need to renew my Salesperson
                                     real
                                     estate license?</summary>
+                                <div class="faq__answer">This is a placeholder answer. Salesperson CE credit
+                                    requirements differ by state and year. Verify current requirements on the state
+                                    licensing website and update this answer accordingly.</div>
                             </details>
                         </div>
 
@@ -625,24 +682,36 @@
                             <details class="faq__item">
                                 <summary class="faq__question">What is the difference between Live, internet, and ZOOM?
                                 </summary>
+                                <div class="faq__answer">This is a placeholder answer. Live courses are in-person, Zoom
+                                    courses are live online sessions, and internet (on‑demand) courses are self-paced
+                                    online. Update with your platform-specific policies.</div>
                             </details>
 
                             <details class="faq__item">
                                 <summary class="faq__question">I also hold an NRED Property Manager permit. What
                                     additional
                                     courses do I need to complete to renew my PM permit?</summary>
+                                <div class="faq__answer">This is a placeholder answer. Property manager permits may
+                                    require extra or different coursework—check the NRED guidance for PM permit renewal
+                                    requirements and replace this text with specifics.</div>
                             </details>
 
 
                             <details class="faq__item">
                                 <summary class="faq__question">If I need additional assistance regarding my real estate
                                     license and/or permits, who can I reach out to?</summary>
+                                <div class="faq__answer">This is a placeholder answer. For assistance, contact the
+                                    state real estate division, your broker, or our support team. Provide actual contact
+                                    details here.</div>
                             </details>
 
                             <details class="faq__item">
                                 <summary class="faq__question">What if I need to swap-out a CE class for a different
                                     type or
                                     date for a live class?</summary>
+                                <div class="faq__answer">This is a placeholder answer. Swapping classes typically
+                                    depends on availability and the provider's change policy—consult our refund/change
+                                    policy or contact support to process swaps. Replace with real procedure.</div>
                             </details>
                         </div>
                     </div>
@@ -652,49 +721,59 @@
         <!-- Partners: industry partners (semantic, namespaced) -->
         <section class="partners-block" aria-label="Our industry partners">
             <div class="partners-block__container">
-                <header class="partners-block__header">
-                    <h2 class="partners-block__title"><span class="partners-block__title-strong">Our Amazing
-                            Industry</span>
-                        <span class="partners-block__title-accent">Partners</span>
-                    </h2>
-                </header>
+            <header class="partners-block__header">
+                <h2 class="partners-block__title"><span class="partners-block__title-strong">Our Amazing
+                    Industry</span>
+                <span class="partners-block__title-accent">Partners</span>
+                </h2>
+            </header>
 
+            <div class="partners-carousel">
+                <button class="partners-carousel__btn partners-carousel__btn--prev" aria-label="Previous partner">‹</button>
+
+                <div class="partners-carousel__viewport" aria-hidden="false">
                 <ul class="partners-block__list" aria-label="Partner logos">
                     <li class="partners-block__item">
-                        <figure class="partners-block__logo">
-                            <img loading="lazy" src="images/icons/s1.svg" alt="Partner 1 logo" width="148" height="61">
-                        </figure>
+                    <figure class="partners-block__logo">
+                        <img loading="lazy" src="images/icons/s1.svg" alt="Partner 1 logo" width="148" height="61">
+                    </figure>
                     </li>
                     <li class="partners-block__item">
-                        <figure class="partners-block__logo">
-                            <img loading="lazy" src="images/icons/s2.svg" alt="Partner 2 logo" width="151" height="64">
-                        </figure>
+                    <figure class="partners-block__logo">
+                        <img loading="lazy" src="images/icons/s2.svg" alt="Partner 2 logo" width="151" height="64">
+                    </figure>
                     </li>
                     <li class="partners-block__item">
-                        <figure class="partners-block__logo">
-                            <img loading="lazy" src="images/icons/s3.svg" alt="Partner 3 logo" width="154" height="63">
-                        </figure>
+                    <figure class="partners-block__logo">
+                        <img loading="lazy" src="images/icons/s3.svg" alt="Partner 3 logo" width="154" height="63">
+                    </figure>
                     </li>
                     <li class="partners-block__item">
-                        <figure class="partners-block__logo">
-                            <img loading="lazy" src="images/icons/s4.svg" alt="Partner 4 logo" width="148" height="61">
-                        </figure>
+                    <figure class="partners-block__logo">
+                        <img loading="lazy" src="images/icons/s4.svg" alt="Partner 4 logo" width="148" height="61">
+                    </figure>
                     </li>
                     <li class="partners-block__item">
-                        <figure class="partners-block__logo">
-                            <img loading="lazy" src="images/icons/s4.svg" alt="Partner 5 logo" width="151" height="64">
-                        </figure>
+                    <figure class="partners-block__logo">
+                        <img loading="lazy" src="images/icons/s4.svg" alt="Partner 5 logo" width="151" height="64">
+                    </figure>
                     </li>
                 </ul>
-
-                <div class="partners-block__pager">
-                    <span class="partners-block__dot"></span>
-                    <span class="partners-block__dot"></span>
-                    <span class="partners-block__dot"></span>
-                    <span class="partners-block__dot"></span>
-                    <span class="partners-block__dot"></span>
                 </div>
+
+                <button class="partners-carousel__btn partners-carousel__btn--next" aria-label="Next partner">›</button>
             </div>
+
+            <div class="partners-block__pager" aria-hidden="false">
+                <button class="partners-block__dot" aria-label="Go to partner 1"></button>
+                <button class="partners-block__dot" aria-label="Go to partner 2"></button>
+                <button class="partners-block__dot" aria-label="Go to partner 3"></button>
+                <button class="partners-block__dot" aria-label="Go to partner 4"></button>
+                <button class="partners-block__dot" aria-label="Go to partner 5"></button>
+            </div>
+            </div>
+
+
         </section>
 
         <!-- Contact / Support -->
@@ -799,7 +878,7 @@
         <div class="site-footer__small">© 2025 ceASAP.com - All rights reserved.</div>
     </footer>
 
-    <script src="script.js" async></script>
+    <script src="script.js"></script>
 </body>
 
 </html>

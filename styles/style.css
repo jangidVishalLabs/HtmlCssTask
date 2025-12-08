@@ -238,24 +238,26 @@ img {
     flex-shrink: 0;
     position: relative;
     overflow: hidden;
+    z-index: 9999;
 }
 .location {
+    width: 220px;
     background: #ffffff;
     border: 0;
     border-radius: 36px;
     padding: 6px 14px;
     display: inline-flex;
-    justify-content: space-between;
     align-items: center;
+    display: flex;
+    justify-content: space-between;
     gap: 8px;
     color: var(--brand-color);
     cursor: pointer;
-    width: 210px;
 }
 .location-text {
     font-weight: 700;
     font-size: 18px;     /* +2px */
-   color:#222;
+    color: var(--brand-color);
 }
 .mdi-chevron-down {
     width: 16px;
@@ -263,6 +265,76 @@ img {
     display: block;
     opacity: 0.95
 }
+.nav-content{
+    position: relative;
+    z-index: 9999;
+}
+.dropdown {
+    width: 220px;
+    position: fixed;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    margin-top: 4px;
+    display: none;
+    max-height: 250px;
+    overflow-y: auto;
+    z-index: 1400; /* above hero and most UI */
+    padding-bottom: 5px;
+    box-shadow: 0 12px 40px rgba(6, 24, 44, 0.16);
+    transform-origin: top right;
+    transition: transform 160ms ease, opacity 120ms ease;
+    opacity: 0;
+    transform: translateY(-6px) scale(.98);
+}
+
+/* visible state with a small "pop" animation */
+.dropdown.open {
+    display: block;
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    z-index: 1000;
+}
+
+/* keep search styling but make it fit within fixed dropdown */
+.search {
+    width: calc(100% - 20px);
+    margin: 10px;
+    padding: 8px;
+    border: 1px solid #aaa;
+    border-radius: 6px;
+    box-sizing: border-box;
+}
+
+.state-list {
+    padding: 0;
+    list-style: none;
+    margin: 0;
+}
+
+.state-list li {
+    padding: 10px 15px;
+    cursor: pointer;
+}
+
+.state-list li:hover {
+    background: #f0f0f0;
+}
+
+.content {
+    position: relative;
+}
+.resources-dropdown{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.resources-dropdown > img{
+    width: 20px;
+}
+
+
+
 .footer-list {
     display: flex;
     gap: 8px;
@@ -271,18 +343,9 @@ img {
     list-style: none;
     align-items: center;
 }
-.resources-dropdown{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
-}
-.mdi-chevron-down2{
-    width: 20px;
-}
 .footer-link {
     display: inline-block;
-    color: #222;
+    color: #ffffff;
     text-decoration: none;
     font-weight: 700;
     font-size: 17px;     /* +2px */
@@ -728,6 +791,7 @@ img {
     text-transform: uppercase;
     letter-spacing: 0.6px;
 }
+
 .cards__controls {
     display: flex;
     justify-content: center;
@@ -749,72 +813,98 @@ img {
     border-top-right-radius:100% ;
     border-bottom-right-radius:100%;
 }
-.cards__list {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-}
-.card {
-    display: flex;
-    flex-direction: column;
-    background: #fff;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 6px 18px rgba(16, 24, 40, 0.08);
-}
-.card__media {
-    width: 100%;
-    height: 160px;
-    object-fit: cover;
-    display: block;
-}
-.card__media-wrap {
-    display: block;
-    width: 100%;
-    overflow: hidden;
-    position: relative;
-    right: 40px;
-    bottom: 20px;
-}
-.card__media {
-    display: block;
-    width: 100%;
-}
-.card__body {
-    padding: 12px;
-    position: relative;
-    bottom: 20px;
-}
-.card__title {
-    font-size: 18px;     /* +2px */
-    margin: 0 0 8px 0;
-    font-weight: 800
-}
-.card__desc {
-    margin: 0;
-    color: #374354
-}
-.cards__pager {
-    display: flex;
-    gap: 8px;
-    justify-content: center;
-    margin-top: 18px;
-}
-.cards__dot {
-    width: 10px;
-    height: 10px;
-    border-radius: 999px;
-    background: rgba(255, 255, 255, 0.85);
-    border: 2px solid rgba(255, 255, 255, 0.2);
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
-}
-.cards__dot.is-active {
-    background: #ff1200;
-    border-color: #ff1200;
-}
+        /* Carousel Wrapper */
+        .cards__viewport {
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .cards__list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: row;
+            gap: 16px;
+            transition: transform 0.4s ease-in-out;
+            will-change: transform;
+            align-items: stretch;
+        }
+
+        .card {
+            display: flex;
+            flex-direction: column;
+            background: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 6px 18px rgba(16, 24, 40, 0.08);
+            flex: 0 0 100%;
+            min-width: 100%;
+        }
+
+        .card__media-wrap {
+            display: block;
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+            right: 40px;
+            bottom: 20px;
+        }
+
+        .card__media {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .card__body {
+            padding: 16px;
+        }
+
+        .card__title {
+            font-size: 18px;
+            margin: 0 0 8px 0;
+            font-weight: 800;
+            color: #333;
+        }
+
+        .card__desc {
+            margin: 0;
+            color: #374354;
+            font-size: 14px;
+        }
+
+        /* Pager Dots */
+        .cards__pager {
+            display: flex;
+            gap: 8px;
+            justify-content: center;
+            margin-top: 12px;
+        }
+
+        .cards__dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.85);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .cards__dot.is-active {
+            background: #ff1200;
+            border-color: #ff1200;
+            transform: scale(1.2);
+        }
+
+        .cards__dot:hover {
+            background: #ff5a3a;
+        }
+
 .cards__action {
     width: 100%;
     display: flex;
@@ -834,6 +924,36 @@ img {
     text-decoration: none;
     font-weight: 700;
 }
+
+
+        /* Responsive */
+        @media screen and (max-width: 767px) {
+            .cards {
+                padding: 20px 12px;
+            }
+
+            .cards__container {
+                padding: 16px 8px;
+            }
+
+            .cards__title {
+                font-size: 20px;
+            }
+
+            .cards__header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .card {
+                flex: 0 0 100%;
+                min-width: 100%;
+            }
+
+            .card__media {
+                height: 140px;
+            }
+        }
 /* ====================================================================
    BUNDLES SECTION
    ==================================================================== */
@@ -988,7 +1108,7 @@ img {
     padding: 0;
     display: flex;
     gap: 16px;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     align-items: center;
     justify-content: center;
     padding-bottom: 8px;
@@ -1021,9 +1141,38 @@ img {
     background: rgba(0, 0, 0, 0.08);
     display: inline-block
 }
+
+            .partners-carousel { display:flex; align-items:center; gap:8px; }
+            .partners-carousel__viewport { flex:1; }
+            .partners-carousel__btn {
+                background: transparent;
+                border: 1px solid rgba(0,0,0,0.08);
+                padding: 6px 10px;
+                font-size: 20px;
+                line-height:1;
+                cursor: pointer;
+                border-radius:4px;
+            }
+            .partners-block__dot {
+                width:10px;
+                height:10px;
+                border-radius:50%;
+                background:#ddd;
+                border:0;
+                margin:4px;
+                display:inline-block;
+                vertical-align:middle;
+                cursor:pointer;
+            }
+            .partners-block__dot.is-active,
+            .partners-block__dot:focus,
+            .partners-block__dot:hover {
+                background:#333;
+            }
 /* ====================================================================
    TESTIMONIALS SECTION
    ==================================================================== */
+
 .testimonials {
     background: #eaf6fb;
     padding: 40px 16px;
@@ -1055,13 +1204,17 @@ img {
     margin: 0;
     padding: 0;
     display: flex;
-    flex-direction: column;
-    gap: 16px;
+    flex-direction: row;       /* Horizontal for carousel */
+    gap: 20px;                 /* Space between items */
     width: 100%;
+    transition: transform 0.3s ease; /* Smooth slide */
+    will-change: transform;    /* Perf boost */
 }
 .testimonial {
     display: flex;
     justify-content: center;
+    flex: 0 0 auto;            /* Fixed size, no shrink */
+    min-width: 0;
 }
 .testimonial__card {
     background: #fff;
@@ -1069,6 +1222,7 @@ img {
     padding: 16px;
     box-shadow: 0 6px 18px rgba(16, 24, 40, 0.06);
     max-width: 320px;
+    width: 100%;               /* Fill flex item */
 }
 .testimonial__meta {
     display: flex;
@@ -1150,9 +1304,15 @@ img {
     height: 10px;
     border-radius: 999px;
     background: #d8e6ef;
+    cursor: pointer;           /* Clickable hint */
+    transition: transform 0.2s ease, background-color 0.2s ease; /* Hover smooth */
+}
+.testimonials__pager .dot:hover {
+    transform: scale(1.1);
 }
 .testimonials__pager .dot.is-active {
-    background: #ff1200
+    background: #ff1200;
+    transform: scale(1.1);     /* Subtle active lift */
 }
 .testimonials__cta .btn {
     background: linear-gradient(90deg, #ff1200, #ff5a3a);
@@ -1160,7 +1320,19 @@ img {
     padding: 10px 18px;
     border-radius: 999px;
     text-decoration: none;
-    display: inline-flex
+    display: inline-flex;
+    transition: transform 0.2s ease; /* Bonus: Hover lift */
+}
+.testimonials__cta .btn:hover {
+    transform: translateY(-1px);
+}
+
+/* Carousel Wrapper: Essential for clipping */
+.carousel-wrapper {
+    overflow: hidden;          /* Hide off-screen */
+    position: relative;
+    width: 100%;
+    align-items: center;       /* Center items in view */
 }
 /* ====================================================================
    TOOLS SECTION
