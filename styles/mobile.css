@@ -1,0 +1,362 @@
+/* =========================================================
+   MOBILE STYLES (max-width: 767px)
+   Keep header compact and stack where needed
+   Font sizes increased by +2px across the board
+   ========================================================= */
+@media screen and (max-width: 767px) {
+
+    /* ======================== NAVBAR ======================== */
+    .nav-header {
+        width: 100%;
+        padding: 12px 16px;
+        flex-direction: row;
+        justify-content: space-around;
+        gap: 10px;
+        position: relative;
+    }
+
+    .brand-logo {
+        width: 140px;
+    }
+
+    .nav-right {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 8px;
+    }
+
+    .nav-toggle {
+        position: absolute;
+        right: 1rem;
+    }
+
+    .actions-list {
+        gap: 8px;
+    }
+
+    .btn-primary {
+        padding: 8px 12px;
+        font-size: 16px;     /* was 14px → +2px */
+    }
+
+    .cart-count {
+        top: -5px;
+        right: -5px;
+        min-width: 16px;
+        height: 16px;
+        font-size: 12px;     /* was 10px → +2px */
+    }
+
+    /* ======================== FOOTER ======================== */
+    .nav-footer {
+        padding: 12px 12px;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 8px;
+    }
+
+    .location {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .footer-list {
+        gap: 8px;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        padding: 6px 4px;
+        width: 100%;
+    }
+
+    .footer-list::-webkit-scrollbar {
+        display: none;
+    }
+
+    .site-footer__social {
+        display: flex;
+        justify-content: center;
+    }
+
+    /* ======================== HERO SECTION ======================== */
+    .hero-grid {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    .hero {
+        padding: 18px 12px;
+    }
+
+    .hero-title {
+        font-size: 26px;     /* was 24px → +2px */
+        line-height: 34px;
+    }
+
+    .hero-image {
+        max-width: 100%;
+        border-radius: 12px;
+    }
+
+    .hero-card {
+        padding: 12px;
+    }
+
+    .hero-ctas {
+        gap: 8px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .cta-btn {
+        padding: 10px 12px;
+        font-size: 16px; 
+        width: fit-content;    /* was 14px → +2px */
+    }
+
+    /* ======================== STATS SECTION ======================== */
+    .stats {
+        margin-top: 20px;
+        padding: 16px 12px;
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .stat {
+        padding: 10px;
+    }
+
+    .stat__value {
+        font-size: 26px;     /* was 24px → +2px */
+    }
+
+    .stat__icon img {
+        width: 56px;
+        height: 56px;
+    }
+
+
+    /* ======================== COURSES SECTION ======================== */
+    .courses {
+        padding: 20px 12px;
+    }
+
+    .courses__list {
+        gap: 12px;
+    }
+
+    .course {
+        padding: 10px;
+    }
+
+    .course__media {
+        height: 160px;
+        object-fit: cover;
+    }
+
+    .course__title {
+        font-size: 20px;     /* was 18px → +2px */
+    }
+
+    .course-cta {
+        width: 100%;
+        justify-content: center;
+    }
+
+    /* Legacy .courses markup (mobile) — merged */
+    .courses .content {
+        flex-direction: column;
+        padding: 16px;
+        gap: 16px;
+        width: auto;
+    }
+
+    .courses .content2 {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .courses .content3,
+    .courses .content6,
+    .courses .content7 {
+        width: 100%;
+        height: auto;
+    }
+
+    .courses .content4 {
+        padding: 16px;
+        align-items: flex-start;
+    }
+
+    .courses .text {
+        text-align: left;
+        font-size: 22px;     /* was 20px → +2px */
+    }
+
+    .courses .text2 {
+        text-align: left;
+        font-size: 18px;     /* was 16px → +2px */
+    }
+
+    .courses .button {
+        width: 100%;
+        justify-content: center;
+        padding: 10px 12px;
+    }
+
+    /* ======================== BENEFITS SECTION ======================== */
+    .benefits-1, .benefits-container{
+        padding: 20px 12px;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .benefits-1 .content {
+        width: 100%;
+        padding: 12px;
+        border-radius: 12px;
+    }
+
+    .benefits-1 .content3,
+    .benefits-1 .image,
+    .benefits-1 .image-2652 {
+        position: static;
+        width: 100%;
+        height: auto;
+        left: auto;
+        top: auto;
+    }
+
+    .benefits-1 .content4 {
+        width: 100%;
+        padding: 12px;
+    }
+
+    .benefits-1 .text {
+        font-size: 22px;     /* was 20px → +2px */
+        line-height: 30px;
+    }
+
+    .benefits-1 .text2 {
+        font-size: 17px;     /* was 15px → +2px */
+        line-height: 24px;
+    }
+
+    .benefits-1 .text-2-span,
+    .benefits-1 .text-2-span3,
+    .benefits-1 .text-2-span2 {
+        padding-left: 1em;
+    }
+
+    .benefits-1 .button {
+        width: 100%;
+        justify-content: center;
+    }
+
+     /* ======================== CARDS SECTION ======================== */
+    .cards {
+        padding: 20px 12px;
+    }
+
+    .cards__title {
+        font-size: 20px;     /* was 18px → +2px */
+    }
+
+    .cards__list {
+        /* gap: 14px; */
+        margin-top: 16px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: center;
+    }
+
+    /* show one card per viewport on mobile */
+    .card {
+        flex: 0 0 100%;
+        background-color: black;
+
+        
+    }
+
+    .card__media {
+        height: 140px;
+    }
+    .cards__controls {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }   
+
+    .cards__cta {
+        width: 100%;
+        justify-content: center;
+    }
+    /* ======================== BUNDLE ======================== */
+    .bundle-card__media {
+        height: 220px;
+    }
+
+    /* ======================== PARTNERS SECTION ======================== */
+    .partners-block {
+        padding: 20px 12px;
+    }
+
+    .partners-block__title {
+        font-size: 20px;     /* was 18px → +2px */
+    }
+
+    .partners-block__list {
+        gap: 12px;
+    }
+
+    .partners-block__logo img {
+        height: 48px;
+    }
+
+    .partners-block__pager {
+        margin-top: 10px;
+    }
+
+    /* ======================== TOOLS SECTION ======================== */
+    .tools-block {
+        padding: 16px 12px;
+    }
+
+    .tools-block__content {
+        flex-direction: column;
+    }
+
+    .tools-block__media {
+        order: 1;
+        margin-bottom: 12px;
+    }
+
+    .tools-block__body {
+        order: 2;
+    }
+
+    .tools-block__title {
+        font-size: 20px;     /* was 18px → +2px */
+    }
+
+    .tools-block__hero {
+        max-width: 100%;
+    }
+
+    .tools-block__cta {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width: 336px){
+    .benefits-container {
+        flex-direction: column;
+    }
+
+    
+}
