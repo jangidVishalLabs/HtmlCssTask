@@ -13,6 +13,7 @@
         justify-content: space-around;
         gap: 10px;
         position: relative;
+        z-index: 1000;
     }
 
     .brand-logo {
@@ -55,6 +56,7 @@
         flex-direction: column;
         align-items: stretch;
         gap: 8px;
+        z-index: 1;
     }
 
     .location {
@@ -277,7 +279,6 @@
     /* show one card per viewport on mobile */
     .card {
         flex: 0 0 100%;
-        background-color: black;
 
         
     }
@@ -300,6 +301,27 @@
         height: 220px;
     }
 
+     .testimonials {
+                padding: 56px 24px;
+            }
+
+            .testimonials__title {
+                font-size: 36px;
+            }
+
+            .testimonial {
+                flex: 0 0 1;
+                width: 150px;
+            }
+
+            .testimonial__card {
+                min-width: 80%;
+            }
+
+            .testimonials__list{
+                gap: 10px;
+            }
+
     /* ======================== PARTNERS SECTION ======================== */
     .partners-block {
         padding: 20px 12px;
@@ -320,6 +342,12 @@
     .partners-block__pager {
         margin-top: 10px;
     }
+
+    
+            .partners-block__item {
+                flex: 0 0 100%;
+                min-width: 100%;
+            }
 
     /* ======================== TOOLS SECTION ======================== */
     .tools-block {

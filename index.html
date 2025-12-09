@@ -577,12 +577,13 @@
                     </ul>
                     </div>
 
-                    <div class="testimonials__pager">
-                        <span class="dot is-active"></span>
-                        <span class="dot"></span>
-                        <span class="dot"></span>
-                        <span class="dot"></span>
+                    <div class="testimonials__pager" id="pagerContainer">
                     </div>
+
+                                    <div class="carousel-controls">
+                    <button class="carousel-btn" id="prevBtn">❮</button>
+                    <button class="carousel-btn" id="nextBtn">❯</button>
+                </div>
 
                     <div class="testimonials__cta">
                         <a class="btn" href="#reviews">See More Reviews<span style="margin-left: 6px;"><img loading="lazy" src="./images/icons/right-fill.svg" alt="" srcset="" width="16" height="16"></span> </a>
@@ -719,62 +720,68 @@
             </div>
         </section>
         <!-- Partners: industry partners (semantic, namespaced) -->
-        <section class="partners-block" aria-label="Our industry partners">
-            <div class="partners-block__container">
+    <section class="partners-block" aria-label="Our industry partners">
+        <div class="partners-block__container">
             <header class="partners-block__header">
-                <h2 class="partners-block__title"><span class="partners-block__title-strong">Our Amazing
-                    Industry</span>
-                <span class="partners-block__title-accent">Partners</span>
+                <h2 class="partners-block__title">
+                    <span class="partners-block__title-strong">Our Amazing Industry</span>
+                    <span class="partners-block__title-accent"> Partners</span>
                 </h2>
             </header>
 
-            <div class="partners-carousel">
-                <button class="partners-carousel__btn partners-carousel__btn--prev" aria-label="Previous partner">‹</button>
-
-                <div class="partners-carousel__viewport" aria-hidden="false">
-                <ul class="partners-block__list" aria-label="Partner logos">
+            <div class="carousel-wrapper">
+                <ul class="partners-block__list" id="partnersCarouselList" aria-label="Partner logos">
                     <li class="partners-block__item">
-                    <figure class="partners-block__logo">
-                        <img loading="lazy" src="images/icons/s1.svg" alt="Partner 1 logo" width="148" height="61">
-                    </figure>
+                        <figure class="partners-block__logo">
+                            <img src="./images/icons/s1.svg" alt="Partner 1 logo" width="148" height="61">
+                        </figure>
                     </li>
                     <li class="partners-block__item">
-                    <figure class="partners-block__logo">
-                        <img loading="lazy" src="images/icons/s2.svg" alt="Partner 2 logo" width="151" height="64">
-                    </figure>
+                        <figure class="partners-block__logo">
+                            <img src="./images/icons/s2.svg" alt="Partner 2 logo" width="151" height="64">
+                        </figure>
                     </li>
                     <li class="partners-block__item">
-                    <figure class="partners-block__logo">
-                        <img loading="lazy" src="images/icons/s3.svg" alt="Partner 3 logo" width="154" height="63">
-                    </figure>
+                        <figure class="partners-block__logo">
+                            <img src="./images/icons/s3.svg" alt="Partner 3 logo" width="154" height="63">
+                        </figure>
                     </li>
                     <li class="partners-block__item">
-                    <figure class="partners-block__logo">
-                        <img loading="lazy" src="images/icons/s4.svg" alt="Partner 4 logo" width="148" height="61">
-                    </figure>
+                        <figure class="partners-block__logo">
+                            <img src="./images/icons/s4.svg" alt="Partner 4 logo" width="148" height="61">
+                        </figure>
                     </li>
                     <li class="partners-block__item">
-                    <figure class="partners-block__logo">
-                        <img loading="lazy" src="images/icons/s4.svg" alt="Partner 5 logo" width="151" height="64">
-                    </figure>
+                        <figure class="partners-block__logo">
+                            <img src="./images/icons/s1.svg" alt="Partner 5 logo" width="151" height="64">
+                        </figure>
+                    </li>
+                                        <li class="partners-block__item">
+                        <figure class="partners-block__logo">
+                            <img src="./images/icons/s1.svg" alt="Partner 1 logo" width="148" height="61">
+                        </figure>
+                    </li>
+                                        <li class="partners-block__item">
+                        <figure class="partners-block__logo">
+                            <img src="./images/icons/s1.svg" alt="Partner 1 logo" width="148" height="61">
+                        </figure>
+                    </li>
+                                        <li class="partners-block__item">
+                        <figure class="partners-block__logo">
+                            <img src="./images/icons/s1.svg" alt="Partner 1 logo" width="148" height="61">
+                        </figure>
                     </li>
                 </ul>
-                </div>
-
-                <button class="partners-carousel__btn partners-carousel__btn--next" aria-label="Next partner">›</button>
             </div>
 
-            <div class="partners-block__pager" aria-hidden="false">
-                <button class="partners-block__dot" aria-label="Go to partner 1"></button>
-                <button class="partners-block__dot" aria-label="Go to partner 2"></button>
-                <button class="partners-block__dot" aria-label="Go to partner 3"></button>
-                <button class="partners-block__dot" aria-label="Go to partner 4"></button>
-                <button class="partners-block__dot" aria-label="Go to partner 5"></button>
-            </div>
+            <div class="carousel-controls">
+                <button class="carousel-btn" id="partnersPrevBtn">❮</button>
+                <button class="carousel-btn" id="partnersNextBtn">❯</button>
             </div>
 
-
-        </section>
+            <div class="partners-block__pager" id="partnersPagerContainer"></div>
+        </div>
+    </section>
 
         <!-- Contact / Support -->
         <section class="contact" aria-label="Contact support">

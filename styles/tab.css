@@ -355,9 +355,6 @@
             .cards__title {
                 font-size: 38px;
             }
-            .cards__list{
-                margin-left: 20px;
-            }
 
             .card {
                 flex: 0 0 calc(25% - 12px);
@@ -471,14 +468,33 @@
         font-size: 14px;
     }
 
-    /* Testimonials */
-    .testimonials__container {
-        padding: 0 24px;
-    }
+                    .partners-block {
+                padding: 56px 48px;
+            }
 
-    .testimonial--media {
-        flex: 0 0 420px;
-    }
+            .partners-block__title {
+                font-size: 36px;
+            }
+
+            .partners-block__item {
+                flex: 0 0 calc(20% - 13px);
+                min-width: calc(20% - 13px);
+            }
+
+    /* Testimonials */
+            .testimonials {
+                padding: 72px 48px;
+            }
+
+            .testimonials__title {
+                font-size: 42px;
+            }
+
+            .testimonial {
+                flex: 0 0 calc(33.333% - 11px);
+                min-width: calc(33.333% - 11px);
+            }
+    
 }
 
 /* ========================================================= TABLET + DESKTOP SHARED STYLES (768px and above) ========================================================= */
@@ -719,8 +735,7 @@
     .bundles-block__side .bundle-card__body {
         padding: 12px;
     }
-
-    /* Testimonials */
+/* Testimonials */
     .testimonials__track {
         gap: 24px;
     }
